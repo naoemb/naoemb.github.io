@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>66 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一.温故知新    1.演示了一遍安装虚拟操作系统的步骤        1)虚拟机软件-&gt;VMWare        2)Ubuntu的镜像-&gt;网易镜像 清华镜像        3)需要手动分区        4)安装软件之前需要切换软件源    2.终端        1)修改了终端的字体字号        2)终端的配色方案        3)分析终端提示符        4)命令">
+<meta property="og:type" content="article">
+<meta property="og:title" content="66">
+<meta property="og:url" content="http://naoemb.github.io/2022/07/15/01test_02day/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一.温故知新    1.演示了一遍安装虚拟操作系统的步骤        1)虚拟机软件-&gt;VMWare        2)Ubuntu的镜像-&gt;网易镜像 清华镜像        3)需要手动分区        4)安装软件之前需要切换软件源    2.终端        1)修改了终端的字体字号        2)终端的配色方案        3)分析终端提示符        4)命令">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-07-15T10:08:52.744Z">
+<meta property="article:modified_time" content="2022-07-15T10:19:31.974Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://naoemb.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-01test_02day" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/07/15/01test_02day/" class="article-date">
+  <time datetime="2022-07-15T10:08:52.744Z" itemprop="datePublished">2022-07-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      66
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一.温故知新<br>    1.演示了一遍安装虚拟操作系统的步骤<br>        1)虚拟机软件-&gt;VMWare<br>        2)Ubuntu的镜像-&gt;网易镜像 清华镜像<br>        3)需要手动分区<br>        4)安装软件之前需要切换软件源<br>    2.终端<br>        1)修改了终端的字体字号<br>        2)终端的配色方案<br>        3)分析终端提示符<br>        4)命令<br>            cd<br>            ls<br>            pwd<br>            touch<br>            mkdir<br>            rm<br>            cp<br>            mv<br>            cat<br>            tar</p>
+<p>二.编辑器与编译器<br>    编辑器是用来编写程序的<br>    编译器是用来编译程序的<br>    在Linux环境中编辑器有很多种 : gedit vi vim emacs<br>    在Linux环境中编译器有很多种 : gcc cc arm-linux-gcc<br>    主要讲 vim 和 gcc 的使用<br>    1.编辑器vim的使用<br>        vim之所以被称之为强大的编辑器是因为本身支持很多的模式<br>        命令模式 命令行模式(底行模式) 编辑模式(插入模式) 可视 可视块 可视行<br>        注意 : 不要使用vim打开目录文件<br>        注意 : 用vim编写完成的文件内容要用正常的保存退出方式,不要直接关闭终端<br>                否则会生成交换文件(交换文件是隐藏文件)<br>                    vim hello.c<br>                        |<br>        按iIoOaA            V        按:<br>    编辑模式&lt;———-命令模式———-&gt;命令行模式<br>            ———&gt;        &lt;———<br>        按esc                    按esc或者删掉:</p>
+<pre><code>命令行模式的操作
+    w        保存
+    q        退出
+    wq        保存并且退出
+
+大家在终端中,执行 vim ~/.vimrc
+先进入到编辑模式
+set ai
+set si
+set ts=4
+set sw=4
+set nu
+保存退出
+
+2.编译器gcc
+    注意 : gcc编译器不检查段错误(操作内存不当引起的)
+gcc hello.c
+    1)编译之后终端什么提示都没有,代表程序没有语法错误,会生成可执行文件
+    2)编译之后终端报出警告,代表程序有些问题,但不是致命的,会生成可执行文件
+    3)编译之后终端报出错误,代表程序100%有问题,并且是致命的,
+            不会生成可执行文件
+默认的可执行文件的名字是a.out
+
+指定可执行文件的名字
+    gcc -o 可执行文件名 .c文件
+
+要求大家在编译程序时加入-Wall选项,可以把所有警告列出
+gcc -Wall hello.c
+
+3.执行可执行文件
+    ./a.out
+</code></pre>
+<p>三.man手册(帮助手册)<br>    有困难,找男人<br>    man 你要查找的东西<br>    在man手册界面中键盘上下按键可以翻阅<br>    按 q 键可以退出man手册</p>
+<p>=====================================<br>作业<br>1.修改自己的vim配置文件<br>=====================================</p>
+<p>#include &lt;stdio.h&gt;<br>/*<br>#include<br>面试题<br>1.在C语言中以#开头的内容都是预处理<br>2.从.c文件编译成可执行程序,需要经历哪些阶段?<br>    预处理-&gt;编译-&gt;汇编-&gt;链接<br>3.在C语言中预处理都包含哪些操作?<br>    文件包含 宏定义 条件编译<br>4.在包含头文件时可以使用双引号或者尖括号,有啥区别?<br>    尖括号 : 默认会从指定的目录(/usr/include)中查找头文件,<br>            如果找不到会报错<br>    双引号 : 默认会从当前目录中查找头文件,<br>            如果找不到再从指定目录中查找头文件,<br>            如果再找不到报错<br>stdio.h        标准输入输出的头文件<br><em>/<br>int main(void)<br>/</em><br>    main函数(也叫做主函数)<br>    main函数是程序的入口<br>    当执行可执行文件时,会从main函数进入,按照从上往下的顺序<br>    逐行逐行执行代码,最后从main函数退出<br><em>/<br>{<br>    printf(“Hello World!”);<br>    /</em><br>    printf是一个函数(功能)<br>    是用来打印输出的(可以把双引号引起来的内容打印到终端中)<br>    由于printf函数是别人实现的功能,所以需要包含人家的头文件<br>    */<br>}</p>
+<p>/*<br>1.在C语言中有字符串,有没有字符串类型?<br>    没有字符串类型<br>printf(“Hello World!”);<br>    在C语言中双引号引起来的内容叫做字符串<br>    字符串都是由一个一个单一的字符组成的<br>    在C语言中单引号引起来的内容叫做字符<br>    字符串最后都有一个结束标志’\0’(尾0)<br>例子:<br>    “a” 和 ‘a’<br>    不一样,”a”是字符串,’a’是字符<br>    “a”是由’a’ + ‘\0’组成<br>======================================<br>    “0” 和 ‘0’ 和 0<br>    不一样.”0”是字符串,’0’是字符,0是整数<br>    “0”是由’0’ + ‘\0’组成<br>练习:<br>在终端中打印出一个 %<br>*/<br>#include &lt;stdio.h&gt;</p>
+<p>int main(void)<br>{<br>    printf(“%”);<br>    //printf(“Hello World!”);<br>    //printf(‘Hello World!’);<br>}</p>
+<p>/*<br>printf打印输出的特殊内容-&gt;转义字符<br>转义字符也是字符<br>    转义字符是由一个 \ + 某一个东西组成的<br>    转义字符除了有ASCII值以外还有另外的一层含义<br>ASCII(描述的就是字符和数字的对应关系)<br>常用的ASCII表一共有128个字符(对应数字0 - 127)<br>记住特殊的ASCII值<br>    字符    ASCII值<br>    ‘\0’    0<br>    ‘\n’    10<br>    ‘0’        48<br>    ‘A’        65<br>    ‘a’        97<br>转义字符<br>    字符    ASCII值        含义<br>    ‘\0’    0            字符串的结束标志<br>    ‘\n’    10            换行符<br>            会把光标换到下一行行首的位置<br>    ‘\r’    13            回车符<br>            会让光标回到当前行行首的位置<br>    ‘\t’    9            水平制表符<br>            会补一个tab<br>    ‘\v’    11            垂直制表符<br>            光标会换到下一行当前列的位置<br>*/<br>#include &lt;stdio.h&gt;</p>
+<p>int main(void)<br>{<br>    printf(“123\v456\v789\v”);<br>    printf(“123\t456\t789\t”);<br>    //printf(“sdlpmdaspmdpasmdpasmoHello World!\r”);<br>    //printf(“Hello World!\n”);<br>    //printf(“Hello\0World!”);<br>    //printf(“%”);<br>    //printf(“Hello World!”);<br>    //printf(‘Hello World!’);<br>}</p>
+<p>/*<br>printf打印输出的特殊内容-&gt;标准化输出格式<br>    标准化输出格式只是一种输出格式,并不是字符<br>    是由一个 % + 某一个东西组成的<br>    %叫做占位符<br>    %d        十进制整数输出<br>    %o        八进制输出<br>    %x        十六进制输出<br>    %f        小数输出(默认打印输出小数点后六位)<br>    %.2f    默认输出小数点后2位<br>    %c        单一字符输出<br>    %s        字符串输出<br>    %p        输出地址<br>    %%        打印一个百分号<br>*/<br>#include &lt;stdio.h&gt;</p>
+<p>int main(void)<br>{<br>    //printf(“%d”, 9527);<br>    //printf(“%x\n”, 100);<br>    //printf(“%o\n”, 100);<br>    //printf(“%f\n”, 3.14);<br>    //printf(“%.2f\n”, 3.14);<br>    //printf(“%c\n”, ‘%’);<br>    //printf(“%%\n”);<br>    //printf(“%s\n”, “Hello”);<br>    //printf(“%f\n”, 100);<br>    //printf(“%d\n”, 3.14);<br>    printf(“%c-%d\n”, 100, ‘A’);<br>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://naoemb.github.io/2022/07/15/01test_02day/" data-id="cl5mbrulw00016wvm0y4xaanu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/07/15/01test_03day/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          67
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/07/15/01test_01day/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">65</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/07/15/01test_03day/">67</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/15/01test_02day/">66</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/15/01test_01day/">65</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/15/01test_07day/">71</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/15/01test_06day/">70</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

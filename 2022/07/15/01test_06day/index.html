@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>70 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一.温故知新    分支语句    switch case default    switch(变量)    {        case 整常量1 : 语句1; break;        case 整常量2 : 语句2; break;        case 整常量3 : 语句3; break;        default : 语句4; break;    } 跳转语句 break     如">
+<meta property="og:type" content="article">
+<meta property="og:title" content="70">
+<meta property="og:url" content="http://naoemb.github.io/2022/07/15/01test_06day/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一.温故知新    分支语句    switch case default    switch(变量)    {        case 整常量1 : 语句1; break;        case 整常量2 : 语句2; break;        case 整常量3 : 语句3; break;        default : 语句4; break;    } 跳转语句 break     如">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-07-15T09:13:02.686Z">
+<meta property="article:modified_time" content="2022-07-15T10:33:00.053Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://naoemb.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-01test_06day" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/07/15/01test_06day/" class="article-date">
+  <time datetime="2022-07-15T09:13:02.686Z" itemprop="datePublished">2022-07-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      70
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一.温故知新<br>    分支语句<br>    switch case default<br>    switch(变量)<br>    {<br>        case 整常量1 : 语句1; break;<br>        case 整常量2 : 语句2; break;<br>        case 整常量3 : 语句3; break;<br>        default : 语句4; break;<br>    }</p>
+<pre><code>跳转语句
+break
+    如果使用在switch语句中会跳出switch
+    
+循环语句
+for(循环变量的赋值; 循环变量的控制; 循环变量的变化)
+&#123;
+    循环的语句
+&#125;
+
+for循环的变形
+1.
+for(; ;)这是一个死循环
+或者
+for(表达式1; ;表达式2)也是一个死循环
+等价于
+for(表达式1; 1;表达式2)
+2.嵌套循环
+int i = 0, j = 0;
+
+for(i = 0; i &lt; 3; i++)
+&#123;
+    for(j = 0; j &lt; 4; j++)
+    &#123;
+        
+    &#125;
+&#125;
+3.int i = 0, j = 0;
+for(i = 0, j = 10; i &lt; 5 &amp;&amp; j &gt; 5; i++, j--)
+</code></pre>
+<p>++++++++<br>homework<br>1.<br>(1)打印4 * 5 的 *<br>例:</p>
+<hr>
+<hr>
+<hr>
+<hr>
+<p>(2).打印i * j 的 * (i j 键盘接收)<br>    例:i = 4, j = 5<br>    //4-5 5-6<br>    *****<br>    *****<br>    *****<br>    *****<br>(3).打印i * j 的 * 边框(i j 键盘接收)<br>    例: i = 4, j = 5<br>    *****<br>    *   *<br>    *   *<br>    *****<br>2.打印99乘法表<br>    1 * 1 = 1<br>    1 * 2 = 2 2 * 2 = 4<br>    *<br>    **<br>    ***<br>    ****</p>
+<p>3.计算1+2+3+4+5+…+n, n是从键盘输入的自然数</p>
+<p>// 穷举<br>4.要将5张100元的大钞票,换成等值的50 20 10 5小钞票,每种面值至少一张,要多少张,有多少种换法</p>
+<p>5.有1、2、3、4 4个数字,能组成多少个互不相同且无重复的三位数呢</p>
+<p>6.有这样的一个等式,xyz+yzz=532,编程求x y z的值</p>
+<p>7.计算1^2 + 2^2 + 3^2 + … +10^2的结果<br>(1的平方 + 2的平方)</p>
+<p>8.输入20个人的成绩,输出不及格的人数(0&lt;=score&lt;60 为不及格)</p>
+<p>9.随机产生100个三位随机数,找出其中能被 3 5 7整除的数</p>
+<p>10.打印0~100以内所有的质数<br>(只能被1 和 本身整除的数)</p>
+<p>11.猜数游戏(随机产生一个1000以内的数,去猜,<br>        如果大了打印猜的大了,<br>        如果小了打印猜的小了,<br>        如果正确打印对的<br>        直到猜对了再结束,每次打印必须打印出猜的次数)</p>
+<ol start="12">
+<li>把11修改成,程序开始时,先输入需要猜的数的范围n<br>例:(想要猜数的范围是(0~10000) 那么变量n接收键盘上10000<pre><code>范围都是从0开始)
+</code></pre>
+</li>
+</ol>
+<h2 id="13"><a href="#13" class="headerlink" title="13."></a>13.</h2><p>a + b - 9 = 4</p>
+<ul>
+<li><ul>
+<li><ul>
+<li>c -    d * e = 4<br>/    *    -<br>f + g - h = 4<br>=    =    =<br>4    4    4<br>求a b c d e f g h (0 ～ 12范围内)//除法指的是整除 c % f == 0<br>只有一种答案</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>14.求1+12+123+…前N项之和,其中N是从键盘输入的数(N取值范围（1~9）)<br>    n = 5;<br>    sum = 1 + 12 + 123 + 1234 + 12345;</p>
+<p>15.爱因斯坦出了一道这样的数学题,有一条长阶梯,若每步跨2阶,则最后剩1阶,若每步跨3阶,则最后省2阶,若每步跨5阶,则最后剩4阶,若每步跨6阶，则最后剩5阶只有每次跨7阶,最后才正好1阶不剩,请问在这条阶梯最少多少阶</p>
+<p>16.设N是一个4位数,它的9倍恰好是它的反序数<br>    例:1234 反序数是4321</p>
+<p>17.求s = a + aa + aaa + aaaa + … + aa…a的值,其中a是1~9的一个数字(不超过十项)<br>例:a = 3; s = 3 + 33 + 333;</p>
+<p>18.“百钱百鸡”问题,百钱买百鸡,公鸡1个3块钱,母鸡1个2块钱，小鸡3个一块钱,问公鸡,母鸡,小鸡各多少个</p>
+<p>19.打印三角形    (画8个三角形)</p>
+<hr>
+<hr>
+<pre><code>* * *
+  * *
+    *
+</code></pre>
+<p>6_1.打印三角形<br>    录入n,n是直角三角形的高<br>    例:    n = 3<br>      *<br>    * * * </p>
+<hr>
+<pre><code>n = 4
+  * 
+* * * 
+</code></pre>
+<hr>
+<hr>
+<p>20.猴子吃桃问题,有一天一只猴子摘了一些桃子,它吃掉一半,又吃了一个,第二天也是这样,到了第十天,只有一个桃子了,求猴子摘了多少桃子</p>
+<ol start="21">
+<li>4 5 6 7总共能组成多少个不能被4整除的4位数</li>
+</ol>
+<p>22.求n!(n的阶乘)</p>
+<pre><code>                    电子版的口算卡
+</code></pre>
+<p>随机生成10道100以内的 [加 减 乘 除 取余] 数学题 回答正确的加10分错误不加分(把正确结果打印出来) 然后显示最后成绩。(不用float类型)<br>1&gt;    操作数随机  2&gt;    运算符随机<br>gcc 1.c        当执行./a.out之后,先清屏<br>23 + 70 = 93<br>Bingo!    +10分<br>79 * 97 = 0<br>Error!    ==== 7663<br>…<br>总分 70分</p>
+<p>做完的同学,如果觉得没有必要修改了,修改成以自己名字命名的.c文件,可以交给组长<br>组长收齐后,打包,发到组长的微信群里<br>17:30之前交齐</p>
+<p>作业:<br>1.把这一周讲过的内容复习一遍<br>2.循环之后的22道练习题<br>3.有时间可以做做pdf里面的编程题<br>4.虚拟机做快照</p>
+<p>/*<br>跳转语句<br>break(是C语言中的关键字)<br>    break关键字只能出现在循环结构或者switch语句中<br>    如果break关键字出现在switch语句中,会跳出switch<br>    如果break关键字出现在循环结构中,会跳出循环<br>*/<br>#include &lt;stdio.h&gt;</p>
+<p>int main(void)<br>{<br>    if(1)<br>    {<br>        printf(“Hello World!\n”);<br>        break;<br>    }</p>
+<pre><code>return 0;
+</code></pre>
+<p>}</p>
+<p>/*<br>跳转语句<br>break(是C语言中的关键字)<br>    break关键字只能出现在循环结构或者switch语句中<br>    如果break关键字出现在switch语句中,会跳出switch<br>    如果break关键字出现在循环结构中,会跳出循环<br>continue(是C语言中的关键字)<br>*/<br>#include &lt;stdio.h&gt;</p>
+<p>int main(void)<br>{<br>    int i = 0;</p>
+<pre><code>for(i = 0; i &lt; 5; i++)
+&#123;
+    if(i == 2)
+    &#123;
+        break;
+    &#125;
+    printf(&quot;i = %d\n&quot;, i);
+&#125;
+
+return 0;
+</code></pre>
+<p>}</p>
+<p>/*<br>跳转语句<br>break(是C语言中的关键字)<br>    break关键字只能出现在循环结构或者switch语句中<br>    如果break关键字出现在switch语句中,会跳出switch<br>    如果break关键字出现在循环结构中,会跳出循环<br>continue(是C语言中的关键字)<br>    continue关键字只能出现在循环结构中<br>    如果continue关键字出现在循环结构中,<br>        会跳过本次循环,继续下一次循环<br>*/<br>#include &lt;stdio.h&gt;</p>
+<p>int main(void)<br>{<br>    int i = 0;</p>
+<pre><code>for(i = 0; i &lt; 5; i++)
+&#123;
+    if(i == 2)
+    &#123;
+        continue;
+    &#125;
+    printf(&quot;i = %d\n&quot;, i);
+&#125;
+
+return 0;
+</code></pre>
+<p>}</p>
+<p>/*<br>跳转语句<br>break(是C语言中的关键字)<br>    break关键字只能出现在循环结构或者switch语句中<br>    如果break关键字出现在switch语句中,会跳出switch<br>    如果break关键字出现在循环结构中,会跳出循环<br>continue(是C语言中的关键字)<br>    continue关键字只能出现在循环结构中<br>    如果continue关键字出现在循环结构中,<br>        会跳过本次循环,继续下一次循环<br>break和continue关键字如果出现在了嵌套循环中,<br>    会作用于最近的循环<br>*/<br>#include &lt;stdio.h&gt;</p>
+<p>int main(void)<br>{<br>    int i = 0, j = 0;</p>
+<pre><code>for(i = 0; i &lt; 5; i++)
+&#123;
+    for(j = 0; j &lt; 5; j++)
+    &#123;
+        if(i == 2)
+        &#123;
+            break;
+        &#125;
+        printf(&quot;(%d %d) &quot;, i, j);
+    &#125;
+    printf(&quot;\n&quot;);
+&#125;
+
+return 0;
+</code></pre>
+<p>}</p>
+<p>/*<br>打印边框<br>*/<br>#include &lt;stdio.h&gt;</p>
+<p>int main(void)<br>{<br>    int i = 0, j = 0, x = 0, y = 0;</p>
+<pre><code>scanf(&quot;%d-%d&quot;, &amp;x, &amp;y);
+//if error
+
+for(i = 0; i &lt; x; i++)
+&#123;
+    for(j = 0; j &lt; y; j++)
+    &#123;
+        if(i == 0 || i == x-1 || j == 0 || j == y-1)
+            printf(&quot;*&quot;);
+        else
+            printf(&quot; &quot;);
+    &#125;
+    printf(&quot;\n&quot;);
+&#125;
+
+return 0;
+</code></pre>
+<p>}</p>
+<p>/*<br>五子棋的棋盘<br>*/<br>#include &lt;stdio.h&gt;</p>
+<p>int main(void)<br>{<br>    int i = 0, j = 0;</p>
+<pre><code>printf(&quot;  1 2 3 4 5 6 7 8 9 A B C D E F\n&quot;);
+
+for(i = 0; i &lt; 15; i++)
+&#123;
+    printf(&quot;%X&quot;, i + 1);
+    for(j = 0; j &lt; 15; j++)
+    &#123;
+        printf(&quot; +&quot;);
+    &#125;
+    printf(&quot;\n&quot;);
+&#125;
+
+return 0;
+</code></pre>
+<p>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://naoemb.github.io/2022/07/15/01test_06day/" data-id="cl5mbrumm00056wvmd1d5frop" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/07/15/01test_07day/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          71
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/07/15/01test_05day/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">69</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/07/15/01test_03day/">67</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/15/01test_02day/">66</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/15/01test_01day/">65</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/15/01test_07day/">71</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/15/01test_06day/">70</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

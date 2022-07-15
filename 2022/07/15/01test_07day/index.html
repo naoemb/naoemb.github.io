@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>71 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&#x2F;*循环语句while(是C语言的关键字)1.while循环的使用语句1while(循环条件){    循环的语句}语句2                ——-&lt;———-&lt;——                |                        ^                V                        |语句1-&gt;循环条件的判断(真)-&amp;gt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="71">
+<meta property="og:url" content="http://naoemb.github.io/2022/07/15/01test_07day/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="&#x2F;*循环语句while(是C语言的关键字)1.while循环的使用语句1while(循环条件){    循环的语句}语句2                ——-&lt;———-&lt;——                |                        ^                V                        |语句1-&gt;循环条件的判断(真)-&amp;gt">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-07-15T09:15:20.718Z">
+<meta property="article:modified_time" content="2022-07-15T10:35:29.265Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://naoemb.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-01test_07day" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/07/15/01test_07day/" class="article-date">
+  <time datetime="2022-07-15T09:15:20.718Z" itemprop="datePublished">2022-07-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      71
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>/*<br>循环语句<br>while(是C语言的关键字)<br>1.while循环的使用<br>语句1<br>while(循环条件)<br>{<br>    循环的语句<br>}<br>语句2<br>                ——-&lt;———-&lt;——<br>                |                        ^<br>                V                        |<br>语句1-&gt;循环条件的判断(真)-&gt;循环的语句–&gt;|<br>                |<br>                (假)-&gt;语句2-&gt;结束<br>*/<br>#include &lt;stdio.h&gt;</p>
+<p>int main(void)<br>{<br>    int i = 1;<br>    int sum = 0;</p>
+<pre><code>while(i &lt;= 100)
+&#123;
+    sum += i++;
+&#125;
+
+printf(&quot;sum = %d\n&quot;, sum);
+
+return 0;
+</code></pre>
+<p>}</p>
+<p>/*<br>循环语句<br>while(是C语言的关键字)<br>1.while循环的使用<br>语句1<br>while(循环条件)<br>{<br>    循环的语句<br>}<br>语句2<br>                ——-&lt;———-&lt;——<br>                |                        ^<br>                V                        |<br>语句1-&gt;循环条件的判断(真)-&gt;循环的语句–&gt;|<br>                |<br>                (假)-&gt;语句2-&gt;结束<br>*/<br>#include &lt;stdio.h&gt;</p>
+<p>int main(void)<br>{<br>    int i = 1;<br>    int sum = 0;</p>
+<pre><code>while(i &lt;= 100)
+&#123;
+    sum += i++;
+&#125;
+
+printf(&quot;sum = %d\n&quot;, sum);
+
+return 0;
+</code></pre>
+<p>}</p>
+<p>/*<br>循环语句<br>while(是C语言的关键字)<br>1.while循环的使用<br>语句1<br>while(循环条件)<br>{<br>    循环的语句<br>}<br>语句2<br>                ——-&lt;———-&lt;——<br>                |                        ^<br>                V                        |<br>语句1-&gt;循环条件的判断(真)-&gt;循环的语句–&gt;|<br>                |<br>                (假)-&gt;语句2-&gt;结束<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;unistd.h&gt;</p>
+<p>int main(void)<br>{<br>    int i = 10, j = 10;</p>
+<pre><code>while(i-- || j--)
+&#123;
+    printf(&quot;i = %d j = %d\n&quot;, i, j);
+    sleep(1);
+&#125;
+
+printf(&quot;=== i = %d j = %d\n&quot;, i, j);
+
+return 0;
+</code></pre>
+<p>}</p>
+<p>/*<br>循环语句<br>do…while循环(也是C语言的关键字)<br>语句1<br>do<br>{<br>    循环的语句<br>}while(循环的条件);<br>语句2<br>            ——–&lt;———–&lt;——–<br>            |                            ^<br>            V                            |<br>语句1-&gt;循环的语句-&gt;循环条件的判断(真)—&gt;<br>                        |<br>                        (假)-&gt;语句2-&gt;结束<br>while循环是先执行循环条件的判断,再执行循环的语句<br>do…while循环是先执行循环的语句,再执行循环条件的判断</p>
+<p>while循环可以一次也不执行循环的语句<br>do…while循环至少会执行一次循环的语句</p>
+<p>do…while : 在写底层内核驱动时,使用do…while循环做超时处理</p>
+<p>*/<br>#include &lt;stdio.h&gt;</p>
+<p>int main(void)<br>{<br>    int i = 1;<br>    int sum = 0;</p>
+<pre><code>do
+&#123;
+    sum += i++;
+&#125;while(i &lt;= 100);
+
+printf(&quot;sum = %d\n&quot;, sum);
+
+return 0;
+</code></pre>
+<p>}</p>
+<p>/*<br>随机函数<br>rand()    :    产生随机数(非负的正整数)的函数</p>
+<p>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(void)<br>{<br>    int num = 0;</p>
+<pre><code>printf(&quot;num = %d\n&quot;, num);
+
+num = rand();
+
+printf(&quot;num = %d\n&quot;, num);
+
+return 0;
+</code></pre>
+<p>}</p>
+<p>/*<br>随机函数<br>rand()        :    产生随机数(非负的正整数)的函数<br>    rand() % 1000; [0 ~ 999]以内的随机数<br>    随机产生5位数<br>    rand() % 90000;            [0 ~ 89999]<br>    rand() % 90000 + 10000;    [10000 ~ 99999]<br>    随机产生-50 ~ 50的随机数<br>    rand() % 100;            [0 ~ 99]<br>    rand() % 100 - 50;        [-50 ~ 49]<br>srand();    :    随机种子(可以保证每一次执行程序时,随机数可变)<br>    srand在调用时需要传参,参数是可变的因子<br>time();        :    时间种子(获取当前时间的秒数)<br>    time(NULL);<br>getpid();    :    进程种子(获取当前进程的ID号)</p>
+<p>注意 : srand()函数在程序中值调用一次即可<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;<br>#include &lt;time.h&gt;<br>#include &lt;sys/types.h&gt;<br>#include &lt;unistd.h&gt;</p>
+<p>int main(void)<br>{<br>    int i = 0;<br>    int num = 0;</p>
+<pre><code>//srand(time(NULL));
+srand(getpid());
+
+for(i = 0; i &lt; 5; i++)
+&#123;
+    num = rand() % 100 - 50;
+    printf(&quot;num = %d\n&quot;, num);
+&#125;
+
+return 0;
+</code></pre>
+<p>}</p>
+<p>/*<br>猜数游戏<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;<br>#include &lt;sys/types.h&gt;<br>#include &lt;unistd.h&gt;</p>
+<p>int main(void)<br>{<br>    int T = 0;//用于保存随机数<br>    int guess = 0;//用于保存录入的数<br>    int i = 0;//循环变量</p>
+<pre><code>srand(getpid());//随机种子
+T = rand() % 1001;//保存随机数
+
+for(i = 1; ; i++)
+&#123;
+    scanf(&quot;%d&quot;, &amp;guess);
+    if(T &gt; guess)
+        printf(&quot;[%d]    Small!\n&quot;, i);
+    else if(T &lt; guess)
+        printf(&quot;[%d]    Big!\n&quot;, i);
+    else
+    &#123;
+        printf(&quot;[%d]    Bingo!\n&quot;, i);
+        break;
+    &#125;
+&#125;
+
+
+return 0;
+</code></pre>
+<p>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://naoemb.github.io/2022/07/15/01test_07day/" data-id="cl5mbrumq00066wvmem8z4kf1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/07/15/01test_01day/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          65
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/07/15/01test_06day/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">70</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/07/15/01test_03day/">67</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/15/01test_02day/">66</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/15/01test_01day/">65</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/15/01test_07day/">71</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/15/01test_06day/">70</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
