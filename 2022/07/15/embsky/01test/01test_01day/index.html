@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"naoemb.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="一.课程介绍    物联网嵌入式方向        拉齐基础        Linux基础		(终端的使用&#x2F;命令&#x2F;编译器&#x2F;编辑器&#x2F;软件安装&#x2F;服务搭建)        Linux下的C语言	        数据结构			(链表&#x2F;栈式&#x2F;队列&#x2F;树&#x2F;哈希表)        ———————————————————-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="test1">
+<meta property="og:url" content="http://naoemb.github.io/2022/07/15/embsky/01test/01test_01day/index.html">
+<meta property="og:site_name" content="naoemb">
+<meta property="og:description" content="一.课程介绍    物联网嵌入式方向        拉齐基础        Linux基础		(终端的使用&#x2F;命令&#x2F;编译器&#x2F;编辑器&#x2F;软件安装&#x2F;服务搭建)        Linux下的C语言	        数据结构			(链表&#x2F;栈式&#x2F;队列&#x2F;树&#x2F;哈希表)        ———————————————————-">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-15T10:08:03.166Z">
+<meta property="article:modified_time" content="2022-07-19T06:12:08.788Z">
+<meta property="article:author" content="naoemb">
+<meta property="article:tag" content="onetest">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://naoemb.github.io/2022/07/15/embsky/01test/01test_01day/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>test1 | naoemb</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">naoemb</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">15</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://naoemb.github.io/2022/07/15/embsky/01test/01test_01day/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="naoemb">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="naoemb">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          test1
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-07-15 18:08:03" itemprop="dateCreated datePublished" datetime="2022-07-15T18:08:03+08:00">2022-07-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-19 14:12:08" itemprop="dateModified" datetime="2022-07-19T14:12:08+08:00">2022-07-19</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>一.课程介绍<br>    物联网嵌入式方向<br>        拉齐基础<br>        Linux基础		(终端的使用&#x2F;命令&#x2F;编译器&#x2F;编辑器&#x2F;软件安装&#x2F;服务搭建)<br>        Linux下的C语言	<br>        数据结构			(链表&#x2F;栈式&#x2F;队列&#x2F;树&#x2F;哈希表)<br>        ———————————————————-<br>        Linux下的高编		(文件IO&#x2F;信号&#x2F;进程&#x2F;线程&#x2F;通信&#x2F;网络socket)<br>        QT(图形化界面开发)	<br>        ———————————————————-<br>        智能终端设备		(单片机&lt;裸板驱动开发&gt;)<br>                        STM32F103RBT6<br>        边缘计算设备		(高端ARM开发板)</p>
+<p>二.安装开发环境<br>    1.双系统<br>        1)系统盘<br>            软碟通 + 镜像<br>        2)需要在电脑硬盘上预留100G空间<br>    2.安装虚拟机<br>        1)虚拟机软件<br>            VMWare<br>        2)镜像<br>            网易镜像 清华镜像<br>    3.分区<br>            注意:一定要手动分区<br>            8192Mb			交换分区(虚拟内存)<br>            把剩余空间的一半	&#x2F;home<br>            把剩余空间		&#x2F;<br>三.介绍终端<br>    在Linux下一切皆文件</p>
+<pre><code>终端上的命令可以代替鼠标的所有操作
+1.打开终端的方式
+    1)鼠标右键-&gt;打开终端
+    2)显示应用程序-&gt;全部-&gt;打开终端
+    3)快捷键
+        ctrl + alt + t
+2.设置终端
+    1)修改终端字体字号
+    2)修改终端配色方案
+3.终端提示符
+    root@zack-machine:/home/zack#
+    @之前的位置		当前登陆终端的用户
+    @				分割符号
+    @之后 :之前		主机名
+    :				分割符号
+    :之后 #或$之前	当前终端所在目录的路径
+        如果出现的是~指的是家目录
+        每个用户都会有自己的家目录
+        用户			家目录的路径
+        root		/root		//超级用户
+        zack		/home/zack
+        tom			/home/tom
+        jerry		/home/jerry
+        root是超级用户所以它的家目录是/root
+        其他用户属于普通用户所以家目录是/home/和用户名同名的目录	
+    # 或者 $			用来提示用户级别
+        #			代表当前登陆终端的用户是超级用户
+        $			代表当前登陆终端的用户是普通用户
+</code></pre>
+<p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>关键词<br>1.根目录<br>    是Linux最根本的路径<br>2.家目录<br>    取决于用户<br>    root用户的家目录		&#x2F;root<br>    普通用户的家目录		&#x2F;home&#x2F;和用户名同名的目录<br>3.桌面<br>    桌面在家目录中<br>    root用户的桌面		&#x2F;root&#x2F;桌面<br>    普通用户的桌面			&#x2F;home&#x2F;和用户名同名的目录&#x2F;桌面</p>
+<pre><code>cd /桌面				ERROR
+cd /home/桌面		ERROR
+cd /home/zack/桌面	Bingo
+cd ~/桌面			Bingo
+</code></pre>
+<p>4.绝对路径和相对路径<br>    绝对路径 : 从根目录出发,一层一层递进<br>        &#x2F;home&#x2F;zack&#x2F;桌面<br>        如果显示出来的路径最左边是 &#x2F; 那么这个路径就是绝对路径<br>    相对路径 : 除了绝对路径都是相对路径<br>        ~&#x2F;桌面<br>        如果显示出来的路径最左边不是 &#x2F; 那么这个路径就是相对路径<br>    在显示的路径中只有最左边出现的是 &#x2F; 才是根目录的意思<br>        之后再出现的&#x2F;都是指的什么什么目录之下<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>练习<br>1.zack@abc-test:<del>$<br>    zack		用户名<br>    abc-test	主机名<br>    ~			家目录(&#x2F;home&#x2F;zack)<br>    $			普通用户<br>2.abc@abc-test:</del>$<br>    &#x2F;home&#x2F;abc<br>3.tom@abc-test:&#x2F;home&#x2F;zack#<br>4.jerry@abc-test:&#x2F;$<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<pre><code>    4.终端执行的简单命令
+        终端提示符 $ 命令
+        终端提示符 $ 命令 选项
+        终端提示符 $ 命令 参数
+        终端提示符 $ 命令 选项 参数
+    cd		(改变目录/切换目录)
+        1) cd			回到家目录
+        2) cd 目录名		切换到该目录中(已有的目录名)
+        3) cd 路径		可以是绝对的也可以是相对的,但必须是正确的路径
+        4) cd ..		切换到上一级目录
+    ls		(显示文件名)
+        1) ls			显示当前目录下的文件名
+        2) ls 文件名		可以显示文件名
+        3) ls 目录名		可以显示该目录下的文件名
+        4) ls -a		可以显示所有文件包括隐藏文件
+            (在Linux中以.开头的文件都是隐藏文件)
+            .			表示的是当前目录
+            ..			表示的是上一级目录
+        5) ls -l		以长格式显示文件内容
+</code></pre>
+<p>-rwxrwxr-x  1 zack zack  8352 6月  22 20:20 a.out<br>drwxrwxr-x  4 zack zack  4096 12月 27  2021 east<br>part.1		文件的类型<br>            在Linux下一共有7种文件类型<br>            -		普通文件<br>            d		目录文件<br>            c		字符设备文件<br>            b		块设备文件<br>            s		网络套接字文件<br>            p		管道文件<br>            l		链接文件(符号链接文件)<br>part.2		文件的权限<br>            普通的权限<br>            rwx				rwx				r-x<br>            文件所有者权限		文件所属组权限		其他用户权限<br>            7				7				5<br>            r	可读			4<br>            w	可写			2<br>            x	可执行		1<br>            -	该处无权限	0<br>part.3		文件链接数</p>
+<p>part.4		文件所属者</p>
+<p>part.5		文件所属组</p>
+<p>part.6		文件字节数</p>
+<p>part.7		文件最后修改时间</p>
+<p>part.8		文件名</p>
+<pre><code>    pwd			显示当前所在目录的绝对路径
+    
+    touch		(创建普通文件)
+        1) touch 文件名			创建普通文件
+        2) touch 已有的文件名		会修改文件最后修改时间
+        3) touch 文件名 文件名		创建多个文件
+    mkdir		(创建目录文件)
+        1) mkdir 目录名			创建目录文件
+        2) mkdir 已有的目录名		报错
+        3) mkdir 目录名 目录名		创建多个目录
+    rm			(删除文件)
+        1) rm 普通文件的文件名		删除普通文件
+        2) rm -r 目录文件名		删除目录文件(-r递归的操作)
+                                            (-f强制的操作)
+        3) rm *.c				删除所有以.c结尾的文件
+            注意 : rm -rf *
+    cp			(拷贝文件)
+        1) cp 源文件文件名 目标文件文件名
+        2) cp -r 源目录名 目标目录名	(-r是递归的操作)
+    mv			(剪切文件/移动文件/改名字)
+        1) mv 源文件文件名 目标文件文件名
+        注意 : 剪切目录时不需要加 -r 的操作
+    cat			(查看普通文件的文件内容)
+    tar			(压缩和解压缩的命令)
+        压缩
+        tar cvf 最终生成的压缩包的名字.tar 压缩的文件
+        解压缩
+        tar xvf tar包的名字
+        tar xvf tar包的名字 -C 目录
+            (默认会解压缩到当前目录下)
+            -C	是用来指定目录的
+</code></pre>
+<p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>作业<br>1.把今天讲过的内容复习一遍(千万不要小看复习的力量)<br>2.重装虚拟操作系统<br>3.查找如何查看文件大小<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>小操作<br>1.打开终端 ctrl + alt + t<br>2.打开终端标签页 ctrl + shift + t<br>3.切换终端标签页 ctrl + pgup&#x2F;pgdn<br>4.临时放大终端字体 ctrl + shift + +<br>5.临时缩小终端字体 ctrl + -<br>6.终端清屏 ctrl + l &#x2F; clear<br>7.查看历史命令 history<br>8.终端复制 鼠标选中就是复制<br>9.终端粘贴 鼠标中轴按键<br>10.终端中多敲tab,可以补齐<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/onetest/" rel="tag"># onetest</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/07/15/embsky/01test/01test_07day/" rel="prev" title="test7">
+      <i class="fa fa-chevron-left"></i> test7
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/07/15/embsky/01test/01test_02day/" rel="next" title="test2">
+      test2 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">naoemb</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">naoemb</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

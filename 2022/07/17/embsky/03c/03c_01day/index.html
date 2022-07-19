@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"naoemb.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="git branch 新建分支 git checkout branch 新建分支 git add .					&#x2F;&#x2F;添加内容 git commit -m “注释”		&#x2F;&#x2F;提交内容 git push -u origin 新建分支	&#x2F;&#x2F;推送分支到远程仓库">
+  <meta name="description" content="&#x2F;*面试题1.在C语言中以 # 开头的操作是预处理的操作2.预处理阶段会有哪些操作?    3个操作,文件包含 条件编译 宏定义3.从.c文件编译成可执行程序需要经历哪些阶段?源程序   被预处理过的源文件   汇编文件    目标文件hello.c——–&gt;hello.i—–&gt;hello.s—–&gt;hello.o—&gt;a.out        预处理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="本地新建分支并推到远程仓库">
-<meta property="og:url" content="http://naoemb.github.io/2022/07/19/git/%E6%9C%AC%E5%9C%B0%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E5%B9%B6%E6%8E%A8%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/index.html">
+<meta property="og:title" content="03c01day">
+<meta property="og:url" content="http://naoemb.github.io/2022/07/17/embsky/03c/03c_01day/index.html">
 <meta property="og:site_name" content="naoemb">
-<meta property="og:description" content="git branch 新建分支 git checkout branch 新建分支 git add .					&#x2F;&#x2F;添加内容 git commit -m “注释”		&#x2F;&#x2F;提交内容 git push -u origin 新建分支	&#x2F;&#x2F;推送分支到远程仓库">
+<meta property="og:description" content="&#x2F;*面试题1.在C语言中以 # 开头的操作是预处理的操作2.预处理阶段会有哪些操作?    3个操作,文件包含 条件编译 宏定义3.从.c文件编译成可执行程序需要经历哪些阶段?源程序   被预处理过的源文件   汇编文件    目标文件hello.c——–&gt;hello.i—–&gt;hello.s—–&gt;hello.o—&gt;a.out        预处理">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-19T12:28:24.000Z">
-<meta property="article:modified_time" content="2022-07-19T12:36:10.496Z">
+<meta property="article:published_time" content="2022-07-17T06:20:54.138Z">
+<meta property="article:modified_time" content="2022-07-19T06:14:04.204Z">
 <meta property="article:author" content="naoemb">
-<meta property="article:tag" content="git">
+<meta property="article:tag" content="threeC">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://naoemb.github.io/2022/07/19/git/%E6%9C%AC%E5%9C%B0%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E5%B9%B6%E6%8E%A8%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/">
+<link rel="canonical" href="http://naoemb.github.io/2022/07/17/embsky/03c/03c_01day/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>本地新建分支并推到远程仓库 | naoemb</title>
+  <title>03c01day | naoemb</title>
   
 
 
@@ -189,7 +189,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://naoemb.github.io/2022/07/19/git/%E6%9C%AC%E5%9C%B0%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E5%B9%B6%E6%8E%A8%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/">
+    <link itemprop="mainEntityOfPage" href="http://naoemb.github.io/2022/07/17/embsky/03c/03c_01day/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -202,7 +202,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          本地新建分支并推到远程仓库
+          03c01day
         </h1>
 
         <div class="post-meta">
@@ -211,10 +211,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-07-19 20:28:24 / 修改时间：20:36:10" itemprop="dateCreated datePublished" datetime="2022-07-19T20:28:24+08:00">2022-07-19</time>
+              <time title="创建时间：2022-07-17 14:20:54" itemprop="dateCreated datePublished" datetime="2022-07-17T14:20:54+08:00">2022-07-17</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-19 14:14:04" itemprop="dateModified" datetime="2022-07-19T14:14:04+08:00">2022-07-19</time>
+              </span>
 
           
 
@@ -227,11 +233,45 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>git branch 新建分支</p>
-<p>git checkout branch 新建分支</p>
-<p>git add .					&#x2F;&#x2F;添加内容</p>
-<p>git commit -m “注释”		&#x2F;&#x2F;提交内容</p>
-<p>git push -u origin 新建分支	&#x2F;&#x2F;推送分支到远程仓库</p>
+        <p>&#x2F;*<br>面试题<br>1.在C语言中以 # 开头的操作是预处理的操作<br>2.预处理阶段会有哪些操作?<br>    3个操作,文件包含 条件编译 宏定义<br>3.从.c文件编译成可执行程序需要经历哪些阶段?<br>源程序   被预处理过的源文件   汇编文件    目标文件<br>hello.c——–&gt;hello.i—–&gt;hello.s—–&gt;hello.o—&gt;a.out<br>        预处理          编译         汇编        链接<br>4.包含头文件时使用尖括号或者双引号的区别?<br>    尖括号 : 默认从指定目录中查找头文件(&#x2F;usr&#x2F;include),<br>            如果找不到报错<br>    双引号 : 默认从当前目录中查找头文件,如果找不到再从<br>            指定目录中查找头文件(&#x2F;usr&#x2F;include),<br>            如果再找不到报错<br>5.C语言中有字符串但是没有字符串类型</p>
+<p><em>&#x2F;<br>#include &lt;stdio.h&gt;<br>&#x2F;</em><br>main函数(主函数) : 是程序的入口<br>当执行可执行程序时,从main函数进入,<br>按照从上往下的顺序逐行逐行执行代码,<br>最后从main函数退出</p>
+<p>在刚开始写程序时,<br>多问问自己为什么要写这一行代码?<br>写这一行代码要干什么?<br><em>&#x2F;<br>&#x2F;</em><br>函数的返回值类型 函数名(参数列表)&#x2F;&#x2F;该处参数指的是形式参数<br>{<br>    程序的代码<br>}</p>
+<p><em>&#x2F;<br>int main(void)<br>{<br>    printf(“Hello World!”);<br>&#x2F;</em><br>    调用了printf函数<br>    printf函数的功能 :<br>        可以把双引号引起来的内容打印输出到终端上<br>    在C语言中双引号引起来的内容叫做字符串<br>    在C语言中单引号引起来的内容叫做字符<br>    字符串是由一个一个单一的字符串组成的,<br>        最后会有一个结束标志尾0(‘\0’)<br>    ——————————–<br>    “0”		这是一个字符串,是由’0’ + ‘\0’组成<br>    ‘0’		这是一个字符,ASCII值48<br>    ‘\0’	这是一个字符,并且是一个转义字符,是尾0,ASCII是0<br>    0		这是一个整数0<br>*&#x2F;<br>}</p>
+<p>&#x2F;*<br>其实字符就是把计算机世界中的数字和日常生活中的符号<br>进行一一对应<br>printf函数<br>    1.转义字符(除了有数字的对应关系以外还有额外的含义)<br>        字符	ASCII值		额外的含义<br>        ‘\0’	0			字符串的结束标志<br>        ‘\n’	10			换行符<br>        ‘\r’	13			回车符<br>        ‘\t’	9			水平制表符<br>        ‘\v’	11			垂直制表符<br>    2.标准化输出格式<br>        %d	十进制整数(%03d)<br>        %x	十六进制输出<br>        %o	八进制输出<br>        %f	小数输出(%.2f)<br>        %c	字符输出<br>        %s	字符串输出<br>        %p	地址输出<br>        %%	打印百分号本身<br>    3.VT控制码<br>        可以控制打印输出的属性</p>
+<p>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int i &#x3D; 0, j &#x3D; 0;</p>
+<pre><code>for(i = 30, j = 47; i &lt;= 37 &amp;&amp; j &gt;= 40; i++, j--)
+&#123;
+    printf(&quot;\33[%dm\33[%dmHello World!\33[0m\n&quot;,i ,j);
+&#125;
+
+return 0;
+</code></pre>
+<p>}</p>
+<p>&#x2F;*<br>面试题<br>1.进制之间转换<br>    八进制&lt;——-&gt;二进制&lt;——–&gt;十六进制<br>                    ^<br>                    |<br>                    V<br>                十进制<br>    1)十进制转换成二进制	除以2取余<br>    2)二进制转换成十进制	2的n次方<br>2.除了常用进制以外,笔试题会考三进制 五进制 七进制 十五进制<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>作业:<br>1.把今天讲过的内容完完整整的复习一遍<br>2.多做一些进制之间转换的题目<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>变量<br>1.变量的含义<br>    变量是用来存储数据的<br>    (会把数据存储到内存中&lt;以二进制补码的形式存储&gt;)<br>2.变量的定义<br>    数据类型	变量名	;<br>    1)基本数据类型<br>    整型	有符号&#x2F;无符号	short int long<br>    实型	有符号			float double<br>    字符型	有符号&#x2F;无符号	char<br>    2)通过sizeof运算符进行测试<br>    测试出的结果以字节为单位<br>    1字节 &#x3D; 8位<br>    sizeof(char) &#x3D; 1<br>    sizeof(short) &#x3D; 2<br>    sizeof(int) &#x3D; 4<br>    sizeof(long) &#x3D; 8<br>    sizeof(float) &#x3D; 4<br>    sizeof(double) &#x3D; 8<br>    测试的结果并不唯一,会随着硬件或者操作系统有所变化<br>3.变量的存储<br>    char c &#x3D; 13;<br>    &#x2F;&#x2F;将来会把十进制整数13转换成8位的二进制的数据存储到<br>    &#x2F;&#x2F;c变量所占用的1个字节的存储空间中</p>
+<pre><code>0 0 0 0 1 1 0 1
+在二进制数据中,最左边的是最高位
+在二进制数据中,最右边的是最低位
+第7位	0
+第6位	0
+第5位	0
+第4位	0
+第3位	1
+第2位	1
+第1位	0
+第0位	1
+如果是有符号类型,最高位是符号位,其余位是数据位
+第7位		符号位	(0代表正数 1代表负数)
+第6-0位		数据位
+
+
+变量会存储在内存中,以二进制补码的形式进行存储
+</code></pre>
+<p>原码 : 把操作数从别的进制转化成二进制,就是原码<br>补码 : 如果操作数为正,那么原码等于补码<br>        如果操作数为负,那么原码不等于补码,需要转换<br>        无论是原码转换成补码,还是补码转换成原码,公式都一样<br>        除了符号位不变,其他位按位取反,再加1<br>为什么使用补码存储数据?<br>    1)保证0的唯一性<br>    2)为了保证加法运算的合理<br>    1-1 -&gt; 1 + (-1)<br>            0001 + 1001 &#x3D; 1010 &#x3D; -2<br>            0001 + 1111 &#x3D; 0000 &#x3D; 0<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    printf(“sizeof(char) &#x3D; %ld\n”, sizeof(char));<br>    printf(“sizeof(short) &#x3D; %ld\n”, sizeof(short));<br>    printf(“sizeof(int) &#x3D; %ld\n”, sizeof(int));<br>    printf(“sizeof(long) &#x3D; %ld\n”, sizeof(long));<br>    printf(“sizeof(float) &#x3D; %ld\n”, sizeof(float));<br>    printf(“sizeof(double) &#x3D; %ld\n”, sizeof(double));</p>
+<pre><code>return 0;
+</code></pre>
+<p>}</p>
 
     </div>
 
@@ -241,7 +281,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/git/" rel="tag"># git</a>
+              <a href="/tags/threeC/" rel="tag"># threeC</a>
           </div>
 
         
@@ -250,12 +290,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/07/19/embsky/03c/03c_04day/" rel="prev" title="03c04day">
-      <i class="fa fa-chevron-left"></i> 03c04day
+    <a href="/2022/07/17/embsky/02linux/02linux_linux_note/" rel="prev" title="02linux">
+      <i class="fa fa-chevron-left"></i> 02linux
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/07/19/embsky/%E6%B5%8B%E8%AF%95/%E9%98%B6%E6%AE%B5%E6%B5%8B%E8%AF%95%E4%B8%80/" rel="next" title="">
-       <i class="fa fa-chevron-right"></i>
+    <a href="/2022/07/17/embsky/03c/03c_02day/" rel="next" title="03c02day">
+      03c02day <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
