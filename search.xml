@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>本地新建分支并推到远程仓库</title>
+      <link href="/2022/07/19/git/%E6%9C%AC%E5%9C%B0%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E5%B9%B6%E6%8E%A8%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/"/>
+      <url>/2022/07/19/git/%E6%9C%AC%E5%9C%B0%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E5%B9%B6%E6%8E%A8%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/</url>
+      
+        <content type="html"><![CDATA[<p>git branch 新建分支</p><p>git checkout branch 新建分支</p><p>git add .&#x2F;&#x2F;添加内容</p><p>git commit -m “注释”&#x2F;&#x2F;提交内容</p><p>git push -u origin 新建分支&#x2F;&#x2F;推送分支到远程仓库</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>03c04day</title>
       <link href="/2022/07/19/03c/03c_04day/"/>
       <url>/2022/07/19/03c/03c_04day/</url>
