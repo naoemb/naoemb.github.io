@@ -28,7 +28,7 @@
 <meta property="og:description" content="&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;2022-7-15&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; 一.编辑器    vi    gedit    emacs    …    我们主要使用vim 二.编译器    gcc -&gt; cc虽然我们称gcc是C语言的编译器,但使用gcc编译C语言源代码文件不仅仅是编译的过程,而是要经历四个相互关联的步骤∶预处理(也">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-17T06:43:59.074Z">
-<meta property="article:modified_time" content="2022-07-20T08:35:44.745Z">
+<meta property="article:modified_time" content="2022-07-20T09:50:39.930Z">
 <meta property="article:author" content="naoemb">
 <meta property="article:tag" content="threeC">
 <meta name="twitter:card" content="summary">
@@ -224,7 +224,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-20 16:35:44" itemprop="dateModified" datetime="2022-07-20T16:35:44+08:00">2022-07-20</time>
+                <time title="修改时间：2022-07-20 17:50:39" itemprop="dateModified" datetime="2022-07-20T17:50:39+08:00">2022-07-20</time>
               </span>
 
           
@@ -594,6 +594,266 @@ for(a = 0; a &lt; 10; a++)//随机取出10个(50~100以内的数)
 <li>4 5 6 7总共能组成多少个不能被4整除的4位数</li>
 </ol>
 <h1 id="22-求n-n的阶乘"><a href="#22-求n-n的阶乘" class="headerlink" title="22.求n!(n的阶乘)"></a>22.求n!(n的阶乘)</h1><p>作业<br>1.把今天讲过的内容完完整整的复习一遍<br>2.整理笔记<br>3.写编程题目<br>====================================<br>小项目<br>                        电子版的口算卡<br>随机生成10道100以内的 [加 减 乘 除 取余] 数学题 回答正确的加10分错误不加分(把正确结果打印出来) 然后显示最后成绩。(不用float类型)<br>1&gt;    操作数随机  2&gt;    运算符随机<br>gcc 1.c        当执行./a.out之后,先清屏<br>23 + 70 = 93<br>Bingo!    +10分<br>15 - 30 = -15<br>Bingo!    +10分<br>23 * 87 = 0<br>Error!    ====== 正确结果打印出来<br>总分 70分<br>====================================</p>
+<p>指针</p>
+<p>机器<br>CPU     内存    硬盘<br>快      中      慢</p>
+<p>int a = 100;//初始化int类型变量<br>int *p;//定义指针</p>
+<p>p = &a;//把a的地址传给指针p<br>//&amp; 取地址符</p>
+<p>printf(“a = %d\n”, a);</p>
+<p>*p = 200;//通过指针改变值</p>
+<p>printf(“*p = %d\n”, <em>p);<br>//</em> 取指针所保存的地址所在的位置里的值<br>// 可以简化成取值</p>
+<p>不同数据类型</p>
+<p>printf(“char = %lu\n”, sizeof(c));<br>printf(“short = %lu\n”, sizeof(s));<br>printf(“int = %lu\n”, sizeof(i));<br>printf(“float = %lu\n”, sizeof(f));</p>
+<p>int *p; int代表以后在保存地址的时候变量的数据类型<br>所有指针在内存中占8个字节(64位操作系统)</p>
+<p>int a = 100;</p>
+<p>变量名      值      址<br>a           100     0x1000<br>0x1001<br>0x1002<br>0x1003<br>pa          0x1000  0x2000</p>
+<p>注意:<br>1.指针所占字节数不分类型都是 8个字节(分操作系统)</p>
+<p>int *p;<br>char *c;<br>2.pa += 1//pa++改变了pa所存的地址值<br>当指针自增p++改变的是指针保存的地址,改变的字节数<br>和所存地址值的变量的类型有关p++ 改变了p所存的地址值<br>p+1 没有改变p所保存的地址值</p>
+<p>3.如果想要操作指针,改变指针 用二级指针<br>取地址符(&amp;)不管是变量还是指针只能加一个<br>对于一级指针来说,取值符(*)只能加一个</p>
+<p>4.* 和 &amp; 是一个可逆的过程,可以中和</p>
+<p>printf(“*(&amp;a) = %d\n”, *(&amp;a));    对<br>printf(“&amp;(*a) = %d\n”, &amp;(*a));    错</p>
+<p>/<em>一级指针 操作不了一级指针</em>/</p>
+<p>a           pa          pp<br>值  100         &amp;a          &amp;pa</p>
+<p>址  0x1000      0x2000      0x3000</p>
+<p>a           pa          pp<br>值  100         0x1000      0x2000</p>
+<p>址  0x1000      0x2000      0x3000</p>
+<p>======================================<br>二级指针</p>
+<p>注意:<br>1.二级指针所占字节数不分类型都是 8个字节<br>(分操作系统)</p>
+<p>int **p;<br>char **c;<br>2.<br>二级指针也可以做加法运算<br>int **p;<br>p + 1;    p++;    p+=1;<br>当二级指针偏移一个单位跨8个字节</p>
+<p>3.如果想要操作指针,改变指针 用二级指针<br>取地址符(&amp;)不管是变量还是指针只能加一个<br>对于一级指针来说,取值符(*)只能加一个</p>
+<p>4.* 和 &amp; 是一个可逆的过程,可以中和</p>
+<p>printf(“*(&amp;a) = %d\n”, *(&amp;a));    对<br>printf(“&amp;(*a) = %d\n”, &amp;(*a));    错</p>
+<p>函数</p>
+<pre><code>void    空
+</code></pre>
+<p>返回值的类型 函数名(参数)<br>{<br>    功能<br>}</p>
+<p>main()是程序的入口;</p>
+<p>函数之间的调用</p>
+<p>注意:<br>2.调用的函数写到被调用函数的下面<br>3.函数可以先定义,再写函数的实现</p>
+<p>//函数的定义<br>void print(int c);</p>
+<p>void print(int c)//显示 函数的实现<br>{<br>    printf(“c = %d\n”, c);<br>}<br>参数传递</p>
+<p>值传递<br>a = 3, b = 4;<br>swap(a, b)<br>    当main函数调用swap函数的时候,<br>    只是把变量的值传过去<br>    相当于swap(3, 4)</p>
+<p>地址传递<br>a = 3, b = 4;<br>swap(&amp;a, &amp;b)<br>    当main函数调用swap函数的时候,<br>    把a和b的地址传过去<br>相当于swap(0x1000, 0x2000)<br>/*<br>   如果函数想要改变main函数的变量的话,<br>   可以传变量的地址<br>   如果函数只是想用main函数地变量的值的话,<br>   可以传变量的值<br> */<br>======================================</p>
+<p>猜数游戏(随机产生一个1000以内的数,去猜,<br>        如果大了打印猜的大了,<br>        如果小了打印猜的小了,<br>        如果正确打印对的<br>        每次打印必须打印出猜的次数)</p>
+<p>口算卡<br>    随机10道口算卡题目</p>
+<pre><code>    100 + 100 = 300
+    wrong! ========= 200
+
+1.操作数100以内随机
+2.运算符 + - * / % 随机
+3.不用float
+4.多函数实现
+</code></pre>
+<p>第一阶段<br>    只写一个.c文件,.c文件中只有一个main函数<br>第二阶段<br>    只写一个.c文件,,c文件中有一个main函数,多个功能函数<br>第三阶段<br>    写多个文件<br>    main.c        主函数和功能函数调用<br>    func.c        功能函数的实现<br>    func.h        功能函数的声明<br>    makefile    编译规则<br>第四阶段<br>    把func.c做成库文件    动态库    静态库</p>
+<p>======================================<br>作业<br>    1.把今天讲过的内容从头到尾复习一遍<br>    2.把之前打印8个三角形的程序整合一个程序,其中打印图形的功能封装成函数<br>    3.猜数游戏(随机产生一个1000以内的数,去猜,<br>        如果大了打印猜的大了,<br>        如果小了打印猜的小了,<br>        如果正确打印对的<br>        每次打印必须打印出猜的次数)<br>    4.口算卡<br>    随机10道口算卡题目</p>
+<pre><code>    100 + 100 = 300
+    wrong! ========= 200
+
+1.操作数100以内随机
+2.运算符 + - * / % 随机
+3.不用float
+4.多函数实现
+</code></pre>
+<p>数组</p>
+<p>一维数组<br>int a[5];</p>
+<p>a[0]        a[1]        a[2]<br>1        2        3<br>0x1000    0x1004    0x1008</p>
+<p>命名规则<br>int a[5] = {1, 2, 3, 4 ,5};<br>int b[5] = {0};<br>waring!<br>int c[]  = {1, 2, 3, 4, 5};<br>/*<br>   int a[10];<br>   int *p = a;</p>
+<p>   a[i];   数组+下标<br>   p + i;  指针+偏移<br>   a + i;  数组名+偏移<br>     p[i]    指针+下标<br>*/</p>
+<p>&amp;arr[0] = 0xbf8c97ec    1<br>arr = 0xbf8c97ec        2<br>&amp;arr = 0xbf8c97ec        3<br>1 2 数组首元素的地址<br>3    数组的地址<br>+++++++++++++++++++++<br>&amp;arr[1] = 0xbf8c97f0<br>arr + 1 = 0xbf8c97f0<br>&amp;arr + 1 = 0xbf8c9800</p>
+<p>一维数组特性<br>1.数组名可以当指针来用,利用地址加法运算,计算出数组元素地址加*取出地址中的内容<br>注:a[i] = *(a + i)</p>
+<p>2.sizeof(数组名) = 整个数组长度(整个数组所占字节数)</p>
+<p>3.数组名是常量，不能改变指向</p>
+<p>p = &i;//指针可以保存别的地址<br>a = &i;//数组名不可以</p>
+<p>*(a + i);<br>a += i;//a = a + i    a++;    数组名都不可以这样操作<br>4.数组名可以当指针来用,但是,不是指针</p>
+<p>多维数组<br>/*</p>
+ 
+   int a[15][15]
+
+
+ 
+
+   char a[15][15]
+
+<p> */</p>
+<p>int a[2][3] = {0}</p>
+ 
+a[0][0] a[0][1] a[0][2]
+
+ 
+a[1][0] a[1][1] a[1][2]
+
+
+<p>内存</p>
+ 
+a[0][0]         0x0
+
+ 
+a[0][1]         0x4
+
+<p>.<br>.<br>.</p>
+ 
+a[1][2]
+
+
+<p>在内存中是顺序的存储</p>
+<p>命名规则</p>
+ 
+int a[3][4] = {{1,2,3,4},{5,6,7,8},{9,10,11,12}};
+
+ 
+int a[3][4] = {0};
+
+ 
+int a[3][4] = {1,2,3,4,5,6,7,8,9,10,11,12};
+
+<p>////!!!!!</p>
+ 
+int a[][4] = {{1,2,3,4},{5,6,7,8},{9,10,11,12}};
+
+
+<p>二维数组中行数可以省略,列数不可以</p>
+<p>二维数组特性<br>1.数组名可以当指针来用,利用地址加法运算,计算出数组元素地址</p>
+<pre><code>加*取出地址中的内容
+</code></pre>
+ 
+	注: a[1][2] = *(*(a + 1) + 2)
+
+ 
+	a[2][3] = *(*(a + 2) + 3)
+
+ 
+	a[i][j] = *(*(a + i) + j)
+
+<p>2.sizeof(数组名) = 整个数组长度(不是指针长度)</p>
+ 
+	a[4][5];
+
+<pre><code>sizeof(a) / sizeof(a[0])        算多少行
+sizeof(a) / sizeof(a[0][0])     算数组成员个数
+注: 算多少行sizeof(a)/sizeof(a[0])
+</code></pre>
+<p>算多少列sizeof(a[0])/sizeof(a[0][0])<br>    sizeof(a)是整个数组的大小<br>sizeof(a[i]是第i行的大小)</p>
+<pre><code>3.数组名是常量,不能改变指向
+
+4.数组名可以当指针使用,但不是指针
+</code></pre>
+ 
+    printf("&a[0][0]    =   %p\n", &a[0][0]);
+
+<pre><code>//数组首元素的地址
+printf(&quot;a[0]        =   %p\n&quot;, a[0]);
+//首行第一个元素的地址
+printf(&quot;a       =   %p\n&quot;, a);
+//首行的地址
+printf(&quot;*a      =   %p\n&quot;, *a);
+//首行第一个元素的地址
+printf(&quot;&amp;a      =   %p\n&quot;, &amp;a);
+//数组的地址
+
+
+
+
+三维数组    =&gt;  多个二维数组组成
+</code></pre>
+ 
+	int a[2][4][4] ={{{0,0,,0},
+
+ 
+		{0,0,0,0},
+
+ 
+		{0,1,0,0},
+
+ 
+		{0,1,1,1}},
+
+
+ 
+		{{0,0,0,0},
+
+ 
+			{0,0,0,1},
+
+ 
+			{0,0,0,1},
+
+ 
+			{0,0,1,1}}}
+
+<pre><code>        指针与数组
+
+        在机器中都是用指针操作的
+</code></pre>
+<p>a[0] = *(a + 0)<br>a[1] = *(a + 1)<br>    …<br>a[i] = *(a + i)</p>
+<p>二维数组与指针</p>
+<pre><code>二维数组的可以当一个指针使用
+</code></pre>
+ 
+a[1][2] = *(*(a + 1) + 2)
+
+ 
+a[2][3] = *(*(a + 2) + 3)
+
+<pre><code>...
+</code></pre>
+ 
+a[i][j] = *(*(a + i) + j)
+
+
+<p>三维数组和指针</p>
+<pre><code>三维数组的可以当一个指针使用
+</code></pre>
+ 
+a[1][2][3] = *(*(*(a + 1) + 2) + 3)
+
+ 
+a[2][3][4] = *(*(*(a + 2) + 3) + 4)
+
+<pre><code>...
+</code></pre>
+ 
+a[i][j][k] = *(*(*(a + i) + j) + k)
+
+
+<p>数组和函数</p>
+<p>/*<br>   一维数组<br>   int arr[5];<br>   调用时: init(arr);直接传数组名<br>   实现时: void init(int *p)   或  void init(int arr[5])   void init(int arr[])<br>   二维数组</p>
+ 
+   int arr[4][4]
+
+<p>   调用时: init(arr);</p>
+ 
+   实现时: void init(int p[][4]) 或 void init(int p[4][4])
+
+
+<p> */<br>//当main函数中函数传参是数组名的时候,<br>//函数中可以用数组形式或者指针形式</p>
+<p>//当main函数中函数传参是二维数组的数组名的时候,<br>//函数中可以用数组形式<br>=============================<br>homework</p>
+<p>(1)输入十个人的身高,求出平均值,并把小于平均值的打印出来    </p>
+<p>(2)输入十个人的身高,要求排序,从低到高打印</p>
+<pre><code>排序        (冒泡    选择)
+</code></pre>
+<p>例:<br>100   201    50   70   30</p>
+<p>(3)完成itob函数(十-&gt;八)<br>十 -&gt; 二<br>void itob(int num, int arr[8]);<br>100<br>01100100</p>
+<p>(4)<br>    阅读<br>    man strcpy<br>    man strcat<br>    man strcmp<br>    man strlen</p>
+<p>(5)<br>有1000发子弹,要提前装到10个箱子里面，接收键盘输入，要取多少颗子弹数，只能显示整箱的个数，问这10个箱子怎么装,编程实现<br>============================<br>========================<br>小项目:五子棋<br>    1.player VS player<br>要求<br>    1&gt;最少完成p v p版本<br>    2&gt;用多函数实现<br>    3&gt;完成五子棋最基本功能即可<br>    4&gt;要有适当的提示信息<br>    5&gt;代码中要有注释<br>    6&gt;完成后上传到邮箱中(<a href="mailto:&#52;&#48;&#50;&#52;&#48;&#51;&#x35;&#55;&#x39;&#64;&#113;&#x71;&#x2e;&#x63;&#x6f;&#x6d;">&#52;&#48;&#50;&#52;&#48;&#51;&#x35;&#55;&#x39;&#64;&#113;&#x71;&#x2e;&#x63;&#x6f;&#x6d;</a>)<br>        2022-2-11_张三.c<br>提示<br>    1&gt;棋盘存储<br>    2&gt;坐标的打印<br>    3&gt;玩家的替换<br>    4&gt;下到重复位置/下出边界以后的处理<br>    5&gt;判断赢的条件</p>
+<p>字符数组初始化<br>char a[6] = {‘a’,’b’,’c’,’d’,’e’,’f’};<br>char b[6] = {‘h’,’i’,’j’,’k’,’l’,’\0’};<br>char c[] = {‘h’,’i’,’j’,’k’,’l’,’m’};<br>char d[] = “hello world”;</p>
+<pre><code>&quot;...&quot;    字符串,默认最后有\0
+</code></pre>
+<p>如果碰到了 \0 表示结束,字符串, %s</p>
+<p>char arr[100] = “hello world!”;//字符数组   存储功能<br>char *p = “hello world!”;//字符指针     只是保存地址<br>//字符指针保存的是 常串 的地址</p>
+<p>================================<br>    周末作业<br>1.把这一周讲过的内容先完完整整的复习一遍,有问题直接问<br>2.阅读man手册 strcpy strcat strcmp strlen<br>3.调用系统实现的string函数的功能,实现自己写的功能<br>    mystrcpy mystrcat mystrcmp mystrlen<br>4.后续作业的1 - 5题</p>
+<p>5.剩余时间去做五子棋的项目</p>
+<p>work<br>man string.h<br>string一族的函数,strcpy strcmp strcat strlen</p>
+<p>char *mystrcpy(char *dst, const char *src);</p>
+<p>char *mystrcat(char *s1, const char *s2);</p>
+<p>int mystrcmp(const char *s1, const char *s2);</p>
+<p>size_t mystrlen(const char *s);    </p>
+<p>char *p = “root:x:0:0:root:/root:/bin/bash”;</p>
+<p>homework<br>1.输入一行字符，分别统计出其中英文字母、空格、数字和其它字符的个数。</p>
+<p>2.输入一个字串，判断它是否是对称串。如”abcdcba”是对称串，”123456789”不是。</p>
+<p>3.输入一行字符串，按如下规则加密：如果是英文字母则大写变小写、小写变大写，对非英文字符则保持不变。试写加密程序。</p>
+<p>4.输入一行小写英文字母，按如下规则加密：a→c、b→d、…、x→z、y→a、z→b，试写加密程序。</p>
+<p>5.输入一行英文，已知各单词之间用1个空格相隔（设第一个单词前没有空格），统计这行英文有多少个单词。</p>
+<p>6.完成atoi函数<br>    int myatoi(const char *nptr);</p>
+<p>7.完成itoa函数<br>    void itoa(int data, char str[]);</p>
 
     </div>
 
