@@ -1,239 +1,95 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.2">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta charset="utf-8">
+  
 
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"naoemb.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
-
-  <meta name="description" content="一.温故知新    权限的补充(特殊的权限)    suid	u+s	(可执行的命令文件中加入u+s)    sgid	g+s	(目录文件中加入g+s)    sticky	o+t	(目录文件中加入o+t) umask值 666 - 0002 &#x3D; 664  777 - 0002 &#x3D; 775  进程的介绍 ps -aux kill PID  Linux下的C语言 #include &lt;stdio">
+  
+  <title>03c02day | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一.温故知新    权限的补充(特殊的权限)    suid    u+s    (可执行的命令文件中加入u+s)    sgid    g+s    (目录文件中加入g+s)    sticky    o+t    (目录文件中加入o+t) umask值 666 - 0002 &#x3D; 664  777 - 0002 &#x3D; 775  进程的介绍 ps -aux kill PID  Linux下的C语言">
 <meta property="og:type" content="article">
 <meta property="og:title" content="03c02day">
 <meta property="og:url" content="http://naoemb.github.io/2022/07/17/embsky/03c/03c_02day/index.html">
-<meta property="og:site_name" content="naoemb">
-<meta property="og:description" content="一.温故知新    权限的补充(特殊的权限)    suid	u+s	(可执行的命令文件中加入u+s)    sgid	g+s	(目录文件中加入g+s)    sticky	o+t	(目录文件中加入o+t) umask值 666 - 0002 &#x3D; 664  777 - 0002 &#x3D; 775  进程的介绍 ps -aux kill PID  Linux下的C语言 #include &lt;stdio">
-<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一.温故知新    权限的补充(特殊的权限)    suid    u+s    (可执行的命令文件中加入u+s)    sgid    g+s    (目录文件中加入g+s)    sticky    o+t    (目录文件中加入o+t) umask值 666 - 0002 &#x3D; 664  777 - 0002 &#x3D; 775  进程的介绍 ps -aux kill PID  Linux下的C语言">
+<meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-07-17T06:41:54.086Z">
 <meta property="article:modified_time" content="2022-07-19T06:14:04.258Z">
-<meta property="article:author" content="naoemb">
+<meta property="article:author" content="John Doe">
 <meta property="article:tag" content="threeC">
 <meta name="twitter:card" content="summary">
-
-<link rel="canonical" href="http://naoemb.github.io/2022/07/17/embsky/03c/03c_02day/">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'zh-CN'
-  };
-</script>
-
-  <title>03c02day | naoemb</title>
   
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">naoemb</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">5</span></a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">15</span></a>
-
-  </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
-      </li>
-  </ul>
-</nav>
-
-
-
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
-           placeholder="搜索..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-  </div>
-</div>
-
-    </div>
-  </div>
-
-</div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content post posts-expand">
-            
-
-    
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://naoemb.github.io/2022/07/17/embsky/03c/03c_02day/">
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="naoemb">
-      <meta itemprop="description" content="">
-    </span>
+<meta name="generator" content="Hexo 5.4.2"></head>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="naoemb">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          03c02day
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-07-17 14:41:54" itemprop="dateCreated datePublished" datetime="2022-07-17T14:41:54+08:00">2022-07-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-19 14:14:04" itemprop="dateModified" datetime="2022-07-19T14:14:04+08:00">2022-07-19</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
       
-        <p>一.温故知新<br>    权限的补充(特殊的权限)<br>    suid	u+s	(可执行的命令文件中加入u+s)<br>    sgid	g+s	(目录文件中加入g+s)<br>    sticky	o+t	(目录文件中加入o+t)</p>
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://naoemb.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-embsky/03c/03c_02day" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/07/17/embsky/03c/03c_02day/" class="article-date">
+  <time datetime="2022-07-17T06:41:54.086Z" itemprop="datePublished">2022-07-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      03c02day
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一.温故知新<br>    权限的补充(特殊的权限)<br>    suid    u+s    (可执行的命令文件中加入u+s)<br>    sgid    g+s    (目录文件中加入g+s)<br>    sticky    o+t    (目录文件中加入o+t)</p>
 <pre><code>umask值
 666 - 0002 = 664 
 777 - 0002 = 775
@@ -245,109 +101,109 @@ kill PID
 <p>Linux下的C语言</p>
 <p>#include &lt;stdio.h&gt;</p>
 <p>int main(void)<br>{<br>    printf(“Hello World!”);<br>}</p>
-<p>函数的返回值类型	函数名	(参数列表)<br>{<br>    代码<br>}<br>int					main	(void)<br>{<br>    printf(“Hello World!”);<br>}</p>
-<p>‘\0’	‘\n’	‘\r’	‘\t’	‘\v’<br>ASCII(常用ASCII表有128个字符&lt;又补充到了256个字符&gt;)<br>‘\0’	0<br>‘\n’	10<br>‘0’		48<br>‘A’		65<br>‘a’		97<br>标准化输出格式<br>    %+某一个东西<br>    %d<br>    %c<br>    %f<br>    %s<br>    %p<br>    %%<br>    %o<br>    %x<br>VT控制码</p>
-<p>变量<br>变量是用来存储数据的<br>数据会存储在内存中&lt;以二进制补码的形式存储&gt;<br>数据类型	变量名	;<br>1.基本数据类型<br>    整型	有符号&#x2F;无符号	short int long<br>    实型	有符号			float double<br>    字符型	有符号&#x2F;无符号	char<br>2.通过了sizeof运算符计算数据类型占用空间的大小<br>    sizeof(数据类型&#x2F;变量名) &#x3D; 结果以字节为单位<br>    1个字节(byte) &#x3D; 8个位(bit)<br>3.存储形式<br>    原码 : 从其他进制转换成二进制<br>        程序员要原码(printf打印出的数据是原码的数据)<br>    补码 : 如果操作数为正,原码 等于 补码<br>            如果操作数为负,原码 不等于 补码<br>            除了符号位不变,其他位按位取反,再加1<br>        计算机要补码(计算机在计算的时候需要补码)<br>        char c &#x3D; -13;<br>        printf(“c &#x3D; %d\n”, c);</p>
-<p>&#x2F;*<br>面试题<br>1.进制之间转换<br>    八进制&lt;——-&gt;二进制&lt;——–&gt;十六进制<br>                    ^<br>                    |<br>                    V<br>                十进制<br>    1)十进制转换成二进制	除以2取余<br>    2)二进制转换成十进制	2的n次方<br>2.除了常用进制以外,笔试题会考三进制 五进制 七进制 十五进制<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>作业:<br>1.把今天讲过的内容完完整整的复习一遍<br>2.多做一些进制之间转换的题目<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>变量<br>1.变量的含义<br>    变量是用来存储数据的<br>    (会把数据存储到内存中&lt;以二进制补码的形式存储&gt;)<br>2.变量的定义<br>    数据类型	变量名	;<br>    1)基本数据类型<br>    整型	有符号&#x2F;无符号	short int long<br>    实型	有符号			float double<br>    字符型	有符号&#x2F;无符号	char<br>    2)通过sizeof运算符进行测试<br>    测试出的结果以字节为单位<br>    1字节 &#x3D; 8位<br>    sizeof(char) &#x3D; 1<br>    sizeof(short) &#x3D; 2<br>    sizeof(int) &#x3D; 4<br>    sizeof(long) &#x3D; 8<br>    sizeof(float) &#x3D; 4<br>    sizeof(double) &#x3D; 8<br>    测试的结果并不唯一,会随着硬件或者操作系统有所变化<br>3.变量的存储<br>    char c &#x3D; 13;<br>    &#x2F;&#x2F;将来会把十进制整数13转换成8位的二进制的数据存储到<br>    &#x2F;&#x2F;c变量所占用的1个字节的存储空间中</p>
+<p>函数的返回值类型    函数名    (参数列表)<br>{<br>    代码<br>}<br>int                    main    (void)<br>{<br>    printf(“Hello World!”);<br>}</p>
+<p>‘\0’    ‘\n’    ‘\r’    ‘\t’    ‘\v’<br>ASCII(常用ASCII表有128个字符&lt;又补充到了256个字符&gt;)<br>‘\0’    0<br>‘\n’    10<br>‘0’        48<br>‘A’        65<br>‘a’        97<br>标准化输出格式<br>    %+某一个东西<br>    %d<br>    %c<br>    %f<br>    %s<br>    %p<br>    %%<br>    %o<br>    %x<br>VT控制码</p>
+<p>变量<br>变量是用来存储数据的<br>数据会存储在内存中&lt;以二进制补码的形式存储&gt;<br>数据类型    变量名    ;<br>1.基本数据类型<br>    整型    有符号/无符号    short int long<br>    实型    有符号            float double<br>    字符型    有符号/无符号    char<br>2.通过了sizeof运算符计算数据类型占用空间的大小<br>    sizeof(数据类型/变量名) = 结果以字节为单位<br>    1个字节(byte) = 8个位(bit)<br>3.存储形式<br>    原码 : 从其他进制转换成二进制<br>        程序员要原码(printf打印出的数据是原码的数据)<br>    补码 : 如果操作数为正,原码 等于 补码<br>            如果操作数为负,原码 不等于 补码<br>            除了符号位不变,其他位按位取反,再加1<br>        计算机要补码(计算机在计算的时候需要补码)<br>        char c = -13;<br>        printf(“c = %d\n”, c);</p>
+<p>/*<br>面试题<br>1.进制之间转换<br>    八进制&lt;——-&gt;二进制&lt;——–&gt;十六进制<br>                    ^<br>                    |<br>                    V<br>                十进制<br>    1)十进制转换成二进制    除以2取余<br>    2)二进制转换成十进制    2的n次方<br>2.除了常用进制以外,笔试题会考三进制 五进制 七进制 十五进制<br>============================================<br>作业:<br>1.把今天讲过的内容完完整整的复习一遍<br>2.多做一些进制之间转换的题目<br>============================================<br>变量<br>1.变量的含义<br>    变量是用来存储数据的<br>    (会把数据存储到内存中&lt;以二进制补码的形式存储&gt;)<br>2.变量的定义<br>    数据类型    变量名    ;<br>    1)基本数据类型<br>    整型    有符号/无符号    short int long<br>    实型    有符号            float double<br>    字符型    有符号/无符号    char<br>    2)通过sizeof运算符进行测试<br>    测试出的结果以字节为单位<br>    1字节 = 8位<br>    sizeof(char) = 1<br>    sizeof(short) = 2<br>    sizeof(int) = 4<br>    sizeof(long) = 8<br>    sizeof(float) = 4<br>    sizeof(double) = 8<br>    测试的结果并不唯一,会随着硬件或者操作系统有所变化<br>3.变量的存储<br>    char c = 13;<br>    //将来会把十进制整数13转换成8位的二进制的数据存储到<br>    //c变量所占用的1个字节的存储空间中</p>
 <pre><code>0 0 0 0 1 1 0 1
 在二进制数据中,最左边的是最高位
 在二进制数据中,最右边的是最低位
-第7位	0
-第6位	0
-第5位	0
-第4位	0
-第3位	1
-第2位	1
-第1位	0
-第0位	1
+第7位    0
+第6位    0
+第5位    0
+第4位    0
+第3位    1
+第2位    1
+第1位    0
+第0位    1
 如果是有符号类型,最高位是符号位,其余位是数据位
-第7位		符号位	(0代表正数 1代表负数)
-第6-0位		数据位
+第7位        符号位    (0代表正数 1代表负数)
+第6-0位        数据位
 
 
 变量会存储在内存中,以二进制补码的形式进行存储
 </code></pre>
-<p>原码 : 把操作数从别的进制转化成二进制,就是原码<br>    程序员要的是原码(printf打印出的数据是原码数据)<br>补码 : 如果操作数为正,那么原码等于补码<br>        如果操作数为负,那么原码不等于补码,需要转换<br>        无论是原码转换成补码,还是补码转换成原码,公式都一样<br>        除了符号位不变,其他位按位取反,再加1<br>    计算机要补码(计算机在计算的时候需要用补码计算)<br>为什么使用补码存储数据?<br>    1)保证0的唯一性<br>    2)为了保证加法运算的合理<br>    1-1 -&gt; 1 + (-1)<br>            0001 + 1001 &#x3D; 1010 &#x3D; -2<br>            0001 + 1111 &#x3D; 0000 &#x3D; 0<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    printf(“sizeof(char) &#x3D; %ld\n”, sizeof(char));<br>    printf(“sizeof(short) &#x3D; %ld\n”, sizeof(short));<br>    printf(“sizeof(int) &#x3D; %ld\n”, sizeof(int));<br>    printf(“sizeof(long) &#x3D; %ld\n”, sizeof(long));<br>    printf(“sizeof(float) &#x3D; %ld\n”, sizeof(float));<br>    printf(“sizeof(double) &#x3D; %ld\n”, sizeof(double));</p>
+<p>原码 : 把操作数从别的进制转化成二进制,就是原码<br>    程序员要的是原码(printf打印出的数据是原码数据)<br>补码 : 如果操作数为正,那么原码等于补码<br>        如果操作数为负,那么原码不等于补码,需要转换<br>        无论是原码转换成补码,还是补码转换成原码,公式都一样<br>        除了符号位不变,其他位按位取反,再加1<br>    计算机要补码(计算机在计算的时候需要用补码计算)<br>为什么使用补码存储数据?<br>    1)保证0的唯一性<br>    2)为了保证加法运算的合理<br>    1-1 -&gt; 1 + (-1)<br>            0001 + 1001 = 1010 = -2<br>            0001 + 1111 = 0000 = 0<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    printf(“sizeof(char) = %ld\n”, sizeof(char));<br>    printf(“sizeof(short) = %ld\n”, sizeof(short));<br>    printf(“sizeof(int) = %ld\n”, sizeof(int));<br>    printf(“sizeof(long) = %ld\n”, sizeof(long));<br>    printf(“sizeof(float) = %ld\n”, sizeof(float));<br>    printf(“sizeof(double) = %ld\n”, sizeof(double));</p>
 <pre><code>return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>面试题<br>1.进制之间转换<br>    八进制&lt;——-&gt;二进制&lt;——–&gt;十六进制<br>                    ^<br>                    |<br>                    V<br>                十进制<br>    1)十进制转换成二进制	除以2取余<br>    2)二进制转换成十进制	2的n次方<br>2.除了常用进制以外,笔试题会考三进制 五进制 七进制 十五进制<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>作业:<br>1.把今天讲过的内容完完整整的复习一遍<br>2.多做一些进制之间转换的题目<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>int i &#x3D; 100;<br>int i &#x3D; ‘a’;<br>char c &#x3D; 13;<br>char c &#x3D; ‘A’;&#x2F;&#x2F;char &#x3D; 1&#x2F;4int</p>
-<p>变量<br>1.变量的含义<br>    变量是用来存储数据的<br>    (会把数据存储到内存中&lt;以二进制补码的形式存储&gt;)<br>2.变量的定义<br>    数据类型	变量名	;<br>    1)基本数据类型<br>    整型	有符号&#x2F;无符号	short int long<br>    实型	有符号			float double<br>    字符型	有符号&#x2F;无符号	char<br>    2)通过sizeof运算符进行测试<br>    测试出的结果以字节为单位<br>    1字节 &#x3D; 8位<br>    sizeof(char) &#x3D; 1<br>    sizeof(short) &#x3D; 2<br>    sizeof(int) &#x3D; 4<br>    sizeof(long) &#x3D; 8<br>    sizeof(float) &#x3D; 4<br>    sizeof(double) &#x3D; 8<br>    测试的结果并不唯一,会随着硬件或者操作系统有所变化<br>3.变量的存储<br>    char c &#x3D; 13;<br>    &#x2F;&#x2F;将来会把十进制整数13转换成8位的二进制的数据存储到<br>    &#x2F;&#x2F;c变量所占用的1个字节的存储空间中</p>
+<p>/*<br>面试题<br>1.进制之间转换<br>    八进制&lt;——-&gt;二进制&lt;——–&gt;十六进制<br>                    ^<br>                    |<br>                    V<br>                十进制<br>    1)十进制转换成二进制    除以2取余<br>    2)二进制转换成十进制    2的n次方<br>2.除了常用进制以外,笔试题会考三进制 五进制 七进制 十五进制<br>============================================<br>作业:<br>1.把今天讲过的内容完完整整的复习一遍<br>2.多做一些进制之间转换的题目<br>============================================<br>int i = 100;<br>int i = ‘a’;<br>char c = 13;<br>char c = ‘A’;//char = 1/4int</p>
+<p>变量<br>1.变量的含义<br>    变量是用来存储数据的<br>    (会把数据存储到内存中&lt;以二进制补码的形式存储&gt;)<br>2.变量的定义<br>    数据类型    变量名    ;<br>    1)基本数据类型<br>    整型    有符号/无符号    short int long<br>    实型    有符号            float double<br>    字符型    有符号/无符号    char<br>    2)通过sizeof运算符进行测试<br>    测试出的结果以字节为单位<br>    1字节 = 8位<br>    sizeof(char) = 1<br>    sizeof(short) = 2<br>    sizeof(int) = 4<br>    sizeof(long) = 8<br>    sizeof(float) = 4<br>    sizeof(double) = 8<br>    测试的结果并不唯一,会随着硬件或者操作系统有所变化<br>3.变量的存储<br>    char c = 13;<br>    //将来会把十进制整数13转换成8位的二进制的数据存储到<br>    //c变量所占用的1个字节的存储空间中</p>
 <pre><code>0 0 0 0 1 1 0 1
 在二进制数据中,最左边的是最高位
 在二进制数据中,最右边的是最低位
-第7位	0
-第6位	0
-第5位	0
-第4位	0
-第3位	1
-第2位	1
-第1位	0
-第0位	1
+第7位    0
+第6位    0
+第5位    0
+第4位    0
+第3位    1
+第2位    1
+第1位    0
+第0位    1
 如果是有符号类型,最高位是符号位,其余位是数据位
-第7位		符号位	(0代表正数 1代表负数)
-第6-0位		数据位
+第7位        符号位    (0代表正数 1代表负数)
+第6-0位        数据位
 
 
 变量会存储在内存中,以二进制补码的形式进行存储
 </code></pre>
-<p>原码 : 把操作数从别的进制转化成二进制,就是原码<br>    程序员要的是原码(printf打印出的数据是原码数据)<br>补码 : 如果操作数为正,那么原码等于补码<br>        如果操作数为负,那么原码不等于补码,需要转换<br>        无论是原码转换成补码,还是补码转换成原码,公式都一样<br>        除了符号位不变,其他位按位取反,再加1<br>    计算机要补码(计算机在计算的时候需要用补码计算)<br>为什么使用补码存储数据?<br>    1)保证0的唯一性<br>    2)为了保证加法运算的合理<br>    1-1 -&gt; 1 + (-1)<br>            0001 + 1001 &#x3D; 1010 &#x3D; -2<br>            0001 + 1111 &#x3D; 0000 &#x3D; 0<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    char c &#x3D; -1;</p>
+<p>原码 : 把操作数从别的进制转化成二进制,就是原码<br>    程序员要的是原码(printf打印出的数据是原码数据)<br>补码 : 如果操作数为正,那么原码等于补码<br>        如果操作数为负,那么原码不等于补码,需要转换<br>        无论是原码转换成补码,还是补码转换成原码,公式都一样<br>        除了符号位不变,其他位按位取反,再加1<br>    计算机要补码(计算机在计算的时候需要用补码计算)<br>为什么使用补码存储数据?<br>    1)保证0的唯一性<br>    2)为了保证加法运算的合理<br>    1-1 -&gt; 1 + (-1)<br>            0001 + 1001 = 1010 = -2<br>            0001 + 1111 = 0000 = 0<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    char c = -1;</p>
 <pre><code>printf(&quot;c = %p\n&quot;, c);
 //%p可以打印出变量在内存中是如何存储的
 </code></pre>
-<p>&#x2F;*<br>    c &#x3D; 0xff;&#x2F;&#x2F;1111 1111	<br>char c &#x3D; -1;<br>原码	1 0 0 0 0 0 0 1<br>补码	1 1 1 1 1 1 1 1<br>*&#x2F;</p>
+<p>/*<br>    c = 0xff;//1111 1111<br>char c = -1;<br>原码    1 0 0 0 0 0 0 1<br>补码    1 1 1 1 1 1 1 1<br>*/</p>
 <pre><code>return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>面试题<br>1.进制之间转换<br>    八进制&lt;——-&gt;二进制&lt;——–&gt;十六进制<br>                    ^<br>                    |<br>                    V<br>                十进制<br>    1)十进制转换成二进制	除以2取余<br>    2)二进制转换成十进制	2的n次方<br>2.除了常用进制以外,笔试题会考三进制 五进制 七进制 十五进制<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>作业:<br>1.把今天讲过的内容完完整整的复习一遍<br>2.多做一些进制之间转换的题目<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>int i &#x3D; 100;<br>int i &#x3D; ‘a’;<br>char c &#x3D; 13;<br>char c &#x3D; ‘A’;&#x2F;&#x2F;char &#x3D; 1&#x2F;4int</p>
-<p>变量<br>1.变量的含义<br>    变量是用来存储数据的<br>    (会把数据存储到内存中&lt;以二进制补码的形式存储&gt;)<br>2.变量的定义<br>    数据类型	变量名	;<br>    1)基本数据类型<br>    整型	有符号&#x2F;无符号	short int long<br>    实型	有符号			float double<br>    字符型	有符号&#x2F;无符号	char<br>    2)通过sizeof运算符进行测试<br>    测试出的结果以字节为单位<br>    1字节 &#x3D; 8位<br>    sizeof(char) &#x3D; 1<br>    sizeof(short) &#x3D; 2<br>    sizeof(int) &#x3D; 4<br>    sizeof(long) &#x3D; 8<br>    sizeof(float) &#x3D; 4<br>    sizeof(double) &#x3D; 8<br>    测试的结果并不唯一,会随着硬件或者操作系统有所变化<br>3.变量的存储<br>    char c &#x3D; 13;<br>    &#x2F;&#x2F;将来会把十进制整数13转换成8位的二进制的数据存储到<br>    &#x2F;&#x2F;c变量所占用的1个字节的存储空间中</p>
+<p>/*<br>面试题<br>1.进制之间转换<br>    八进制&lt;——-&gt;二进制&lt;——–&gt;十六进制<br>                    ^<br>                    |<br>                    V<br>                十进制<br>    1)十进制转换成二进制    除以2取余<br>    2)二进制转换成十进制    2的n次方<br>2.除了常用进制以外,笔试题会考三进制 五进制 七进制 十五进制<br>============================================<br>作业:<br>1.把今天讲过的内容完完整整的复习一遍<br>2.多做一些进制之间转换的题目<br>============================================<br>int i = 100;<br>int i = ‘a’;<br>char c = 13;<br>char c = ‘A’;//char = 1/4int</p>
+<p>变量<br>1.变量的含义<br>    变量是用来存储数据的<br>    (会把数据存储到内存中&lt;以二进制补码的形式存储&gt;)<br>2.变量的定义<br>    数据类型    变量名    ;<br>    1)基本数据类型<br>    整型    有符号/无符号    short int long<br>    实型    有符号            float double<br>    字符型    有符号/无符号    char<br>    2)通过sizeof运算符进行测试<br>    测试出的结果以字节为单位<br>    1字节 = 8位<br>    sizeof(char) = 1<br>    sizeof(short) = 2<br>    sizeof(int) = 4<br>    sizeof(long) = 8<br>    sizeof(float) = 4<br>    sizeof(double) = 8<br>    测试的结果并不唯一,会随着硬件或者操作系统有所变化<br>3.变量的存储<br>    char c = 13;<br>    //将来会把十进制整数13转换成8位的二进制的数据存储到<br>    //c变量所占用的1个字节的存储空间中</p>
 <pre><code>0 0 0 0 1 1 0 1
 在二进制数据中,最左边的是最高位
 在二进制数据中,最右边的是最低位
-第7位	0
-第6位	0
-第5位	0
-第4位	0
-第3位	1
-第2位	1
-第1位	0
-第0位	1
+第7位    0
+第6位    0
+第5位    0
+第4位    0
+第3位    1
+第2位    1
+第1位    0
+第0位    1
 如果是有符号类型,最高位是符号位,其余位是数据位
-第7位		符号位	(0代表正数 1代表负数)
-第6-0位		数据位
+第7位        符号位    (0代表正数 1代表负数)
+第6-0位        数据位
 
 
 变量会存储在内存中,以二进制补码的形式进行存储
 </code></pre>
-<p>原码 : 把操作数从别的进制转化成二进制,就是原码<br>    程序员要的是原码(printf打印出的数据是原码数据)<br>补码 : 如果操作数为正,那么原码等于补码<br>        如果操作数为负,那么原码不等于补码,需要转换<br>        无论是原码转换成补码,还是补码转换成原码,公式都一样<br>        除了符号位不变,其他位按位取反,再加1<br>    计算机要补码(计算机在计算的时候需要用补码计算)<br>为什么使用补码存储数据?<br>    1)保证0的唯一性<br>    2)为了保证加法运算的合理<br>    1-1 -&gt; 1 + (-1)<br>            0001 + 1001 &#x3D; 1010 &#x3D; -2<br>            0001 + 1111 &#x3D; 0000 &#x3D; 0<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    char c &#x3D; -13;</p>
+<p>原码 : 把操作数从别的进制转化成二进制,就是原码<br>    程序员要的是原码(printf打印出的数据是原码数据)<br>补码 : 如果操作数为正,那么原码等于补码<br>        如果操作数为负,那么原码不等于补码,需要转换<br>        无论是原码转换成补码,还是补码转换成原码,公式都一样<br>        除了符号位不变,其他位按位取反,再加1<br>    计算机要补码(计算机在计算的时候需要用补码计算)<br>为什么使用补码存储数据?<br>    1)保证0的唯一性<br>    2)为了保证加法运算的合理<br>    1-1 -&gt; 1 + (-1)<br>            0001 + 1001 = 1010 = -2<br>            0001 + 1111 = 0000 = 0<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    char c = -13;</p>
 <pre><code>printf(&quot;c = %p\n&quot;, c);
 //%p可以打印出变量在内存中是如何存储的
 </code></pre>
-<p>&#x2F;*<br>    c &#x3D; 0xff;&#x2F;&#x2F;1111 1111	<br>char c &#x3D; -1;<br>原码	1 0 0 0 0 0 0 1<br>补码	1 1 1 1 1 1 1 1</p>
-<p>char c &#x3D; -128;<br>原码	1 0 0 0 0 0 0 0<br>补码	1 0 0 0 0 0 0 0<br>0x80</p>
-<p>char c &#x3D; -13;<br>原码	1 0 0 0 1 1 0 1<br>补码	1 1 1 1 0 0 1 1<br>    c &#x3D; 0xf3<br>*&#x2F;</p>
+<p>/*<br>    c = 0xff;//1111 1111<br>char c = -1;<br>原码    1 0 0 0 0 0 0 1<br>补码    1 1 1 1 1 1 1 1</p>
+<p>char c = -128;<br>原码    1 0 0 0 0 0 0 0<br>补码    1 0 0 0 0 0 0 0<br>0x80</p>
+<p>char c = -13;<br>原码    1 0 0 0 1 1 0 1<br>补码    1 1 1 1 0 0 1 1<br>    c = 0xf3<br>*/</p>
 <pre><code>return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>面试题<br>1.进制之间转换<br>    八进制&lt;——-&gt;二进制&lt;——–&gt;十六进制<br>                    ^<br>                    |<br>                    V<br>                十进制<br>    1)十进制转换成二进制	除以2取余<br>    2)二进制转换成十进制	2的n次方<br>2.除了常用进制以外,笔试题会考三进制 五进制 七进制 十五进制<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>作业:<br>1.把今天讲过的内容完完整整的复习一遍<br>2.多做一些进制之间转换的题目<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>int i &#x3D; 100;<br>int i &#x3D; ‘a’;<br>char c &#x3D; 13;<br>char c &#x3D; ‘A’;&#x2F;&#x2F;char &#x3D; 1&#x2F;4int</p>
-<p>变量<br>1.变量的含义<br>    变量是用来存储数据的<br>    (会把数据存储到内存中&lt;以二进制补码的形式存储&gt;)<br>2.变量的定义<br>    数据类型	变量名	;<br>    1)基本数据类型<br>    整型	有符号&#x2F;无符号	short int long<br>    实型	有符号			float double<br>    字符型	有符号&#x2F;无符号	char<br>    2)通过sizeof运算符进行测试<br>    测试出的结果以字节为单位<br>    1字节 &#x3D; 8位<br>    sizeof(char) &#x3D; 1<br>    sizeof(short) &#x3D; 2<br>    sizeof(int) &#x3D; 4<br>    sizeof(long) &#x3D; 8<br>    sizeof(float) &#x3D; 4<br>    sizeof(double) &#x3D; 8<br>    测试的结果并不唯一,会随着硬件或者操作系统有所变化<br>3.变量的存储<br>    char c &#x3D; 13;<br>    &#x2F;&#x2F;将来会把十进制整数13转换成8位的二进制的数据存储到<br>    &#x2F;&#x2F;c变量所占用的1个字节的存储空间中</p>
+<p>/*<br>面试题<br>1.进制之间转换<br>    八进制&lt;——-&gt;二进制&lt;——–&gt;十六进制<br>                    ^<br>                    |<br>                    V<br>                十进制<br>    1)十进制转换成二进制    除以2取余<br>    2)二进制转换成十进制    2的n次方<br>2.除了常用进制以外,笔试题会考三进制 五进制 七进制 十五进制<br>============================================<br>作业:<br>1.把今天讲过的内容完完整整的复习一遍<br>2.多做一些进制之间转换的题目<br>============================================<br>int i = 100;<br>int i = ‘a’;<br>char c = 13;<br>char c = ‘A’;//char = 1/4int</p>
+<p>变量<br>1.变量的含义<br>    变量是用来存储数据的<br>    (会把数据存储到内存中&lt;以二进制补码的形式存储&gt;)<br>2.变量的定义<br>    数据类型    变量名    ;<br>    1)基本数据类型<br>    整型    有符号/无符号    short int long<br>    实型    有符号            float double<br>    字符型    有符号/无符号    char<br>    2)通过sizeof运算符进行测试<br>    测试出的结果以字节为单位<br>    1字节 = 8位<br>    sizeof(char) = 1<br>    sizeof(short) = 2<br>    sizeof(int) = 4<br>    sizeof(long) = 8<br>    sizeof(float) = 4<br>    sizeof(double) = 8<br>    测试的结果并不唯一,会随着硬件或者操作系统有所变化<br>3.变量的存储<br>    char c = 13;<br>    //将来会把十进制整数13转换成8位的二进制的数据存储到<br>    //c变量所占用的1个字节的存储空间中</p>
 <pre><code>0 0 0 0 1 1 0 1
 在二进制数据中,最左边的是最高位
 在二进制数据中,最右边的是最低位
-第7位	0
-第6位	0
-第5位	0
-第4位	0
-第3位	1
-第2位	1
-第1位	0
-第0位	1
+第7位    0
+第6位    0
+第5位    0
+第4位    0
+第3位    1
+第2位    1
+第1位    0
+第0位    1
 如果是有符号类型,最高位是符号位,其余位是数据位
-第7位		符号位	(0代表正数 1代表负数)
-第6-0位		数据位
+第7位        符号位    (0代表正数 1代表负数)
+第6-0位        数据位
 
 unsigned char c = 13;
 无符号的数据类型所以范围是[0 ~ 255]
@@ -355,47 +211,47 @@ unsigned char c = 13;
 float f = 3.2;
 有符号的数据类型
 float在内存中占用4个字节存储空间(32bit)
-第31位		符号位
-第30位		浮点偏移量的位
-第29-23位	整数位
-第22-0位	小数位
+第31位        符号位
+第30位        浮点偏移量的位
+第29-23位    整数位
+第22-0位    小数位
 f = 3.2
 000000011
-0.2 * 2 = 0.4	0
-0.4 * 2 = 0.8	0
-0.8 * 2 = 1.6	1
-0.6 * 2 = 1.2	1
-0.2 * 2 = 0.4	0
+0.2 * 2 = 0.4    0
+0.4 * 2 = 0.8    0
+0.8 * 2 = 1.6    1
+0.6 * 2 = 1.2    1
+0.2 * 2 = 0.4    0
 
 变量会存储在内存中,以二进制补码的形式进行存储
 </code></pre>
-<p>原码 : 把操作数从别的进制转化成二进制,就是原码<br>    程序员要的是原码(printf打印出的数据是原码数据)<br>补码 : 如果操作数为正,那么原码等于补码<br>        如果操作数为负,那么原码不等于补码,需要转换<br>        无论是原码转换成补码,还是补码转换成原码,公式都一样<br>        除了符号位不变,其他位按位取反,再加1<br>    计算机要补码(计算机在计算的时候需要用补码计算)<br>为什么使用补码存储数据?<br>    1)保证0的唯一性<br>    2)为了保证加法运算的合理<br>    1-1 -&gt; 1 + (-1)<br>            0001 + 1001 &#x3D; 1010 &#x3D; -2<br>            0001 + 1111 &#x3D; 0000 &#x3D; 0<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    char c &#x3D; -13;</p>
+<p>原码 : 把操作数从别的进制转化成二进制,就是原码<br>    程序员要的是原码(printf打印出的数据是原码数据)<br>补码 : 如果操作数为正,那么原码等于补码<br>        如果操作数为负,那么原码不等于补码,需要转换<br>        无论是原码转换成补码,还是补码转换成原码,公式都一样<br>        除了符号位不变,其他位按位取反,再加1<br>    计算机要补码(计算机在计算的时候需要用补码计算)<br>为什么使用补码存储数据?<br>    1)保证0的唯一性<br>    2)为了保证加法运算的合理<br>    1-1 -&gt; 1 + (-1)<br>            0001 + 1001 = 1010 = -2<br>            0001 + 1111 = 0000 = 0<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    char c = -13;</p>
 <pre><code>printf(&quot;c = %p\n&quot;, c);
 //%p可以打印出变量在内存中是如何存储的
 </code></pre>
-<p>&#x2F;*<br>    c &#x3D; 0xff;&#x2F;&#x2F;1111 1111	<br>char c &#x3D; -1;<br>原码	1 0 0 0 0 0 0 1<br>补码	1 1 1 1 1 1 1 1</p>
-<p>char c &#x3D; -128;<br>原码	1 0 0 0 0 0 0 0<br>补码	1 0 0 0 0 0 0 0<br>0x80</p>
-<p>char c &#x3D; -13;<br>原码	1 0 0 0 1 1 0 1<br>补码	1 1 1 1 0 0 1 1<br>    c &#x3D; 0xf3<br>*&#x2F;</p>
+<p>/*<br>    c = 0xff;//1111 1111<br>char c = -1;<br>原码    1 0 0 0 0 0 0 1<br>补码    1 1 1 1 1 1 1 1</p>
+<p>char c = -128;<br>原码    1 0 0 0 0 0 0 0<br>补码    1 0 0 0 0 0 0 0<br>0x80</p>
+<p>char c = -13;<br>原码    1 0 0 0 1 1 0 1<br>补码    1 1 1 1 0 0 1 1<br>    c = 0xf3<br>*/</p>
 <pre><code>return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>面试题<br>1.进制之间转换<br>    八进制&lt;——-&gt;二进制&lt;——–&gt;十六进制<br>                    ^<br>                    |<br>                    V<br>                十进制<br>    1)十进制转换成二进制	除以2取余<br>    2)二进制转换成十进制	2的n次方<br>2.除了常用进制以外,笔试题会考三进制 五进制 七进制 十五进制<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>作业:<br>1.把今天讲过的内容完完整整的复习一遍<br>2.多做一些进制之间转换的题目<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>int i &#x3D; 100;<br>int i &#x3D; ‘a’;<br>char c &#x3D; 13;<br>char c &#x3D; ‘A’;&#x2F;&#x2F;char &#x3D; 1&#x2F;4int</p>
-<p>变量<br>1.变量的含义<br>    变量是用来存储数据的<br>    (会把数据存储到内存中&lt;以二进制补码的形式存储&gt;)<br>2.变量的定义<br>    数据类型	变量名	;<br>    1)基本数据类型<br>    整型	有符号&#x2F;无符号	short int long<br>    实型	有符号			float double<br>    字符型	有符号&#x2F;无符号	char<br>    2)通过sizeof运算符进行测试<br>    测试出的结果以字节为单位<br>    1字节 &#x3D; 8位<br>    sizeof(char) &#x3D; 1<br>    sizeof(short) &#x3D; 2<br>    sizeof(int) &#x3D; 4<br>    sizeof(long) &#x3D; 8<br>    sizeof(float) &#x3D; 4<br>    sizeof(double) &#x3D; 8<br>    测试的结果并不唯一,会随着硬件或者操作系统有所变化<br>    3)变量名的命名要求<br>        1&gt;变量名是由数字 字母 下划线组成,但不能以数字开头<br>        2&gt;变量名是区分大小写的<br>        3&gt;变量名不能与C语言的关键字重复<br>        4&gt;变量名要做到见名生义<br>3.变量的存储<br>    char c &#x3D; 13;<br>    &#x2F;&#x2F;将来会把十进制整数13转换成8位的二进制的数据存储到<br>    &#x2F;&#x2F;c变量所占用的1个字节的存储空间中</p>
+<p>/*<br>面试题<br>1.进制之间转换<br>    八进制&lt;——-&gt;二进制&lt;——–&gt;十六进制<br>                    ^<br>                    |<br>                    V<br>                十进制<br>    1)十进制转换成二进制    除以2取余<br>    2)二进制转换成十进制    2的n次方<br>2.除了常用进制以外,笔试题会考三进制 五进制 七进制 十五进制<br>============================================<br>作业:<br>1.把今天讲过的内容完完整整的复习一遍<br>2.多做一些进制之间转换的题目<br>============================================<br>int i = 100;<br>int i = ‘a’;<br>char c = 13;<br>char c = ‘A’;//char = 1/4int</p>
+<p>变量<br>1.变量的含义<br>    变量是用来存储数据的<br>    (会把数据存储到内存中&lt;以二进制补码的形式存储&gt;)<br>2.变量的定义<br>    数据类型    变量名    ;<br>    1)基本数据类型<br>    整型    有符号/无符号    short int long<br>    实型    有符号            float double<br>    字符型    有符号/无符号    char<br>    2)通过sizeof运算符进行测试<br>    测试出的结果以字节为单位<br>    1字节 = 8位<br>    sizeof(char) = 1<br>    sizeof(short) = 2<br>    sizeof(int) = 4<br>    sizeof(long) = 8<br>    sizeof(float) = 4<br>    sizeof(double) = 8<br>    测试的结果并不唯一,会随着硬件或者操作系统有所变化<br>    3)变量名的命名要求<br>        1&gt;变量名是由数字 字母 下划线组成,但不能以数字开头<br>        2&gt;变量名是区分大小写的<br>        3&gt;变量名不能与C语言的关键字重复<br>        4&gt;变量名要做到见名生义<br>3.变量的存储<br>    char c = 13;<br>    //将来会把十进制整数13转换成8位的二进制的数据存储到<br>    //c变量所占用的1个字节的存储空间中</p>
 <pre><code>0 0 0 0 1 1 0 1
 在二进制数据中,最左边的是最高位
 在二进制数据中,最右边的是最低位
-第7位	0
-第6位	0
-第5位	0
-第4位	0
-第3位	1
-第2位	1
-第1位	0
-第0位	1
+第7位    0
+第6位    0
+第5位    0
+第4位    0
+第3位    1
+第2位    1
+第1位    0
+第0位    1
 如果是有符号类型,最高位是符号位,其余位是数据位
-第7位		符号位	(0代表正数 1代表负数)
-第6-0位		数据位
+第7位        符号位    (0代表正数 1代表负数)
+第6-0位        数据位
 
 unsigned char c = 13;
 无符号的数据类型所以范围是[0 ~ 255]
@@ -403,34 +259,34 @@ unsigned char c = 13;
 float f = 3.2;
 有符号的数据类型
 float在内存中占用4个字节存储空间(32bit)
-第31位		符号位
-第30位		浮点偏移量的位
-第29-23位	整数位
-第22-0位	小数位
+第31位        符号位
+第30位        浮点偏移量的位
+第29-23位    整数位
+第22-0位    小数位
 f = 3.2
 000000011
-0.2 * 2 = 0.4	0
-0.4 * 2 = 0.8	0
-0.8 * 2 = 1.6	1
-0.6 * 2 = 1.2	1
-0.2 * 2 = 0.4	0
+0.2 * 2 = 0.4    0
+0.4 * 2 = 0.8    0
+0.8 * 2 = 1.6    1
+0.6 * 2 = 1.2    1
+0.2 * 2 = 0.4    0
 
 变量会存储在内存中,以二进制补码的形式进行存储
 </code></pre>
-<p>原码 : 把操作数从别的进制转化成二进制,就是原码<br>    程序员要的是原码(printf打印出的数据是原码数据)<br>补码 : 如果操作数为正,那么原码等于补码<br>        如果操作数为负,那么原码不等于补码,需要转换<br>        无论是原码转换成补码,还是补码转换成原码,公式都一样<br>        除了符号位不变,其他位按位取反,再加1<br>    计算机要补码(计算机在计算的时候需要用补码计算)<br>为什么使用补码存储数据?<br>    1)保证0的唯一性<br>    2)为了保证加法运算的合理<br>    1-1 -&gt; 1 + (-1)<br>            0001 + 1001 &#x3D; 1010 &#x3D; -2<br>            0001 + 1111 &#x3D; 0000 &#x3D; 0<br>4.变量的初始化<br>    数据类型	变量名	&#x3D;	数值	;<br>    char		c		&#x3D;	13		;<br>    int			a		&#x3D;	9527	;<br>    float		f		&#x3D;	3.14	;<br>5.变量的定义和变量的初始化有什么区别?<br>    变量的定义 : 只是在内存中分配了相应的存储单元,<br>                    存储空间中是垃圾值<br>    变量的初始化 : 除了在内存中分配了相应的存储单元,<br>                    也在存储空间中保存了初始值<br>    注意 : 当你定义变量时一定要有初始化<br>6.变量的使用规则<br>    1)变量要先定义再使用<br>        (把变量的定义放到main函数的开头的位置)<br>    2)不同类型的变量有不同的运算要求<br>    3)变量在定义时在内存中占用的空间大小就已经确定了<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    char c &#x3D; -13;</p>
+<p>原码 : 把操作数从别的进制转化成二进制,就是原码<br>    程序员要的是原码(printf打印出的数据是原码数据)<br>补码 : 如果操作数为正,那么原码等于补码<br>        如果操作数为负,那么原码不等于补码,需要转换<br>        无论是原码转换成补码,还是补码转换成原码,公式都一样<br>        除了符号位不变,其他位按位取反,再加1<br>    计算机要补码(计算机在计算的时候需要用补码计算)<br>为什么使用补码存储数据?<br>    1)保证0的唯一性<br>    2)为了保证加法运算的合理<br>    1-1 -&gt; 1 + (-1)<br>            0001 + 1001 = 1010 = -2<br>            0001 + 1111 = 0000 = 0<br>4.变量的初始化<br>    数据类型    变量名    =    数值    ;<br>    char        c        =    13        ;<br>    int            a        =    9527    ;<br>    float        f        =    3.14    ;<br>5.变量的定义和变量的初始化有什么区别?<br>    变量的定义 : 只是在内存中分配了相应的存储单元,<br>                    存储空间中是垃圾值<br>    变量的初始化 : 除了在内存中分配了相应的存储单元,<br>                    也在存储空间中保存了初始值<br>    注意 : 当你定义变量时一定要有初始化<br>6.变量的使用规则<br>    1)变量要先定义再使用<br>        (把变量的定义放到main函数的开头的位置)<br>    2)不同类型的变量有不同的运算要求<br>    3)变量在定义时在内存中占用的空间大小就已经确定了<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    char c = -13;</p>
 <pre><code>printf(&quot;c = %p\n&quot;, c);
 //%p可以打印出变量在内存中是如何存储的
 </code></pre>
-<p>&#x2F;*<br>    c &#x3D; 0xff;&#x2F;&#x2F;1111 1111	<br>char c &#x3D; -1;<br>原码	1 0 0 0 0 0 0 1<br>补码	1 1 1 1 1 1 1 1</p>
-<p>char c &#x3D; -128;<br>原码	1 0 0 0 0 0 0 0<br>补码	1 0 0 0 0 0 0 0<br>0x80</p>
-<p>char c &#x3D; -13;<br>原码	1 0 0 0 1 1 0 1<br>补码	1 1 1 1 0 0 1 1<br>    c &#x3D; 0xf3<br>*&#x2F;</p>
+<p>/*<br>    c = 0xff;//1111 1111<br>char c = -1;<br>原码    1 0 0 0 0 0 0 1<br>补码    1 1 1 1 1 1 1 1</p>
+<p>char c = -128;<br>原码    1 0 0 0 0 0 0 0<br>补码    1 0 0 0 0 0 0 0<br>0x80</p>
+<p>char c = -13;<br>原码    1 0 0 0 1 1 0 1<br>补码    1 1 1 1 0 0 1 1<br>    c = 0xf3<br>*/</p>
 <pre><code>return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>scanf函数<br>函数功能 : 用来接收键盘录入的函数<br>    scanf(“%d”, &amp;i);<br>注意:<br>    1.在scanf函数的双引号中只写标准化输出格式即可<br>    2.在scanf函数的双引号中不要加换行符<br>    3.在scanf函数的双引号之后需要的是地址<br>gcc编译器是不检查段错误(由于操作内存不当引起的)的</p>
-<p>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    int i &#x3D; 0;</p>
+<p>/*<br>scanf函数<br>函数功能 : 用来接收键盘录入的函数<br>    scanf(“%d”, &amp;i);<br>注意:<br>    1.在scanf函数的双引号中只写标准化输出格式即可<br>    2.在scanf函数的双引号中不要加换行符<br>    3.在scanf函数的双引号之后需要的是地址<br>gcc编译器是不检查段错误(由于操作内存不当引起的)的</p>
+<p>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int i = 0;</p>
 <pre><code>printf(&quot;i = %d\n&quot;, i);
 
 printf(&quot;请输入变量i的值:&quot;);
@@ -442,8 +298,8 @@ printf(&quot;i = %d\n&quot;, i);
 return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>算术运算符<br>    +	加法<br>    -	减法<br>    *	乘法<br>    &#x2F;	除法(取商)<br>    %	除法(取余&#x2F;取模)<br>注意 :<br>    除法运算中,除数不能为0<br>    int a &#x3D; 13, b &#x3D; 7, sum &#x3D; 0;<br>    sum &#x3D; a + b;<br>    sum &#x3D; a - b;<br>    sum &#x3D; a * b;<br>    sum &#x3D; a &#x2F; b;&#x2F;&#x2F;a所在的位置是被除数,b所在的位置是除数<br>    sum &#x3D; a % b;&#x2F;&#x2F;a所在的位置是被除数,b所在的位置是除数<br>如果在除法运算中,被除数 小于 除数, 商是0, 余数是被除数本身<br>    sum &#x3D; 7 &#x2F; 13;&#x2F;&#x2F; sum &#x3D; 0<br>    sum &#x3D; 7 % 13;&#x2F;&#x2F; sum &#x3D; 7<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    int a &#x3D; 7, b &#x3D; 13;</p>
+<p>/*<br>算术运算符<br>    +    加法<br>    -    减法<br>    *    乘法<br>    /    除法(取商)<br>    %    除法(取余/取模)<br>注意 :<br>    除法运算中,除数不能为0<br>    int a = 13, b = 7, sum = 0;<br>    sum = a + b;<br>    sum = a - b;<br>    sum = a * b;<br>    sum = a / b;//a所在的位置是被除数,b所在的位置是除数<br>    sum = a % b;//a所在的位置是被除数,b所在的位置是除数<br>如果在除法运算中,被除数 小于 除数, 商是0, 余数是被除数本身<br>    sum = 7 / 13;// sum = 0<br>    sum = 7 % 13;// sum = 7<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int a = 7, b = 13;</p>
 <pre><code>printf(&quot;a + b = %d\n&quot;, a + b);
 printf(&quot;a - b = %d\n&quot;, a - b);
 printf(&quot;a * b = %d\n&quot;, a * b);
@@ -453,12 +309,12 @@ printf(&quot;a %% b = %d\n&quot;, a % b);
 return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>算术运算符<br>    +	加法<br>    -	减法<br>    *	乘法<br>    &#x2F;	除法(取商)<br>    %	除法(取余&#x2F;取模)<br>注意 :<br>    除法运算中,除数不能为0<br>    int a &#x3D; 13, b &#x3D; 7, sum &#x3D; 0;<br>    sum &#x3D; a + b;<br>    sum &#x3D; a - b;<br>    sum &#x3D; a * b;<br>    sum &#x3D; a &#x2F; b;&#x2F;&#x2F;a所在的位置是被除数,b所在的位置是除数<br>    sum &#x3D; a % b;&#x2F;&#x2F;a所在的位置是被除数,b所在的位置是除数<br>如果在除法运算中,被除数 小于 除数, 商是0, 余数是被除数本身<br>    sum &#x3D; 7 &#x2F; 13;&#x2F;&#x2F; sum &#x3D; 0<br>    sum &#x3D; 7 % 13;&#x2F;&#x2F; sum &#x3D; 7<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    int sum &#x3D; 0;</p>
+<p>/*<br>算术运算符<br>    +    加法<br>    -    减法<br>    *    乘法<br>    /    除法(取商)<br>    %    除法(取余/取模)<br>注意 :<br>    除法运算中,除数不能为0<br>    int a = 13, b = 7, sum = 0;<br>    sum = a + b;<br>    sum = a - b;<br>    sum = a * b;<br>    sum = a / b;//a所在的位置是被除数,b所在的位置是除数<br>    sum = a % b;//a所在的位置是被除数,b所在的位置是除数<br>如果在除法运算中,被除数 小于 除数, 商是0, 余数是被除数本身<br>    sum = 7 / 13;// sum = 0<br>    sum = 7 % 13;// sum = 7<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int sum = 0;</p>
 <pre><code>scanf(&quot;%d&quot;, &amp;sum);
 //通过scanf函数为sum变量录入4位的正整数
-//atoi();		itoa();
-/*	itoa();
+//atoi();        itoa();
+/*    itoa();
     9527 -&gt; &quot;9527&quot;
     9527 / 1000 = 9 + &#39;0&#39; = &#39;9&#39;
     9527 / 100 % 10 = 5 + &#39;0&#39; = &#39;5&#39;
@@ -473,8 +329,8 @@ printf(&quot;个位 : %d\n&quot;, sum % 10);
 return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>算术运算符<br>    +	加法<br>    -	减法<br>    *	乘法<br>    &#x2F;	除法(取商)<br>    %	除法(取余&#x2F;取模)<br>注意 :<br>    除法运算中,除数不能为0<br>    int a &#x3D; 13, b &#x3D; 7, sum &#x3D; 0;<br>    sum &#x3D; a + b;<br>    sum &#x3D; a - b;<br>    sum &#x3D; a * b;<br>    sum &#x3D; a &#x2F; b;&#x2F;&#x2F;a所在的位置是被除数,b所在的位置是除数<br>    sum &#x3D; a % b;&#x2F;&#x2F;a所在的位置是被除数,b所在的位置是除数<br>如果在除法运算中,被除数 小于 除数, 商是0, 余数是被除数本身<br>    sum &#x3D; 7 &#x2F; 13;&#x2F;&#x2F; sum &#x3D; 0<br>    sum &#x3D; 7 % 13;&#x2F;&#x2F; sum &#x3D; 7<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    int a &#x3D; 0, b &#x3D; 0;<br>    int tmp &#x3D; 0;</p>
+<p>/*<br>算术运算符<br>    +    加法<br>    -    减法<br>    *    乘法<br>    /    除法(取商)<br>    %    除法(取余/取模)<br>注意 :<br>    除法运算中,除数不能为0<br>    int a = 13, b = 7, sum = 0;<br>    sum = a + b;<br>    sum = a - b;<br>    sum = a * b;<br>    sum = a / b;//a所在的位置是被除数,b所在的位置是除数<br>    sum = a % b;//a所在的位置是被除数,b所在的位置是除数<br>如果在除法运算中,被除数 小于 除数, 商是0, 余数是被除数本身<br>    sum = 7 / 13;// sum = 0<br>    sum = 7 % 13;// sum = 7<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int a = 0, b = 0;<br>    int tmp = 0;</p>
 <pre><code>scanf(&quot;%d-%d&quot;, &amp;a, &amp;b);
 
 printf(&quot;a = %d b = %d\n&quot;, a, b);
@@ -494,27 +350,27 @@ printf(&quot;a = %d b = %d\n&quot;, a, b);
 return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>关系运算符<br>    &gt;		是否大于<br>    &lt;		是否小于<br>    &#x3D;&#x3D;		是否相等<br>    &gt;&#x3D;		是否大于等于<br>    &lt;&#x3D;		是否小于等于<br>    !&#x3D;		是否不等于<br>一个表达式经过关系运算符的运算,最终会生成真假值<br>    0为假,非0为真<br>    默认的真值是1<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    printf(“13 &gt; 7 &#x3D; %d\n”, 13 &gt; 7);<br>    printf(“13 &lt; 7 &#x3D; %d\n”, 13 &lt; 7);<br>    printf(“13 &#x3D;&#x3D; 7 &#x3D; %d\n”, 13 &#x3D;&#x3D; 7);<br>    printf(“13 &gt;&#x3D; 7 &#x3D; %d\n”, 13 &gt;&#x3D; 7);<br>    printf(“13 &lt;&#x3D; 7 &#x3D; %d\n”, 13 &lt;&#x3D; 7);<br>    printf(“13 !&#x3D; 7 &#x3D; %d\n”, 13 !&#x3D; 7);</p>
+<p>/*<br>关系运算符<br>    &gt;        是否大于<br>    &lt;        是否小于<br>    ==        是否相等<br>    &gt;=        是否大于等于<br>    &lt;=        是否小于等于<br>    !=        是否不等于<br>一个表达式经过关系运算符的运算,最终会生成真假值<br>    0为假,非0为真<br>    默认的真值是1<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    printf(“13 &gt; 7 = %d\n”, 13 &gt; 7);<br>    printf(“13 &lt; 7 = %d\n”, 13 &lt; 7);<br>    printf(“13 == 7 = %d\n”, 13 == 7);<br>    printf(“13 &gt;= 7 = %d\n”, 13 &gt;= 7);<br>    printf(“13 &lt;= 7 = %d\n”, 13 &lt;= 7);<br>    printf(“13 != 7 = %d\n”, 13 != 7);</p>
 <pre><code>return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>逻辑运算符<br>    &amp;&amp;	逻辑与	表达式1 &amp;&amp; 表达式2<br>        全真才为真,有假就是假<br>    ||	逻辑或	表达式1 || 表达式2<br>        全假才为假,有真就是真<br>    !	逻辑非	!(表达式)<br>        真假互换<br>    表达式1 &amp;&amp; 表达式2<br>        如果表达式1为真,会执行表达式2的内容<br>        如果表达式1为假,不会执行表达式2的内容<br>    表达式1 || 表达式2<br>        如果表达式1为真,不会执行表达式2的内容<br>        如果表达式1为假,会执行表达式2的内容</p>
+<p>/*<br>逻辑运算符<br>    &amp;&amp;    逻辑与    表达式1 &amp;&amp; 表达式2<br>        全真才为真,有假就是假<br>    ||    逻辑或    表达式1 || 表达式2<br>        全假才为假,有真就是真<br>    !    逻辑非    !(表达式)<br>        真假互换<br>    表达式1 &amp;&amp; 表达式2<br>        如果表达式1为真,会执行表达式2的内容<br>        如果表达式1为假,不会执行表达式2的内容<br>    表达式1 || 表达式2<br>        如果表达式1为真,不会执行表达式2的内容<br>        如果表达式1为假,会执行表达式2的内容</p>
 <hr>
-<p>1.罗列一下判断是否是闰年的条件<br>(能被4整除但是不能被100整除 或者 能被400整除)<br>(year % 4 &#x3D;&#x3D; 0 &amp;&amp; year % 100 !&#x3D; 0) || (year%400&#x3D;&#x3D;0)<br>2.罗列三角形的条件(普通 直角 等腰 等边)<br>    a b c<br>    a + b &gt; c &amp;&amp; a + c &gt; b &amp;&amp; b + c &gt; a<br>    a * a + b * b &#x3D;&#x3D; c * c ||<br>    a * a + c * c &#x3D;&#x3D; b * b ||<br>    b * b + c * c &#x3D;&#x3D; a * a<br>    a &#x3D;&#x3D; b || a &#x3D;&#x3D; c || b &#x3D;&#x3D; c<br>    a &#x3D;&#x3D; b &amp;&amp; a &#x3D;&#x3D; c</p>
+<p>1.罗列一下判断是否是闰年的条件<br>(能被4整除但是不能被100整除 或者 能被400整除)<br>(year % 4 == 0 &amp;&amp; year % 100 != 0) || (year%400==0)<br>2.罗列三角形的条件(普通 直角 等腰 等边)<br>    a b c<br>    a + b &gt; c &amp;&amp; a + c &gt; b &amp;&amp; b + c &gt; a<br>    a * a + b * b == c * c ||<br>    a * a + c * c == b * b ||<br>    b * b + c * c == a * a<br>    a == b || a == c || b == c<br>    a == b &amp;&amp; a == c</p>
 <hr>
-<p>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
 <p>int main(int argc, char *argv[])<br>{</p>
 <pre><code>return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>赋值运算符<br>    &#x3D; +&#x3D; -&#x3D; *&#x3D; &#x2F;&#x3D; %&#x3D; &lt;&lt;&#x3D; …<br>会把赋值运算符右边的项先进行计算,<br>    再赋值给赋值运算符左边的项(左值)<br>a +&#x3D; 1;	&#x2F;&#x2F;	a &#x3D; a + 1;<br>int a &#x3D; 10;<br>a *&#x3D; 2 + 3;&#x2F;&#x2F; a &#x3D; a * (2 + 3);<br>a &#x3D; 50<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>/*<br>赋值运算符<br>    = += -= *= /= %= &lt;&lt;= …<br>会把赋值运算符右边的项先进行计算,<br>    再赋值给赋值运算符左边的项(左值)<br>a += 1;    //    a = a + 1;<br>int a = 10;<br>a *= 2 + 3;// a = a * (2 + 3);<br>a = 50<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
 <p>int main(int argc, char *argv[])<br>{</p>
 <pre><code>return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>条件运算符<br>    也是C语言唯一的一个三目运算符<br>    ? :<br>    part.1 ? part.2 : part.3;<br>如果part.1为真,会执行part.2的内容<br>如果part.1为假,会执行part.3的内容<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    int a &#x3D; 0, b &#x3D; 0;<br>    int min &#x3D; 0;</p>
+<p>/*<br>条件运算符<br>    也是C语言唯一的一个三目运算符<br>    ? :<br>    part.1 ? part.2 : part.3;<br>如果part.1为真,会执行part.2的内容<br>如果part.1为假,会执行part.3的内容<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int a = 0, b = 0;<br>    int min = 0;</p>
 <pre><code>scanf(&quot;%d-%d&quot;, &amp;a, &amp;b);
 
 min = a &lt; b ? a : b;
@@ -524,23 +380,23 @@ printf(&quot;min = %d\n&quot;, min);
 return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>条件运算符<br>    也是C语言唯一的一个三目运算符<br>    ? :<br>    part.1 ? part.2 : part.3;<br>如果part.1为真,会执行part.2的内容<br>如果part.1为假,会执行part.3的内容<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    int year &#x3D; 0;</p>
+<p>/*<br>条件运算符<br>    也是C语言唯一的一个三目运算符<br>    ? :<br>    part.1 ? part.2 : part.3;<br>如果part.1为真,会执行part.2的内容<br>如果part.1为假,会执行part.3的内容<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int year = 0;</p>
 <pre><code>scanf(&quot;%d&quot;, &amp;year);
 </code></pre>
-<p>(year%4&#x3D;&#x3D;0&amp;&amp;year%100!&#x3D;0)||(year%400&#x3D;&#x3D;0)?printf(“%d年是闰年\n”, year) : printf(“%d年是平年\n”, year);</p>
+<p>(year%4==0&amp;&amp;year%100!=0)||(year%400==0)?printf(“%d年是闰年\n”, year) : printf(“%d年是平年\n”, year);</p>
 <pre><code>return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>强制类型转换<br>    (数据类型)<br>    可以把操作的内容临时的强制转换成某种数据类型<br>    将来会在底层内核驱动大量使用强制类型转换的运算符<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    float f &#x3D; 3.14;</p>
+<p>/*<br>强制类型转换<br>    (数据类型)<br>    可以把操作的内容临时的强制转换成某种数据类型<br>    将来会在底层内核驱动大量使用强制类型转换的运算符<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    float f = 3.14;</p>
 <pre><code>printf(&quot;f = %d\n&quot;, (int)f);
 
 return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>自增自减运算符<br>    ++	自增<br>    –	自减<br>    如果a++或者++a自己为独立的一条语句,执行时没有区别<br>    如果和别的语句一起使用,会有区别<br>    a++ : 先使用a的值做操作,再自增<br>    ++a : 先自增,再使用a的值做操作<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    int a &#x3D; 0;</p>
+<p>/*<br>自增自减运算符<br>    ++    自增<br>    –    自减<br>    如果a++或者++a自己为独立的一条语句,执行时没有区别<br>    如果和别的语句一起使用,会有区别<br>    a++ : 先使用a的值做操作,再自增<br>    ++a : 先自增,再使用a的值做操作<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int a = 0;</p>
 <pre><code>printf(&quot;a++ = %d\n&quot;, a++);
 
 a = 0;
@@ -550,8 +406,8 @@ printf(&quot;++a = %d\n&quot;, ++a);
 return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>注意 : 作为嵌入式开发工程师,2的0次方 ~ 2的10次方<br>位运算符<br>    &lt;&lt;		按位左移<br>        会把操作数的二进制位,每一位都进行左移的操作<br>        在某种程度上来说,按位左移相当于是乘法运算<br>        左移多少位就相当于乘以2的多少次方<br>        char c &#x3D; 13;<br>        c &lt;&lt;&#x3D; 3;&#x2F;&#x2F;c * 2的3次方 &#x3D; 13 * 8 &#x3D; 104<br>    &gt;&gt;		按位右移<br>        会把操作数的二进制位,每一位都进行右移的操作<br>        在某种程度上来说,按位右移相当于是除法运算(取商)<br>        右移多少位就相当于 &#x2F; 2的多少次方,取商<br>    &amp;		按位与<br>    |		按位或<br>    ~		按位取反<br>    ^		按位异或<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    char c &#x3D; 13;&#x2F;&#x2F;00001101</p>
+<p>/*<br>注意 : 作为嵌入式开发工程师,2的0次方 ~ 2的10次方<br>位运算符<br>    &lt;&lt;        按位左移<br>        会把操作数的二进制位,每一位都进行左移的操作<br>        在某种程度上来说,按位左移相当于是乘法运算<br>        左移多少位就相当于乘以2的多少次方<br>        char c = 13;<br>        c &lt;&lt;= 3;//c * 2的3次方 = 13 * 8 = 104<br>    &gt;&gt;        按位右移<br>        会把操作数的二进制位,每一位都进行右移的操作<br>        在某种程度上来说,按位右移相当于是除法运算(取商)<br>        右移多少位就相当于 / 2的多少次方,取商<br>    &amp;        按位与<br>    |        按位或<br>    ~        按位取反<br>    ^        按位异或<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    char c = 13;//00001101</p>
 <pre><code>printf(&quot;c = %d\n&quot;, c);
 
 //c = c &lt;&lt; 2;//00110100-&gt;32+16+4=52
@@ -563,8 +419,8 @@ printf(&quot;c = %d\n&quot;, c);
 return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>注意 : 作为嵌入式开发工程师,2的0次方 ~ 2的10次方<br>位运算符<br>    &lt;&lt;		按位左移<br>        会把操作数的二进制位,每一位都进行左移的操作<br>        在某种程度上来说,按位左移相当于是乘法运算<br>        左移多少位就相当于乘以2的多少次方<br>        char c &#x3D; 13;<br>        c &lt;&lt;&#x3D; 3;&#x2F;&#x2F;c * 2的3次方 &#x3D; 13 * 8 &#x3D; 104<br>    &gt;&gt;		按位右移<br>        会把操作数的二进制位,每一位都进行右移的操作<br>        在某种程度上来说,按位右移相当于是除法运算(取商)<br>        右移多少位就相当于 &#x2F; 2的多少次方,取商<br>    &amp;		按位与<br>    |		按位或<br>    ~		按位取反<br>    ^		按位异或<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    char c &#x3D; 13;&#x2F;&#x2F;00001101</p>
+<p>/*<br>注意 : 作为嵌入式开发工程师,2的0次方 ~ 2的10次方<br>位运算符<br>    &lt;&lt;        按位左移<br>        会把操作数的二进制位,每一位都进行左移的操作<br>        在某种程度上来说,按位左移相当于是乘法运算<br>        左移多少位就相当于乘以2的多少次方<br>        char c = 13;<br>        c &lt;&lt;= 3;//c * 2的3次方 = 13 * 8 = 104<br>    &gt;&gt;        按位右移<br>        会把操作数的二进制位,每一位都进行右移的操作<br>        在某种程度上来说,按位右移相当于是除法运算(取商)<br>        右移多少位就相当于 / 2的多少次方,取商<br>    &amp;        按位与<br>    |        按位或<br>    ~        按位取反<br>    ^        按位异或<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    char c = 13;//00001101</p>
 <pre><code>printf(&quot;c = %d\n&quot;, c);
 
 c = c &gt;&gt; 2;//00000011
@@ -574,241 +430,191 @@ printf(&quot;c = %d\n&quot;, c);
 return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>注意 : 作为嵌入式开发工程师,2的0次方 ~ 2的10次方<br>位运算符<br>    &lt;&lt;		按位左移<br>        会把操作数的二进制位,每一位都进行左移的操作<br>        在某种程度上来说,按位左移相当于是乘法运算<br>        左移多少位就相当于乘以2的多少次方<br>        char c &#x3D; 13;<br>        c &lt;&lt;&#x3D; 3;&#x2F;&#x2F;c * 2的3次方 &#x3D; 13 * 8 &#x3D; 104<br>    &gt;&gt;		按位右移<br>        会把操作数的二进制位,每一位都进行右移的操作<br>        在某种程度上来说,按位右移相当于是除法运算(取商)<br>        右移多少位就相当于 &#x2F; 2的多少次方,取商<br>    &amp;		按位与<br>        全1才是1,有0就是0<br>    |		按位或<br>        全0才是0,有1就是1<br>    ~		按位取反<br>    ^		按位异或<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    char a &#x3D; 13, b &#x3D; 7;<br>    char c &#x3D; 0;</p>
+<p>/*<br>注意 : 作为嵌入式开发工程师,2的0次方 ~ 2的10次方<br>位运算符<br>    &lt;&lt;        按位左移<br>        会把操作数的二进制位,每一位都进行左移的操作<br>        在某种程度上来说,按位左移相当于是乘法运算<br>        左移多少位就相当于乘以2的多少次方<br>        char c = 13;<br>        c &lt;&lt;= 3;//c * 2的3次方 = 13 * 8 = 104<br>    &gt;&gt;        按位右移<br>        会把操作数的二进制位,每一位都进行右移的操作<br>        在某种程度上来说,按位右移相当于是除法运算(取商)<br>        右移多少位就相当于 / 2的多少次方,取商<br>    &amp;        按位与<br>        全1才是1,有0就是0<br>    |        按位或<br>        全0才是0,有1就是1<br>    ~        按位取反<br>    ^        按位异或<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    char a = 13, b = 7;<br>    char c = 0;</p>
 <pre><code>printf(&quot;c = %d\n&quot;, c);
 
 c = a &amp; b;
 </code></pre>
-<p>&#x2F;*<br>    a	0 0 0 0 1 1 0 1<br>    &amp;<br>    b	0 0 0 0 0 1 1 1<br>    &#x3D;<br>    c	0 0 0 0 0 1 0 1<br>*&#x2F;</p>
+<p>/*<br>    a    0 0 0 0 1 1 0 1<br>    &amp;<br>    b    0 0 0 0 0 1 1 1<br>    =<br>    c    0 0 0 0 0 1 0 1<br>*/</p>
 <pre><code>printf(&quot;c = %d\n&quot;, c);
 
 c = a | b;
 </code></pre>
-<p>&#x2F;*<br>    a	00001101<br>    |<br>    b	00000111<br>    &#x3D;<br>    c	00001111<br>*&#x2F;	<br>    printf(“c &#x3D; %d\n”, c);</p>
+<p>/*<br>    a    00001101<br>    |<br>    b    00000111<br>    =<br>    c    00001111<br>*/<br>    printf(“c = %d\n”, c);</p>
 <pre><code>return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>注意 : 作为嵌入式开发工程师,2的0次方 ~ 2的10次方<br>位运算符<br>    &lt;&lt;		按位左移<br>        会把操作数的二进制位,每一位都进行左移的操作<br>        在某种程度上来说,按位左移相当于是乘法运算<br>        左移多少位就相当于乘以2的多少次方<br>        char c &#x3D; 13;<br>        c &lt;&lt;&#x3D; 3;&#x2F;&#x2F;c * 2的3次方 &#x3D; 13 * 8 &#x3D; 104<br>    &gt;&gt;		按位右移<br>        会把操作数的二进制位,每一位都进行右移的操作<br>        在某种程度上来说,按位右移相当于是除法运算(取商)<br>        右移多少位就相当于 &#x2F; 2的多少次方,取商<br>    &amp;		按位与<br>        全1才是1,有0就是0<br>    |		按位或<br>        全0才是0,有1就是1<br>    ~		按位取反(每一位都要取反)<br>        0变成1,1变成0<br>    ^		按位异或<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    char c &#x3D; 13;&#x2F;&#x2F;00001101</p>
+<p>/*<br>注意 : 作为嵌入式开发工程师,2的0次方 ~ 2的10次方<br>位运算符<br>    &lt;&lt;        按位左移<br>        会把操作数的二进制位,每一位都进行左移的操作<br>        在某种程度上来说,按位左移相当于是乘法运算<br>        左移多少位就相当于乘以2的多少次方<br>        char c = 13;<br>        c &lt;&lt;= 3;//c * 2的3次方 = 13 * 8 = 104<br>    &gt;&gt;        按位右移<br>        会把操作数的二进制位,每一位都进行右移的操作<br>        在某种程度上来说,按位右移相当于是除法运算(取商)<br>        右移多少位就相当于 / 2的多少次方,取商<br>    &amp;        按位与<br>        全1才是1,有0就是0<br>    |        按位或<br>        全0才是0,有1就是1<br>    ~        按位取反(每一位都要取反)<br>        0变成1,1变成0<br>    ^        按位异或<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    char c = 13;//00001101</p>
 <pre><code>printf(&quot;c = %d\n&quot;, c);
-c = ~c;		//11110010-&gt;-114
+c = ~c;        //11110010-&gt;-114
 printf(&quot;c = %d\n&quot;, c);
 
 return 0;
 </code></pre>
-<p>}<br>&#x2F;*<br>char c &#x3D; 13;<br>原码	0 0 0 0 1 1 0 1<br>补码	0 0 0 0 1 1 0 1<br>~<br>补码	1 1 1 1 0 0 1 0<br>原码	1 0 0 0 1 1 1 0<br>    c &#x3D; -14<br>char c &#x3D; -13;	c &#x3D; ~c;<br>原码	1 0 0 0 1 1 0 1<br>补码	1 1 1 1 0 0 1 1<br>~<br>补码	0 0 0 0 1 1 0 0<br>原码	0 0 0 0 1 1 0 0<br>    c &#x3D; 12<br>*&#x2F;</p>
-<p>&#x2F;*<br>注意 : 作为嵌入式开发工程师,2的0次方 ~ 2的10次方<br>在底层内核驱动中做位运算需要保证是在无符号的环境中进行运算<br>位运算符<br>    &lt;&lt;		按位左移<br>        会把操作数的二进制位,每一位都进行左移的操作<br>        在某种程度上来说,按位左移相当于是乘法运算<br>        左移多少位就相当于乘以2的多少次方<br>        char c &#x3D; 13;<br>        c &lt;&lt;&#x3D; 3;&#x2F;&#x2F;c * 2的3次方 &#x3D; 13 * 8 &#x3D; 104<br>    &gt;&gt;		按位右移<br>        会把操作数的二进制位,每一位都进行右移的操作<br>        在某种程度上来说,按位右移相当于是除法运算(取商)<br>        右移多少位就相当于 &#x2F; 2的多少次方,取商<br>    &amp;		按位与<br>        全1才是1,有0就是0<br>    |		按位或<br>        全0才是0,有1就是1<br>    ~		按位取反(每一位都要取反)<br>        0变成1,1变成0<br>    ^		按位异或<br>        相同为0,不同为1<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    char c &#x3D; -13;</p>
+<p>}<br>/*<br>char c = 13;<br>原码    0 0 0 0 1 1 0 1<br>补码    0 0 0 0 1 1 0 1<br>~<br>补码    1 1 1 1 0 0 1 0<br>原码    1 0 0 0 1 1 1 0<br>    c = -14<br>char c = -13;    c = ~c;<br>原码    1 0 0 0 1 1 0 1<br>补码    1 1 1 1 0 0 1 1<br>~<br>补码    0 0 0 0 1 1 0 0<br>原码    0 0 0 0 1 1 0 0<br>    c = 12<br>*/</p>
+<p>/*<br>注意 : 作为嵌入式开发工程师,2的0次方 ~ 2的10次方<br>在底层内核驱动中做位运算需要保证是在无符号的环境中进行运算<br>位运算符<br>    &lt;&lt;        按位左移<br>        会把操作数的二进制位,每一位都进行左移的操作<br>        在某种程度上来说,按位左移相当于是乘法运算<br>        左移多少位就相当于乘以2的多少次方<br>        char c = 13;<br>        c &lt;&lt;= 3;//c * 2的3次方 = 13 * 8 = 104<br>    &gt;&gt;        按位右移<br>        会把操作数的二进制位,每一位都进行右移的操作<br>        在某种程度上来说,按位右移相当于是除法运算(取商)<br>        右移多少位就相当于 / 2的多少次方,取商<br>    &amp;        按位与<br>        全1才是1,有0就是0<br>    |        按位或<br>        全0才是0,有1就是1<br>    ~        按位取反(每一位都要取反)<br>        0变成1,1变成0<br>    ^        按位异或<br>        相同为0,不同为1<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    char c = -13;</p>
 <pre><code>printf(&quot;c = %d\n&quot;, c);
 
 c &lt;&lt;= 4;
 </code></pre>
-<p>&#x2F;*<br>c &#x3D; -13<br>原	1 0 0 0 1 1 0 1<br>补	1 1 1 1 0 0 1 1<br>c &lt;&lt; 4<br>补	0 0 1 1 0 0 0 0<br>原	0 0 1 1 0 0 0 0<br>    c &#x3D; 48<br>*&#x2F;<br>    printf(“c &#x3D; %d\n”, c);</p>
+<p>/*<br>c = -13<br>原    1 0 0 0 1 1 0 1<br>补    1 1 1 1 0 0 1 1<br>c &lt;&lt; 4<br>补    0 0 1 1 0 0 0 0<br>原    0 0 1 1 0 0 0 0<br>    c = 48<br>*/<br>    printf(“c = %d\n”, c);</p>
 <pre><code>return 0;
 </code></pre>
 <p>}</p>
 <p>位运算符的真正使用<br>注意:<br>1.在做位运算时,只改变要操作的位,其他位要保持不变<br>2.如果想要置1用按位或<br>3.如果想要清0用按位与<br>4.按位或上0,会保持不变<br>5.按位与上1,会保持不变<br>6.如果一次性想要操作多个位,一定要先清零再赋值</p>
-<p>1.例如:GPIOA是一个32bit的寄存器,<br>    现在想要把该寄存器的第3位置1</p>
-<h2 id="GPIOA-x3D-1-lt-lt-3"><a href="#GPIOA-x3D-1-lt-lt-3" class="headerlink" title="GPIOA |&#x3D; (1 &lt;&lt; 3);"></a>GPIOA |&#x3D; (1 &lt;&lt; 3);</h2><p>1			00000000 00000000 00000000 00000001<br>1&lt;&lt;3		00000000 00000000 00000000 00001000<br>|<br>GPIOA		XXXXXXXX XXXXXXXX XXXXXXXX XXXX#XXX<br>&#x3D;<br>GPIOA		XXXXXXXX XXXXXXXX XXXXXXXX XXXX1XXX</p>
+<p>1.例如:GPIOA是一个32bit的寄存器,<br>    现在想要把该寄存器的第3位置1<br>GPIOA |= (1 &lt;&lt; 3);</p>
 <hr>
-<p>2.例如:GPIOA是一个32bit的寄存器,<br>    现在想要把该寄存器的第4位清0<br>    GPIOA &amp;&#x3D; ~(1 &lt;&lt; 4);</p>
+<p>1            00000000 00000000 00000000 00000001<br>1&lt;&lt;3        00000000 00000000 00000000 00001000<br>|<br>GPIOA        XXXXXXXX XXXXXXXX XXXXXXXX XXXX#XXX<br>=<br>GPIOA        XXXXXXXX XXXXXXXX XXXXXXXX XXXX1XXX</p>
 <hr>
-<p>1			00000000 00000000 00000000 00000001<br>1&lt;&lt;4		00000000 00000000 00000000 00010000<br>~(1&lt;&lt;4)		11111111 11111111 11111111 11101111<br>&amp;<br>GPIOA		XXXXXXXX XXXXXXXX XXXXXXXX XXX#1XXX<br>&#x3D;<br>GPIOA		XXXXXXXX XXXXXXXX XXXXXXXX XXX01XXX</p>
+<p>2.例如:GPIOA是一个32bit的寄存器,<br>    现在想要把该寄存器的第4位清0<br>    GPIOA &amp;= ~(1 &lt;&lt; 4);</p>
 <hr>
-<p>3.例如:GPIOA是一个32bit的寄存器,<br>    现在想要把该寄存器的第11 10 9 8位变为1010<br>    GPIOA &amp;&#x3D; ~(15 &lt;&lt; 8);<br>    GPIOA |&#x3D; (10 &lt;&lt; 8);</p>
+<p>1            00000000 00000000 00000000 00000001<br>1&lt;&lt;4        00000000 00000000 00000000 00010000<br>~(1&lt;&lt;4)        11111111 11111111 11111111 11101111<br>&amp;<br>GPIOA        XXXXXXXX XXXXXXXX XXXXXXXX XXX#1XXX<br>=<br>GPIOA        XXXXXXXX XXXXXXXX XXXXXXXX XXX01XXX</p>
+<hr>
+<p>3.例如:GPIOA是一个32bit的寄存器,<br>    现在想要把该寄存器的第11 10 9 8位变为1010<br>    GPIOA &amp;= ~(15 &lt;&lt; 8);<br>    GPIOA |= (10 &lt;&lt; 8);</p>
 
+      
     </div>
+    <footer class="article-footer">
+      <a data-url="http://naoemb.github.io/2022/07/17/embsky/03c/03c_02day/" data-id="cl5sucxja000m40vm6f5e920p" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/threeC/" rel="tag">threeC</a></li></ul>
 
-    
-    
-    
-
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/threeC/" rel="tag"># threeC</a>
-          </div>
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2022/07/17/embsky/03c/03c_01day/" rel="prev" title="03c01day">
-      <i class="fa fa-chevron-left"></i> 03c01day
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/07/17/embsky/03c/03c_cnote/" rel="next" title="03ccnote">
-      03ccnote <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-
-
-          </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#GPIOA-x3D-1-lt-lt-3"><span class="nav-number">1.</span> <span class="nav-text">GPIOA |&#x3D; (1 &lt;&lt; 3);</span></a></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">naoemb</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">15</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">5</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-
-
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2022</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">naoemb</span>
-</div>
-
-        
-
-
-
-
-
-
-
-
-      </div>
     </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/07/17/embsky/03c/03c_cnote/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          03ccnote
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/07/17/embsky/03c/03c_01day/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">03c01day</div>
+    </a>
+  
+</nav>
 
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
+</article>
 
-<script src="/js/utils.js"></script>
+</section>
+        
+          <aside id="sidebar">
+  
+    
 
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/muse.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/onetest/" rel="tag">onetest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/threeC/" rel="tag">threeC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/twolinux/" rel="tag">twolinux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li></ul>
+    </div>
+  </div>
 
 
   
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/onetest/" style="font-size: 20px;">onetest</a> <a href="/tags/threeC/" style="font-size: 15px;">threeC</a> <a href="/tags/twolinux/" style="font-size: 10px;">twolinux</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 10px;">测试</a>
+    </div>
+  </div>
 
-
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li></ul>
+    </div>
+  </div>
 
 
   
-<script src="/js/local-search.js"></script>
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/07/20/embsky/%E6%B5%8B%E8%AF%95/%E9%98%B6%E6%AE%B5%E6%B5%8B%E8%AF%95%E4%B8%80/">阶段测试一</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/19/git/%E6%9C%AC%E5%9C%B0%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E5%B9%B6%E6%8E%A8%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/">本地新建分支并推到远程仓库</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/19/embsky/03c/03c_04day/">03c04day</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/18/embsky/03c/03c_03day/">03c03day</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/17/embsky/03c/03c_cnote/">03ccnote</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
 
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
 
-
-
-
-
-
-
-
-
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
   
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
 
   
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
 
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
 </body>
 </html>

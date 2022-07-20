@@ -1,241 +1,97 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.2">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta charset="utf-8">
+  
 
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"naoemb.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
-
-  <meta name="description" content="一.温故知新    运算符        算术运算符		+ - * &#x2F; %            注意 : 除法运算符中除数不能为0        关系运算符		&gt; &lt; &#x3D;&#x3D; &gt;&#x3D; &lt;&#x3D; !&#x3D;            注意 :            1.一个表达式经过关系运算符的运算最后是真假值">
+  
+  <title>03c03day | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一.温故知新    运算符        算术运算符        + - * &#x2F; %            注意 : 除法运算符中除数不能为0        关系运算符        &gt; &lt; &#x3D;&#x3D; &gt;&#x3D; &lt;&#x3D; !&#x3D;            注意 :            1.一个表达式经过关系运算符的运算最后是真假值            2.判断两个值是否相等用&#x3D;&#x3D;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="03c03day">
 <meta property="og:url" content="http://naoemb.github.io/2022/07/18/embsky/03c/03c_03day/index.html">
-<meta property="og:site_name" content="naoemb">
-<meta property="og:description" content="一.温故知新    运算符        算术运算符		+ - * &#x2F; %            注意 : 除法运算符中除数不能为0        关系运算符		&gt; &lt; &#x3D;&#x3D; &gt;&#x3D; &lt;&#x3D; !&#x3D;            注意 :            1.一个表达式经过关系运算符的运算最后是真假值">
-<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一.温故知新    运算符        算术运算符        + - * &#x2F; %            注意 : 除法运算符中除数不能为0        关系运算符        &gt; &lt; &#x3D;&#x3D; &gt;&#x3D; &lt;&#x3D; !&#x3D;            注意 :            1.一个表达式经过关系运算符的运算最后是真假值            2.判断两个值是否相等用&#x3D;&#x3D;">
+<meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-07-18T12:23:17.304Z">
 <meta property="article:modified_time" content="2022-07-19T06:14:04.305Z">
-<meta property="article:author" content="naoemb">
+<meta property="article:author" content="John Doe">
 <meta property="article:tag" content="threeC">
 <meta name="twitter:card" content="summary">
-
-<link rel="canonical" href="http://naoemb.github.io/2022/07/18/embsky/03c/03c_03day/">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'zh-CN'
-  };
-</script>
-
-  <title>03c03day | naoemb</title>
   
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">naoemb</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">5</span></a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">15</span></a>
-
-  </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
-      </li>
-  </ul>
-</nav>
-
-
-
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
-           placeholder="搜索..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-  </div>
-</div>
-
-    </div>
-  </div>
-
-</div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content post posts-expand">
-            
-
-    
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://naoemb.github.io/2022/07/18/embsky/03c/03c_03day/">
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="naoemb">
-      <meta itemprop="description" content="">
-    </span>
+<meta name="generator" content="Hexo 5.4.2"></head>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="naoemb">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          03c03day
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-07-18 20:23:17" itemprop="dateCreated datePublished" datetime="2022-07-18T20:23:17+08:00">2022-07-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-19 14:14:04" itemprop="dateModified" datetime="2022-07-19T14:14:04+08:00">2022-07-19</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
       
-        <p>一.温故知新<br>    运算符<br>        算术运算符		+ - * &#x2F; %<br>            注意 : 除法运算符中除数不能为0<br>        关系运算符		&gt; &lt; &#x3D;&#x3D; &gt;&#x3D; &lt;&#x3D; !&#x3D;<br>            注意 :<br>            1.一个表达式经过关系运算符的运算最后是真假值<br>            2.判断两个值是否相等用&#x3D;&#x3D;<br>            3.if(a &#x3D;&#x3D; 13) 建议 if(13 &#x3D;&#x3D; a)<br>        逻辑运算符		&amp;&amp; || !<br>            注意 :<br>            1.一个表达式经过逻辑运算符的运算最后是真假值<br>            2.条件1 &amp;&amp; 条件2<br>                条件1为真,会执行条件2<br>                条件1为假,不会执行条件2<br>            3.条件1 || 条件2<br>                条件1为真,不会执行条件2<br>                条件1为假,会执行条件2<br>        赋值运算符		&#x3D; +&#x3D; -&#x3D; *&#x3D; &#x2F;&#x3D; &amp;&#x3D; |&#x3D; …<br>            注意 : 先计算右边的项,再和左边结合<br>        位运算符		&lt;&lt; &gt;&gt; &amp; | ~ ^<br>            注意 : 操作数符号的问题<br>        条件运算符		? :<br>            注意 : 是C语言中唯一的一个三目运算符<br>        下标运算符		[]<br>        指针运算符		* &amp;<br>        分量运算符		. -&gt;<br>        求字节大小运算符sizeof()<br>            注意 : sizeof不是函数,是一个运算符<br>        强制类型转换	()<br>            注意 : 会在指针的时候使用<br>        自增自减		++ –<br>        逗号运算符		,</p>
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://naoemb.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-embsky/03c/03c_03day" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/07/18/embsky/03c/03c_03day/" class="article-date">
+  <time datetime="2022-07-18T12:23:17.304Z" itemprop="datePublished">2022-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      03c03day
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一.温故知新<br>    运算符<br>        算术运算符        + - * / %<br>            注意 : 除法运算符中除数不能为0<br>        关系运算符        &gt; &lt; == &gt;= &lt;= !=<br>            注意 :<br>            1.一个表达式经过关系运算符的运算最后是真假值<br>            2.判断两个值是否相等用==<br>            3.if(a == 13) 建议 if(13 == a)<br>        逻辑运算符        &amp;&amp; || !<br>            注意 :<br>            1.一个表达式经过逻辑运算符的运算最后是真假值<br>            2.条件1 &amp;&amp; 条件2<br>                条件1为真,会执行条件2<br>                条件1为假,不会执行条件2<br>            3.条件1 || 条件2<br>                条件1为真,不会执行条件2<br>                条件1为假,会执行条件2<br>        赋值运算符        = += -= *= /= &amp;= |= …<br>            注意 : 先计算右边的项,再和左边结合<br>        位运算符        &lt;&lt; &gt;&gt; &amp; | ~ ^<br>            注意 : 操作数符号的问题<br>        条件运算符        ? :<br>            注意 : 是C语言中唯一的一个三目运算符<br>        下标运算符        []<br>        指针运算符        * &amp;<br>        分量运算符        . -&gt;<br>        求字节大小运算符sizeof()<br>            注意 : sizeof不是函数,是一个运算符<br>        强制类型转换    ()<br>            注意 : 会在指针的时候使用<br>        自增自减        ++ –<br>        逗号运算符        ,</p>
 <p>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    int a &#x3D; 0, b &#x3D; 0;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int a = 0, b = 0;</p>
 <pre><code>scanf(&quot;%d-%d&quot;, &amp;a, &amp;b);
 
 printf(&quot;a = %d b = %d\n&quot;, a, b);
@@ -258,7 +114,7 @@ return 0;
 </code></pre>
 <p>}</p>
 <p>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    int a &#x3D; 10, sum &#x3D; 0;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int a = 10, sum = 0;</p>
 <pre><code>sum += a++;
 
 printf(&quot;a = %d sum = %d\n&quot;, a, sum);
@@ -266,8 +122,8 @@ printf(&quot;a = %d sum = %d\n&quot;, a, sum);
 return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>    逗号运算符<br>    如果一个表达式使用了逗号运算符<br>        如果没有加小括号,那么会把第一个项的结果赋值给变量<br>        如果有加小括号,那么会把最后一个项的结果赋值给变量<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    int a &#x3D; 0, b &#x3D; 10, c &#x3D; 20, d &#x3D; 30;</p>
+<p>/*<br>    逗号运算符<br>    如果一个表达式使用了逗号运算符<br>        如果没有加小括号,那么会把第一个项的结果赋值给变量<br>        如果有加小括号,那么会把最后一个项的结果赋值给变量<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int a = 0, b = 10, c = 20, d = 30;</p>
 <pre><code>a = (b++,c+5,d+10);
 
 printf(&quot;a = %d\n&quot;, a);
@@ -275,9 +131,9 @@ printf(&quot;a = %d\n&quot;, a);
 return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>分支结构<br>    if<br>1.if是C语言的关键字<br>2.使用方法<br>    语句1<br>    if(条件)<br>    {<br>        语句2<br>    }<br>    语句3</p>
-<p>语句1-&gt;条件的判断(真)-&gt;语句2-&gt;语句3<br>        |<br>        (假)-&gt;语句3<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    int c &#x3D; 0;</p>
+<p>/*<br>分支结构<br>    if<br>1.if是C语言的关键字<br>2.使用方法<br>    语句1<br>    if(条件)<br>    {<br>        语句2<br>    }<br>    语句3</p>
+<p>语句1-&gt;条件的判断(真)-&gt;语句2-&gt;语句3<br>        |<br>        (假)-&gt;语句3<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int c = 0;</p>
 <pre><code>scanf(&quot;%d&quot;, &amp;c);
 
 //if(c % 2 == 0)//判断是否是偶数的条件
@@ -289,9 +145,9 @@ if((c &amp; 1) == 0)//位运算符(判断最低位是否为0)
 return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>分支结构<br>    if<br>1.if else是C语言的关键字<br>2.if使用方法<br>    语句1<br>    if(条件)<br>    {<br>        语句2<br>    }<br>    语句3</p>
-<p>语句1-&gt;条件的判断(真)-&gt;语句2-&gt;语句3<br>        |<br>        (假)-&gt;语句3<br>3.if else使用方法<br>    语句1<br>    if(条件)<br>    {<br>        语句2<br>    }<br>    else<br>    {<br>        语句3<br>    }<br>    语句4<br>语句1-&gt;条件的判断(真)-&gt;语句2-&gt;语句4<br>        |<br>        (假)-&gt;语句3-&gt;语句4<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    int c &#x3D; 0;</p>
+<p>/*<br>分支结构<br>    if<br>1.if else是C语言的关键字<br>2.if使用方法<br>    语句1<br>    if(条件)<br>    {<br>        语句2<br>    }<br>    语句3</p>
+<p>语句1-&gt;条件的判断(真)-&gt;语句2-&gt;语句3<br>        |<br>        (假)-&gt;语句3<br>3.if else使用方法<br>    语句1<br>    if(条件)<br>    {<br>        语句2<br>    }<br>    else<br>    {<br>        语句3<br>    }<br>    语句4<br>语句1-&gt;条件的判断(真)-&gt;语句2-&gt;语句4<br>        |<br>        (假)-&gt;语句3-&gt;语句4<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int c = 0;</p>
 <pre><code>scanf(&quot;%d&quot;, &amp;c);
 
 //if(c % 2 == 0)//判断是否是偶数的条件
@@ -307,9 +163,9 @@ else
 return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>分支结构<br>    if<br>1.if else是C语言的关键字<br>2.if使用方法<br>    语句1<br>    if(条件)<br>    {<br>        语句2<br>    }<br>    语句3</p>
-<p>语句1-&gt;条件的判断(真)-&gt;语句2-&gt;语句3<br>        |<br>        (假)-&gt;语句3<br>3.if else使用方法<br>    语句1<br>    if(条件)<br>    {<br>        语句2<br>    }<br>    else<br>    {<br>        语句3<br>    }<br>    语句4<br>语句1-&gt;条件的判断(真)-&gt;语句2-&gt;语句4<br>        |<br>        (假)-&gt;语句3-&gt;语句4<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    int year &#x3D; 0;</p>
+<p>/*<br>分支结构<br>    if<br>1.if else是C语言的关键字<br>2.if使用方法<br>    语句1<br>    if(条件)<br>    {<br>        语句2<br>    }<br>    语句3</p>
+<p>语句1-&gt;条件的判断(真)-&gt;语句2-&gt;语句3<br>        |<br>        (假)-&gt;语句3<br>3.if else使用方法<br>    语句1<br>    if(条件)<br>    {<br>        语句2<br>    }<br>    else<br>    {<br>        语句3<br>    }<br>    语句4<br>语句1-&gt;条件的判断(真)-&gt;语句2-&gt;语句4<br>        |<br>        (假)-&gt;语句3-&gt;语句4<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int year = 0;</p>
 <pre><code>scanf(&quot;%d&quot;, &amp;year);
 
 //if((year%4==0&amp;&amp;year%100!=0) || (year%400==0))
@@ -326,10 +182,10 @@ else
 return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>分支结构<br>    if<br>1.if else是C语言的关键字<br>2.if使用方法<br>    语句1<br>    if(条件)<br>    {<br>        语句2<br>    }<br>    语句3</p>
+<p>/*<br>分支结构<br>    if<br>1.if else是C语言的关键字<br>2.if使用方法<br>    语句1<br>    if(条件)<br>    {<br>        语句2<br>    }<br>    语句3</p>
 <p>语句1-&gt;条件的判断(真)-&gt;语句2-&gt;语句3<br>        |<br>        (假)-&gt;语句3<br>3.if else使用方法<br>    语句1<br>    if(条件)<br>    {<br>        语句2<br>    }<br>    else<br>    {<br>        语句3<br>    }<br>    语句4<br>语句1-&gt;条件的判断(真)-&gt;语句2-&gt;语句4<br>        |<br>        (假)-&gt;语句3-&gt;语句4<br>4.if else if else if使用方法<br>    语句1<br>    if(条件1)<br>    {<br>        语句2<br>    }<br>    else if(条件2)<br>    {<br>        语句3<br>    }<br>    else if(条件3)<br>    {<br>        语句4<br>    }<br>    else<br>    {<br>        语句5<br>    }<br>    语句6<br>语句1-&gt;条件1的判断(真)-&gt;语句2-&gt;语句6<br>        |<br>        (假)-&gt;条件2的判断(真)-&gt;语句3-&gt;语句6<br>                |<br>                (假)-&gt;条件3的判断(真)-&gt;语句4-&gt;语句6<br>                        |<br>                        (假)-&gt;语句5-&gt;语句6<br>5.使用if需要注意的问题<br>    1&gt;if关键字之后必须要写小括号,小括号内必须写内容<br>    2&gt;else关键字之后不能直接加小括号写条件,需要写成else if<br>    3&gt;if(条件)之后可以直接加 ;<br>        if(条件);<br>        {<br>            语句<br>        }<br>        等价于<br>        if(条件)<br>        {<br>            ;<br>        }<br>        {<br>            语句<br>        }<br>    4&gt;if(条件)之下可以不加大括号<br>        if(条件)<br>            语句1<br>            语句2<br>        等价于<br>        if(条件)<br>        {<br>            语句1<br>        }<br>        语句2</p>
-<p>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    int a &#x3D; 0, b &#x3D; 0, c &#x3D; 0;</p>
+<p>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int a = 0, b = 0, c = 0;</p>
 <pre><code>scanf(&quot;%d-%d-%d&quot;, &amp;a, &amp;b, &amp;c);
 //if error
 
@@ -365,8 +221,8 @@ else
 return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>分支语句<br>    switch<br>1.switch case default是C语言的关键字<br>2.switch case语句的使用方法<br>语句1<br>switch(变量)<br>{<br>    case 整常量1: 语句2;<br>    case 整常量2: 语句3;<br>    default : 语句4;<br>}<br>语句5<br>语句1-&gt;变量和整常量1判断(相等)-&gt;语句2-&gt;语句3-&gt;语句4-&gt;语句5<br>        |<br>        (不相等)-&gt;变量和整常量2判断(相等)-&gt;语句3-&gt;语句4-&gt;语句5<br>                    |<br>                    (不相等)-&gt;语句4-&gt;语句5<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    int i &#x3D; 0;</p>
+<p>/*<br>分支语句<br>    switch<br>1.switch case default是C语言的关键字<br>2.switch case语句的使用方法<br>语句1<br>switch(变量)<br>{<br>    case 整常量1: 语句2;<br>    case 整常量2: 语句3;<br>    default : 语句4;<br>}<br>语句5<br>语句1-&gt;变量和整常量1判断(相等)-&gt;语句2-&gt;语句3-&gt;语句4-&gt;语句5<br>        |<br>        (不相等)-&gt;变量和整常量2判断(相等)-&gt;语句3-&gt;语句4-&gt;语句5<br>                    |<br>                    (不相等)-&gt;语句4-&gt;语句5<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int i = 0;</p>
 <pre><code>scanf(&quot;%d&quot;, &amp;i);
 
 switch(i)
@@ -380,8 +236,8 @@ switch(i)
 return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>分支语句<br>    switch<br>1.switch case default是C语言的关键字<br>2.switch case语句的使用方法<br>语句1<br>switch(变量)<br>{<br>    case 整常量1: 语句2;<br>    case 整常量2: 语句3;<br>    default : 语句4;<br>}<br>语句5<br>语句1-&gt;变量和整常量1判断(相等)-&gt;语句2-&gt;语句3-&gt;语句4-&gt;语句5<br>        |<br>        (不相等)-&gt;变量和整常量2判断(相等)-&gt;语句3-&gt;语句4-&gt;语句5<br>                    |<br>                    (不相等)-&gt;语句4-&gt;语句5<br>3.switch case语句加入break关键字的使用方法<br>语句1<br>switch(变量)<br>{<br>    case 整常量1: 语句2;break;<br>    case 整常量2: 语句3;break;<br>    default : 语句4;break;<br>}<br>语句5<br>语句1-&gt;变量和整常量1判断(相等)-&gt;语句2-&gt;break-&gt;语句5<br>        |<br>        (不相等)-&gt;变量和整常量2判断(相等)-&gt;语句3-&gt;break-&gt;语句5<br>                    |<br>                    (不相等)-&gt;语句4-&gt;break-&gt;语句5<br>4.switch语句需要注意的地方<br>    1&gt;在switch关键字之后必须要写小括号<br>    2&gt;在switch之下的大括号内<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    int i &#x3D; 0;</p>
+<p>/*<br>分支语句<br>    switch<br>1.switch case default是C语言的关键字<br>2.switch case语句的使用方法<br>语句1<br>switch(变量)<br>{<br>    case 整常量1: 语句2;<br>    case 整常量2: 语句3;<br>    default : 语句4;<br>}<br>语句5<br>语句1-&gt;变量和整常量1判断(相等)-&gt;语句2-&gt;语句3-&gt;语句4-&gt;语句5<br>        |<br>        (不相等)-&gt;变量和整常量2判断(相等)-&gt;语句3-&gt;语句4-&gt;语句5<br>                    |<br>                    (不相等)-&gt;语句4-&gt;语句5<br>3.switch case语句加入break关键字的使用方法<br>语句1<br>switch(变量)<br>{<br>    case 整常量1: 语句2;break;<br>    case 整常量2: 语句3;break;<br>    default : 语句4;break;<br>}<br>语句5<br>语句1-&gt;变量和整常量1判断(相等)-&gt;语句2-&gt;break-&gt;语句5<br>        |<br>        (不相等)-&gt;变量和整常量2判断(相等)-&gt;语句3-&gt;break-&gt;语句5<br>                    |<br>                    (不相等)-&gt;语句4-&gt;break-&gt;语句5<br>4.switch语句需要注意的地方<br>    1&gt;在switch关键字之后必须要写小括号<br>    2&gt;在switch之下的大括号内<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int i = 0;</p>
 <pre><code>scanf(&quot;%d&quot;, &amp;i);
 
 switch(i)
@@ -395,8 +251,8 @@ switch(i)
 return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>分支语句<br>    switch<br>1.switch case default是C语言的关键字<br>2.switch case语句的使用方法<br>语句1<br>switch(变量)<br>{<br>    case 整常量1: 语句2;<br>    case 整常量2: 语句3;<br>    default : 语句4;<br>}<br>语句5<br>语句1-&gt;变量和整常量1判断(相等)-&gt;语句2-&gt;语句3-&gt;语句4-&gt;语句5<br>        |<br>        (不相等)-&gt;变量和整常量2判断(相等)-&gt;语句3-&gt;语句4-&gt;语句5<br>                    |<br>                    (不相等)-&gt;语句4-&gt;语句5<br>3.switch case语句加入break关键字的使用方法<br>语句1<br>switch(变量)<br>{<br>    case 整常量1: 语句2;break;<br>    case 整常量2: 语句3;break;<br>    default : 语句4;break;<br>}<br>语句5<br>语句1-&gt;变量和整常量1判断(相等)-&gt;语句2-&gt;break-&gt;语句5<br>        |<br>        (不相等)-&gt;变量和整常量2判断(相等)-&gt;语句3-&gt;break-&gt;语句5<br>                    |<br>                    (不相等)-&gt;语句4-&gt;break-&gt;语句5<br>4.switch语句需要注意的地方<br>    1&gt;在switch关键字之后必须要写小括号<br>    2&gt;在switch之下的大括号内需要写case和整常量<br>    3&gt;整常量可以是整数或者字符<br>    4&gt;在同一个switch语句中整常量不可以重复<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    int i &#x3D; 0;</p>
+<p>/*<br>分支语句<br>    switch<br>1.switch case default是C语言的关键字<br>2.switch case语句的使用方法<br>语句1<br>switch(变量)<br>{<br>    case 整常量1: 语句2;<br>    case 整常量2: 语句3;<br>    default : 语句4;<br>}<br>语句5<br>语句1-&gt;变量和整常量1判断(相等)-&gt;语句2-&gt;语句3-&gt;语句4-&gt;语句5<br>        |<br>        (不相等)-&gt;变量和整常量2判断(相等)-&gt;语句3-&gt;语句4-&gt;语句5<br>                    |<br>                    (不相等)-&gt;语句4-&gt;语句5<br>3.switch case语句加入break关键字的使用方法<br>语句1<br>switch(变量)<br>{<br>    case 整常量1: 语句2;break;<br>    case 整常量2: 语句3;break;<br>    default : 语句4;break;<br>}<br>语句5<br>语句1-&gt;变量和整常量1判断(相等)-&gt;语句2-&gt;break-&gt;语句5<br>        |<br>        (不相等)-&gt;变量和整常量2判断(相等)-&gt;语句3-&gt;break-&gt;语句5<br>                    |<br>                    (不相等)-&gt;语句4-&gt;break-&gt;语句5<br>4.switch语句需要注意的地方<br>    1&gt;在switch关键字之后必须要写小括号<br>    2&gt;在switch之下的大括号内需要写case和整常量<br>    3&gt;整常量可以是整数或者字符<br>    4&gt;在同一个switch语句中整常量不可以重复<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int i = 0;</p>
 <pre><code>scanf(&quot;%d&quot;, &amp;i);
 
 switch(i)
@@ -410,8 +266,8 @@ switch(i)
 return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>输入年月日,打印出是该年的第几天<br>&#x2F;&#x2F;2022-7-18<br>是2022年的第?天<br>2022-1-9	9天<br>2022-2-9	9+31天<br>2022-3-9	9+(28||29)+31<br>2022-4-9	9+31+(28||29)+31<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    int year &#x3D; 0, month &#x3D; 0, day &#x3D; 0;<br>    int flag &#x3D; 0;&#x2F;&#x2F;用来标记闰年和平年<br>    int days &#x3D; 0;&#x2F;&#x2F;用来存储最后总天数</p>
+<p>/*<br>输入年月日,打印出是该年的第几天<br>//2022-7-18<br>是2022年的第?天<br>2022-1-9    9天<br>2022-2-9    9+31天<br>2022-3-9    9+(28||29)+31<br>2022-4-9    9+31+(28||29)+31<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int year = 0, month = 0, day = 0;<br>    int flag = 0;//用来标记闰年和平年<br>    int days = 0;//用来存储最后总天数</p>
 <pre><code>scanf(&quot;%d-%d-%d&quot;, &amp;year, &amp;month, &amp;day);
 /*if error*/
 
@@ -439,8 +295,8 @@ printf(&quot;%d年%d月%d日是这一年的第%d天!\n&quot;, year, month, day, 
 return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>输入年月日,打印出是该年的第几天<br>&#x2F;&#x2F;2022-7-18<br>是2022年的第?天<br>2022-1-9	9天<br>2022-2-9	9+31天<br>2022-3-9	9+(28||29)+31<br>2022-4-9	9+31+(28||29)+31<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    int year &#x3D; 0, month &#x3D; 0, day &#x3D; 0;<br>    int flag &#x3D; 0;&#x2F;&#x2F;用来标记闰年和平年<br>    int days &#x3D; 0;&#x2F;&#x2F;用来存储最后总天数</p>
+<p>/*<br>输入年月日,打印出是该年的第几天<br>//2022-7-18<br>是2022年的第?天<br>2022-1-9    9天<br>2022-2-9    9+31天<br>2022-3-9    9+(28||29)+31<br>2022-4-9    9+31+(28||29)+31<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int year = 0, month = 0, day = 0;<br>    int flag = 0;//用来标记闰年和平年<br>    int days = 0;//用来存储最后总天数</p>
 <pre><code>scanf(&quot;%d-%d-%d&quot;, &amp;year, &amp;month, &amp;day);
 /*if error*/
 
@@ -468,8 +324,8 @@ printf(&quot;%d年%d月%d日是这一年的第%d天!\n&quot;, year, month, day, 
 return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>循环语句<br>    for<br>1.for是C语言中的关键字<br>2.for循环的使用方法<br>    语句1<br>    for(循环变量的赋值; 循环变量的控制; 循环变量的变化)<br>    {<br>        循环的语句<br>    }<br>    语句2<br>3.for循环的执行流程<br>                    语句1<br>                        |<br>                        V<br>                循环变量的赋值<br>                        |<br>                        V<br>            |-&lt;-循环变量的控制–&lt;—|<br>            |			|			|<br>            V			V			|<br>            假			真			|<br>            |			|			^<br>            V			V			|<br>            |		循环的语句		|<br>            |			|			^<br>            |			V			|<br>            |	循环变量的变化–&gt;—|<br>            |<br>            |—-&gt;——|<br>                        V<br>                    语句2<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    int i &#x3D; 0, score &#x3D; 0;</p>
+<p>/*<br>循环语句<br>    for<br>1.for是C语言中的关键字<br>2.for循环的使用方法<br>    语句1<br>    for(循环变量的赋值; 循环变量的控制; 循环变量的变化)<br>    {<br>        循环的语句<br>    }<br>    语句2<br>3.for循环的执行流程<br>                    语句1<br>                        |<br>                        V<br>                循环变量的赋值<br>                        |<br>                        V<br>            |-&lt;-循环变量的控制–&lt;—|<br>            |            |            |<br>            V            V            |<br>            假            真            |<br>            |            |            ^<br>            V            V            |<br>            |        循环的语句        |<br>            |            |            ^<br>            |            V            |<br>            |    循环变量的变化–&gt;—|<br>            |<br>            |—-&gt;——|<br>                        V<br>                    语句2<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int i = 0, score = 0;</p>
 <pre><code>for(i = 0; i &lt; 10; i++)
 &#123;
     scanf(&quot;%d&quot;, &amp;score);
@@ -478,8 +334,8 @@ return 0;
 
 return 0;
 </code></pre>
-<p>}<br>&#x2F;*<br>循环语句<br>    for<br>1.for是C语言中的关键字<br>2.for循环的使用方法<br>    语句1<br>    for(循环变量的赋值; 循环变量的控制; 循环变量的变化)<br>    {<br>        循环的语句<br>    }<br>    语句2<br>3.for循环的执行流程<br>                    语句1<br>                        |<br>                        V<br>                循环变量的赋值<br>                        |<br>                        V<br>            |-&lt;-循环变量的控制–&lt;—|<br>            |			|			|<br>            V			V			|<br>            假			真			|<br>            |			|			^<br>            V			V			|<br>            |		循环的语句		|<br>            |			|			^<br>            |			V			|<br>            |	循环变量的变化–&gt;—|<br>            |<br>            |—-&gt;——|<br>                        V<br>                    语句2<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    int i &#x3D; 0, score &#x3D; 0;</p>
+<p>}<br>/*<br>循环语句<br>    for<br>1.for是C语言中的关键字<br>2.for循环的使用方法<br>    语句1<br>    for(循环变量的赋值; 循环变量的控制; 循环变量的变化)<br>    {<br>        循环的语句<br>    }<br>    语句2<br>3.for循环的执行流程<br>                    语句1<br>                        |<br>                        V<br>                循环变量的赋值<br>                        |<br>                        V<br>            |-&lt;-循环变量的控制–&lt;—|<br>            |            |            |<br>            V            V            |<br>            假            真            |<br>            |            |            ^<br>            V            V            |<br>            |        循环的语句        |<br>            |            |            ^<br>            |            V            |<br>            |    循环变量的变化–&gt;—|<br>            |<br>            |—-&gt;——|<br>                        V<br>                    语句2<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int i = 0, score = 0;</p>
 <pre><code>for(i = 0; i &lt; 10; i++)
 &#123;
     scanf(&quot;%d&quot;, &amp;score);
@@ -489,7 +345,7 @@ return 0;
 return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>循环语句<br>    for<br>1.for是C语言中的关键字<br>2.for循环的使用方法<br>    语句1<br>    for(循环变量的赋值; 循环变量的控制; 循环变量的变化)<br>    {<br>        循环的语句<br>    }<br>    语句2<br>3.for循环的执行流程<br>                    语句1<br>                        |<br>                        V<br>                循环变量的赋值<br>                        |<br>                        V<br>            |-&lt;-循环变量的控制–&lt;—|<br>            |			|			|<br>            V			V			|<br>            假			真			|<br>            |			|			^<br>            V			V			|<br>            |		循环的语句		|<br>            |			|			^<br>            |			V			|<br>            |	循环变量的变化–&gt;—|<br>            |<br>            |—-&gt;——|<br>                        V<br>                    语句2<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;<br>&#x2F;&#x2F;求3位数字的水仙花数<br>&#x2F;&#x2F;百位数字的3次方 +<br>&#x2F;&#x2F;十位数字的3次方 +<br>&#x2F;&#x2F;个位数字的3次方 &#x3D;&#x3D; 3位数<br>int main(int argc, char *argv[])<br>{<br>    int i &#x3D; 0;<br>    int b &#x3D; 0, s &#x3D; 0, g &#x3D; 0;</p>
+<p>/*<br>循环语句<br>    for<br>1.for是C语言中的关键字<br>2.for循环的使用方法<br>    语句1<br>    for(循环变量的赋值; 循环变量的控制; 循环变量的变化)<br>    {<br>        循环的语句<br>    }<br>    语句2<br>3.for循环的执行流程<br>                    语句1<br>                        |<br>                        V<br>                循环变量的赋值<br>                        |<br>                        V<br>            |-&lt;-循环变量的控制–&lt;—|<br>            |            |            |<br>            V            V            |<br>            假            真            |<br>            |            |            ^<br>            V            V            |<br>            |        循环的语句        |<br>            |            |            ^<br>            |            V            |<br>            |    循环变量的变化–&gt;—|<br>            |<br>            |—-&gt;——|<br>                        V<br>                    语句2<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;<br>//求3位数字的水仙花数<br>//百位数字的3次方 +<br>//十位数字的3次方 +<br>//个位数字的3次方 == 3位数<br>int main(int argc, char *argv[])<br>{<br>    int i = 0;<br>    int b = 0, s = 0, g = 0;</p>
 <pre><code>for(i = 100; i &lt; 1000; i++)//[100 ~ 999]所有三位数
 &#123;
     b = i / 100;//取三位数的百位
@@ -502,7 +358,7 @@ return 0;
 return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>循环语句<br>    for<br>1.for是C语言中的关键字<br>2.for循环的使用方法<br>    语句1<br>    for(循环变量的赋值; 循环变量的控制; 循环变量的变化)<br>    {<br>        循环的语句<br>    }<br>    语句2<br>3.for循环的执行流程<br>                    语句1<br>                        |<br>                        V<br>                循环变量的赋值<br>                        |<br>                        V<br>            |-&lt;-循环变量的控制–&lt;—|<br>            |			|			|<br>            V			V			|<br>            假			真			|<br>            |			|			^<br>            V			V			|<br>            |		循环的语句		|<br>            |			|			^<br>            |			V			|<br>            |	循环变量的变化–&gt;—|<br>            |<br>            |—-&gt;——|<br>                        V<br>                    语句2<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;<br>&#x2F;&#x2F;求3位数字的水仙花数<br>&#x2F;&#x2F;百位数字的3次方 +<br>&#x2F;&#x2F;十位数字的3次方 +<br>&#x2F;&#x2F;个位数字的3次方 &#x3D;&#x3D; 3位数<br>int main(int argc, char *argv[])<br>{<br>    int i &#x3D; 0;<br>    int b &#x3D; 0, s &#x3D; 0, g &#x3D; 0;</p>
+<p>/*<br>循环语句<br>    for<br>1.for是C语言中的关键字<br>2.for循环的使用方法<br>    语句1<br>    for(循环变量的赋值; 循环变量的控制; 循环变量的变化)<br>    {<br>        循环的语句<br>    }<br>    语句2<br>3.for循环的执行流程<br>                    语句1<br>                        |<br>                        V<br>                循环变量的赋值<br>                        |<br>                        V<br>            |-&lt;-循环变量的控制–&lt;—|<br>            |            |            |<br>            V            V            |<br>            假            真            |<br>            |            |            ^<br>            V            V            |<br>            |        循环的语句        |<br>            |            |            ^<br>            |            V            |<br>            |    循环变量的变化–&gt;—|<br>            |<br>            |—-&gt;——|<br>                        V<br>                    语句2<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;<br>//求3位数字的水仙花数<br>//百位数字的3次方 +<br>//十位数字的3次方 +<br>//个位数字的3次方 == 3位数<br>int main(int argc, char *argv[])<br>{<br>    int i = 0;<br>    int b = 0, s = 0, g = 0;</p>
 <pre><code>for(b = 1; b &lt; 10; b++)
 &#123;
     for(s = 0; s &lt; 10; s++)
@@ -518,8 +374,8 @@ return 0;
 return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>打印0~100以内所有的质数(素数)<br>(只能被1 和 本身整除的数)<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    int i &#x3D; 0, j &#x3D; 0;<br>    int num &#x3D; 1;</p>
+<p>/*<br>打印0~100以内所有的质数(素数)<br>(只能被1 和 本身整除的数)<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int i = 0, j = 0;<br>    int num = 1;</p>
 <pre><code>for(i = 2; i &lt; 100; i++)
 //该循环为了取出[0-100]以内所有数字
 &#123;
@@ -531,13 +387,13 @@ return 0;
         &#125;
     &#125;
     if(i == j)
-        printf(&quot;[%d]	%d\n&quot;, num++, i);
+        printf(&quot;[%d]    %d\n&quot;, num++, i);
 &#125;
 
 return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>    11	是不是质数</p>
+<p>/*<br>    11    是不是质数</p>
 <pre><code>11 % 1 = 0
 11 % 2 != 0
 11 % 3 != 0
@@ -550,213 +406,163 @@ return 0;
 11 % 10 != 0
 11 % 11 = 0
 
-8	是不是质数
+8    是不是质数
 8 % 1 = 0
-8 % 2 = 0	能整除
+8 % 2 = 0    能整除
 8 % 3 != 0
-8 % 4 = 0	能整除
+8 % 4 = 0    能整除
 8 % 5 != 0
 8 % 6 != 0
 8 % 7 != 0
 8 % 8 = 0
 
-i	是不是质数
+i    是不是质数
 i % 1 = 0
 i % [2 ~ i-1]
 i % i = 0
 </code></pre>
-<p>*&#x2F;</p>
+<p>*/</p>
 
+      
     </div>
+    <footer class="article-footer">
+      <a data-url="http://naoemb.github.io/2022/07/18/embsky/03c/03c_03day/" data-id="cl5sucxjf000p40vm51w80x4t" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/threeC/" rel="tag">threeC</a></li></ul>
 
-    
-    
-    
-
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/threeC/" rel="tag"># threeC</a>
-          </div>
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2022/07/17/embsky/03c/03c_cnote/" rel="prev" title="03ccnote">
-      <i class="fa fa-chevron-left"></i> 03ccnote
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/07/19/embsky/03c/03c_04day/" rel="next" title="03c04day">
-      03c04day <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-
-
-          </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">naoemb</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">15</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">5</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-
-
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2022</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">naoemb</span>
-</div>
-
-        
-
-
-
-
-
-
-
-
-      </div>
     </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/07/19/embsky/03c/03c_04day/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          03c04day
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/07/17/embsky/03c/03c_cnote/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">03ccnote</div>
+    </a>
+  
+</nav>
 
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
+</article>
 
-<script src="/js/utils.js"></script>
+</section>
+        
+          <aside id="sidebar">
+  
+    
 
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/muse.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/onetest/" rel="tag">onetest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/threeC/" rel="tag">threeC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/twolinux/" rel="tag">twolinux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li></ul>
+    </div>
+  </div>
 
 
   
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/onetest/" style="font-size: 20px;">onetest</a> <a href="/tags/threeC/" style="font-size: 15px;">threeC</a> <a href="/tags/twolinux/" style="font-size: 10px;">twolinux</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 10px;">测试</a>
+    </div>
+  </div>
 
-
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li></ul>
+    </div>
+  </div>
 
 
   
-<script src="/js/local-search.js"></script>
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/07/20/embsky/%E6%B5%8B%E8%AF%95/%E9%98%B6%E6%AE%B5%E6%B5%8B%E8%AF%95%E4%B8%80/">阶段测试一</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/19/git/%E6%9C%AC%E5%9C%B0%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E5%B9%B6%E6%8E%A8%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/">本地新建分支并推到远程仓库</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/19/embsky/03c/03c_04day/">03c04day</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/18/embsky/03c/03c_03day/">03c03day</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/17/embsky/03c/03c_cnote/">03ccnote</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
 
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
 
-
-
-
-
-
-
-
-
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
   
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
 
   
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
 
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
 </body>
 </html>

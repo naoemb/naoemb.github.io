@@ -1,245 +1,101 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.2">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta charset="utf-8">
+  
 
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"naoemb.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
-
-  <meta name="description" content="&#x2F;*面试题1.在C语言中以 # 开头的操作是预处理的操作2.预处理阶段会有哪些操作?    3个操作,文件包含 条件编译 宏定义3.从.c文件编译成可执行程序需要经历哪些阶段?源程序   被预处理过的源文件   汇编文件    目标文件hello.c——–&gt;hello.i—–&gt;hello.s—–&gt;hello.o—&gt;a.out        预处理">
+  
+  <title>03c01day | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&#x2F;*面试题1.在C语言中以 # 开头的操作是预处理的操作2.预处理阶段会有哪些操作?    3个操作,文件包含 条件编译 宏定义3.从.c文件编译成可执行程序需要经历哪些阶段?源程序   被预处理过的源文件   汇编文件    目标文件hello.c——–&gt;hello.i—–&gt;hello.s—–&gt;hello.o—&gt;a.out        预处理          编译">
 <meta property="og:type" content="article">
 <meta property="og:title" content="03c01day">
 <meta property="og:url" content="http://naoemb.github.io/2022/07/17/embsky/03c/03c_01day/index.html">
-<meta property="og:site_name" content="naoemb">
-<meta property="og:description" content="&#x2F;*面试题1.在C语言中以 # 开头的操作是预处理的操作2.预处理阶段会有哪些操作?    3个操作,文件包含 条件编译 宏定义3.从.c文件编译成可执行程序需要经历哪些阶段?源程序   被预处理过的源文件   汇编文件    目标文件hello.c——–&gt;hello.i—–&gt;hello.s—–&gt;hello.o—&gt;a.out        预处理">
-<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="&#x2F;*面试题1.在C语言中以 # 开头的操作是预处理的操作2.预处理阶段会有哪些操作?    3个操作,文件包含 条件编译 宏定义3.从.c文件编译成可执行程序需要经历哪些阶段?源程序   被预处理过的源文件   汇编文件    目标文件hello.c——–&gt;hello.i—–&gt;hello.s—–&gt;hello.o—&gt;a.out        预处理          编译">
+<meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-07-17T06:20:54.138Z">
 <meta property="article:modified_time" content="2022-07-19T06:14:04.204Z">
-<meta property="article:author" content="naoemb">
+<meta property="article:author" content="John Doe">
 <meta property="article:tag" content="threeC">
 <meta name="twitter:card" content="summary">
-
-<link rel="canonical" href="http://naoemb.github.io/2022/07/17/embsky/03c/03c_01day/">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'zh-CN'
-  };
-</script>
-
-  <title>03c01day | naoemb</title>
   
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">naoemb</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">5</span></a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">15</span></a>
-
-  </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
-      </li>
-  </ul>
-</nav>
-
-
-
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
-           placeholder="搜索..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-  </div>
-</div>
-
-    </div>
-  </div>
-
-</div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content post posts-expand">
-            
-
-    
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://naoemb.github.io/2022/07/17/embsky/03c/03c_01day/">
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="naoemb">
-      <meta itemprop="description" content="">
-    </span>
+<meta name="generator" content="Hexo 5.4.2"></head>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="naoemb">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          03c01day
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-07-17 14:20:54" itemprop="dateCreated datePublished" datetime="2022-07-17T14:20:54+08:00">2022-07-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-19 14:14:04" itemprop="dateModified" datetime="2022-07-19T14:14:04+08:00">2022-07-19</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
       
-        <p>&#x2F;*<br>面试题<br>1.在C语言中以 # 开头的操作是预处理的操作<br>2.预处理阶段会有哪些操作?<br>    3个操作,文件包含 条件编译 宏定义<br>3.从.c文件编译成可执行程序需要经历哪些阶段?<br>源程序   被预处理过的源文件   汇编文件    目标文件<br>hello.c——–&gt;hello.i—–&gt;hello.s—–&gt;hello.o—&gt;a.out<br>        预处理          编译         汇编        链接<br>4.包含头文件时使用尖括号或者双引号的区别?<br>    尖括号 : 默认从指定目录中查找头文件(&#x2F;usr&#x2F;include),<br>            如果找不到报错<br>    双引号 : 默认从当前目录中查找头文件,如果找不到再从<br>            指定目录中查找头文件(&#x2F;usr&#x2F;include),<br>            如果再找不到报错<br>5.C语言中有字符串但是没有字符串类型</p>
-<p><em>&#x2F;<br>#include &lt;stdio.h&gt;<br>&#x2F;</em><br>main函数(主函数) : 是程序的入口<br>当执行可执行程序时,从main函数进入,<br>按照从上往下的顺序逐行逐行执行代码,<br>最后从main函数退出</p>
-<p>在刚开始写程序时,<br>多问问自己为什么要写这一行代码?<br>写这一行代码要干什么?<br><em>&#x2F;<br>&#x2F;</em><br>函数的返回值类型 函数名(参数列表)&#x2F;&#x2F;该处参数指的是形式参数<br>{<br>    程序的代码<br>}</p>
-<p><em>&#x2F;<br>int main(void)<br>{<br>    printf(“Hello World!”);<br>&#x2F;</em><br>    调用了printf函数<br>    printf函数的功能 :<br>        可以把双引号引起来的内容打印输出到终端上<br>    在C语言中双引号引起来的内容叫做字符串<br>    在C语言中单引号引起来的内容叫做字符<br>    字符串是由一个一个单一的字符串组成的,<br>        最后会有一个结束标志尾0(‘\0’)<br>    ——————————–<br>    “0”		这是一个字符串,是由’0’ + ‘\0’组成<br>    ‘0’		这是一个字符,ASCII值48<br>    ‘\0’	这是一个字符,并且是一个转义字符,是尾0,ASCII是0<br>    0		这是一个整数0<br>*&#x2F;<br>}</p>
-<p>&#x2F;*<br>其实字符就是把计算机世界中的数字和日常生活中的符号<br>进行一一对应<br>printf函数<br>    1.转义字符(除了有数字的对应关系以外还有额外的含义)<br>        字符	ASCII值		额外的含义<br>        ‘\0’	0			字符串的结束标志<br>        ‘\n’	10			换行符<br>        ‘\r’	13			回车符<br>        ‘\t’	9			水平制表符<br>        ‘\v’	11			垂直制表符<br>    2.标准化输出格式<br>        %d	十进制整数(%03d)<br>        %x	十六进制输出<br>        %o	八进制输出<br>        %f	小数输出(%.2f)<br>        %c	字符输出<br>        %s	字符串输出<br>        %p	地址输出<br>        %%	打印百分号本身<br>    3.VT控制码<br>        可以控制打印输出的属性</p>
-<p>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    int i &#x3D; 0, j &#x3D; 0;</p>
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://naoemb.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-embsky/03c/03c_01day" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/07/17/embsky/03c/03c_01day/" class="article-date">
+  <time datetime="2022-07-17T06:20:54.138Z" itemprop="datePublished">2022-07-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      03c01day
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>/*<br>面试题<br>1.在C语言中以 # 开头的操作是预处理的操作<br>2.预处理阶段会有哪些操作?<br>    3个操作,文件包含 条件编译 宏定义<br>3.从.c文件编译成可执行程序需要经历哪些阶段?<br>源程序   被预处理过的源文件   汇编文件    目标文件<br>hello.c——–&gt;hello.i—–&gt;hello.s—–&gt;hello.o—&gt;a.out<br>        预处理          编译         汇编        链接<br>4.包含头文件时使用尖括号或者双引号的区别?<br>    尖括号 : 默认从指定目录中查找头文件(/usr/include),<br>            如果找不到报错<br>    双引号 : 默认从当前目录中查找头文件,如果找不到再从<br>            指定目录中查找头文件(/usr/include),<br>            如果再找不到报错<br>5.C语言中有字符串但是没有字符串类型</p>
+<p><em>/<br>#include &lt;stdio.h&gt;<br>/</em><br>main函数(主函数) : 是程序的入口<br>当执行可执行程序时,从main函数进入,<br>按照从上往下的顺序逐行逐行执行代码,<br>最后从main函数退出</p>
+<p>在刚开始写程序时,<br>多问问自己为什么要写这一行代码?<br>写这一行代码要干什么?<br><em>/<br>/</em><br>函数的返回值类型 函数名(参数列表)//该处参数指的是形式参数<br>{<br>    程序的代码<br>}</p>
+<p><em>/<br>int main(void)<br>{<br>    printf(“Hello World!”);<br>/</em><br>    调用了printf函数<br>    printf函数的功能 :<br>        可以把双引号引起来的内容打印输出到终端上<br>    在C语言中双引号引起来的内容叫做字符串<br>    在C语言中单引号引起来的内容叫做字符<br>    字符串是由一个一个单一的字符串组成的,<br>        最后会有一个结束标志尾0(‘\0’)<br>    ——————————–<br>    “0”        这是一个字符串,是由’0’ + ‘\0’组成<br>    ‘0’        这是一个字符,ASCII值48<br>    ‘\0’    这是一个字符,并且是一个转义字符,是尾0,ASCII是0<br>    0        这是一个整数0<br>*/<br>}</p>
+<p>/*<br>其实字符就是把计算机世界中的数字和日常生活中的符号<br>进行一一对应<br>printf函数<br>    1.转义字符(除了有数字的对应关系以外还有额外的含义)<br>        字符    ASCII值        额外的含义<br>        ‘\0’    0            字符串的结束标志<br>        ‘\n’    10            换行符<br>        ‘\r’    13            回车符<br>        ‘\t’    9            水平制表符<br>        ‘\v’    11            垂直制表符<br>    2.标准化输出格式<br>        %d    十进制整数(%03d)<br>        %x    十六进制输出<br>        %o    八进制输出<br>        %f    小数输出(%.2f)<br>        %c    字符输出<br>        %s    字符串输出<br>        %p    地址输出<br>        %%    打印百分号本身<br>    3.VT控制码<br>        可以控制打印输出的属性</p>
+<p>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int i = 0, j = 0;</p>
 <pre><code>for(i = 30, j = 47; i &lt;= 37 &amp;&amp; j &gt;= 40; i++, j--)
 &#123;
     printf(&quot;\33[%dm\33[%dmHello World!\33[0m\n&quot;,i ,j);
@@ -248,221 +104,171 @@
 return 0;
 </code></pre>
 <p>}</p>
-<p>&#x2F;*<br>面试题<br>1.进制之间转换<br>    八进制&lt;——-&gt;二进制&lt;——–&gt;十六进制<br>                    ^<br>                    |<br>                    V<br>                十进制<br>    1)十进制转换成二进制	除以2取余<br>    2)二进制转换成十进制	2的n次方<br>2.除了常用进制以外,笔试题会考三进制 五进制 七进制 十五进制<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>作业:<br>1.把今天讲过的内容完完整整的复习一遍<br>2.多做一些进制之间转换的题目<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>变量<br>1.变量的含义<br>    变量是用来存储数据的<br>    (会把数据存储到内存中&lt;以二进制补码的形式存储&gt;)<br>2.变量的定义<br>    数据类型	变量名	;<br>    1)基本数据类型<br>    整型	有符号&#x2F;无符号	short int long<br>    实型	有符号			float double<br>    字符型	有符号&#x2F;无符号	char<br>    2)通过sizeof运算符进行测试<br>    测试出的结果以字节为单位<br>    1字节 &#x3D; 8位<br>    sizeof(char) &#x3D; 1<br>    sizeof(short) &#x3D; 2<br>    sizeof(int) &#x3D; 4<br>    sizeof(long) &#x3D; 8<br>    sizeof(float) &#x3D; 4<br>    sizeof(double) &#x3D; 8<br>    测试的结果并不唯一,会随着硬件或者操作系统有所变化<br>3.变量的存储<br>    char c &#x3D; 13;<br>    &#x2F;&#x2F;将来会把十进制整数13转换成8位的二进制的数据存储到<br>    &#x2F;&#x2F;c变量所占用的1个字节的存储空间中</p>
+<p>/*<br>面试题<br>1.进制之间转换<br>    八进制&lt;——-&gt;二进制&lt;——–&gt;十六进制<br>                    ^<br>                    |<br>                    V<br>                十进制<br>    1)十进制转换成二进制    除以2取余<br>    2)二进制转换成十进制    2的n次方<br>2.除了常用进制以外,笔试题会考三进制 五进制 七进制 十五进制<br>============================================<br>作业:<br>1.把今天讲过的内容完完整整的复习一遍<br>2.多做一些进制之间转换的题目<br>============================================<br>变量<br>1.变量的含义<br>    变量是用来存储数据的<br>    (会把数据存储到内存中&lt;以二进制补码的形式存储&gt;)<br>2.变量的定义<br>    数据类型    变量名    ;<br>    1)基本数据类型<br>    整型    有符号/无符号    short int long<br>    实型    有符号            float double<br>    字符型    有符号/无符号    char<br>    2)通过sizeof运算符进行测试<br>    测试出的结果以字节为单位<br>    1字节 = 8位<br>    sizeof(char) = 1<br>    sizeof(short) = 2<br>    sizeof(int) = 4<br>    sizeof(long) = 8<br>    sizeof(float) = 4<br>    sizeof(double) = 8<br>    测试的结果并不唯一,会随着硬件或者操作系统有所变化<br>3.变量的存储<br>    char c = 13;<br>    //将来会把十进制整数13转换成8位的二进制的数据存储到<br>    //c变量所占用的1个字节的存储空间中</p>
 <pre><code>0 0 0 0 1 1 0 1
 在二进制数据中,最左边的是最高位
 在二进制数据中,最右边的是最低位
-第7位	0
-第6位	0
-第5位	0
-第4位	0
-第3位	1
-第2位	1
-第1位	0
-第0位	1
+第7位    0
+第6位    0
+第5位    0
+第4位    0
+第3位    1
+第2位    1
+第1位    0
+第0位    1
 如果是有符号类型,最高位是符号位,其余位是数据位
-第7位		符号位	(0代表正数 1代表负数)
-第6-0位		数据位
+第7位        符号位    (0代表正数 1代表负数)
+第6-0位        数据位
 
 
 变量会存储在内存中,以二进制补码的形式进行存储
 </code></pre>
-<p>原码 : 把操作数从别的进制转化成二进制,就是原码<br>补码 : 如果操作数为正,那么原码等于补码<br>        如果操作数为负,那么原码不等于补码,需要转换<br>        无论是原码转换成补码,还是补码转换成原码,公式都一样<br>        除了符号位不变,其他位按位取反,再加1<br>为什么使用补码存储数据?<br>    1)保证0的唯一性<br>    2)为了保证加法运算的合理<br>    1-1 -&gt; 1 + (-1)<br>            0001 + 1001 &#x3D; 1010 &#x3D; -2<br>            0001 + 1111 &#x3D; 0000 &#x3D; 0<br>*&#x2F;<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main(int argc, char *argv[])<br>{<br>    printf(“sizeof(char) &#x3D; %ld\n”, sizeof(char));<br>    printf(“sizeof(short) &#x3D; %ld\n”, sizeof(short));<br>    printf(“sizeof(int) &#x3D; %ld\n”, sizeof(int));<br>    printf(“sizeof(long) &#x3D; %ld\n”, sizeof(long));<br>    printf(“sizeof(float) &#x3D; %ld\n”, sizeof(float));<br>    printf(“sizeof(double) &#x3D; %ld\n”, sizeof(double));</p>
+<p>原码 : 把操作数从别的进制转化成二进制,就是原码<br>补码 : 如果操作数为正,那么原码等于补码<br>        如果操作数为负,那么原码不等于补码,需要转换<br>        无论是原码转换成补码,还是补码转换成原码,公式都一样<br>        除了符号位不变,其他位按位取反,再加1<br>为什么使用补码存储数据?<br>    1)保证0的唯一性<br>    2)为了保证加法运算的合理<br>    1-1 -&gt; 1 + (-1)<br>            0001 + 1001 = 1010 = -2<br>            0001 + 1111 = 0000 = 0<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    printf(“sizeof(char) = %ld\n”, sizeof(char));<br>    printf(“sizeof(short) = %ld\n”, sizeof(short));<br>    printf(“sizeof(int) = %ld\n”, sizeof(int));<br>    printf(“sizeof(long) = %ld\n”, sizeof(long));<br>    printf(“sizeof(float) = %ld\n”, sizeof(float));<br>    printf(“sizeof(double) = %ld\n”, sizeof(double));</p>
 <pre><code>return 0;
 </code></pre>
 <p>}</p>
 
+      
     </div>
+    <footer class="article-footer">
+      <a data-url="http://naoemb.github.io/2022/07/17/embsky/03c/03c_01day/" data-id="cl5sucxiw000h40vmaewxgsjr" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/threeC/" rel="tag">threeC</a></li></ul>
 
-    
-    
-    
-
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/threeC/" rel="tag"># threeC</a>
-          </div>
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2022/07/17/embsky/02linux/02linux_linux_note/" rel="prev" title="02linux">
-      <i class="fa fa-chevron-left"></i> 02linux
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/07/17/embsky/03c/03c_02day/" rel="next" title="03c02day">
-      03c02day <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-
-
-          </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">naoemb</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">15</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">5</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-
-
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2022</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">naoemb</span>
-</div>
-
-        
-
-
-
-
-
-
-
-
-      </div>
     </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/07/17/embsky/03c/03c_02day/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          03c02day
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/07/17/embsky/02linux/02linux_linux_note/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">02linux</div>
+    </a>
+  
+</nav>
 
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
+</article>
 
-<script src="/js/utils.js"></script>
+</section>
+        
+          <aside id="sidebar">
+  
+    
 
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/muse.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/onetest/" rel="tag">onetest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/threeC/" rel="tag">threeC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/twolinux/" rel="tag">twolinux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li></ul>
+    </div>
+  </div>
 
 
   
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/onetest/" style="font-size: 20px;">onetest</a> <a href="/tags/threeC/" style="font-size: 15px;">threeC</a> <a href="/tags/twolinux/" style="font-size: 10px;">twolinux</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 10px;">测试</a>
+    </div>
+  </div>
 
-
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li></ul>
+    </div>
+  </div>
 
 
   
-<script src="/js/local-search.js"></script>
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/07/20/embsky/%E6%B5%8B%E8%AF%95/%E9%98%B6%E6%AE%B5%E6%B5%8B%E8%AF%95%E4%B8%80/">阶段测试一</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/19/git/%E6%9C%AC%E5%9C%B0%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E5%B9%B6%E6%8E%A8%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/">本地新建分支并推到远程仓库</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/19/embsky/03c/03c_04day/">03c04day</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/18/embsky/03c/03c_03day/">03c03day</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/17/embsky/03c/03c_cnote/">03ccnote</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
 
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
 
-
-
-
-
-
-
-
-
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
   
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
 
   
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
 
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
 </body>
 </html>
