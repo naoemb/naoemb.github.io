@@ -213,7 +213,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-07-20 18:07:31 / 修改时间：20:10:45" itemprop="dateCreated datePublished" datetime="2022-07-20T18:07:31+08:00">2022-07-20</time>
+              <time title="创建时间：2022-07-20 18:07:31 / 修改时间：20:17:08" itemprop="dateCreated datePublished" datetime="2022-07-20T18:07:31+08:00">2022-07-20</time>
             </span>
 
           
@@ -227,7 +227,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>/*<br>    指针(point/pointer)<br>1.指针的含义<br>嵌入式开发工程师需要遵守的规则<br>谁打开，谁关闭    文件IO<br>谁开辟，谁释放    堆区空间 malloc<br>谁创建，谁销毁    链表<br>谁加锁，谁解锁    线程</p>
+          <pre><code>指针(point/pointer)
+</code></pre>
+<p>1.指针的含义<br>嵌入式开发工程师需要遵守的规则<br>谁打开，谁关闭    文件IO<br>谁开辟，谁释放    堆区空间 malloc<br>谁创建，谁销毁    链表<br>谁加锁，谁解锁    线程</p>
 <pre><code>指针就是用来存储地址的
 变量是用来存储数据的(会存在内存中&lt;以二进制补码形式&gt;)
 指针是用来存储地址的(会存在内存中&lt;以二进制补码形式&gt;)
@@ -246,7 +248,164 @@ int    *        pi        =    &amp;i        ;
 float *        pf        =    &amp;f        ;
 int    *        p        =    NULL    ;
 </code></pre>
-<p>注意 ：如果初始化指针时，不确定指针指向哪个空间，<br>    可以先将指针指向NULL(空)<br>    NULL代表的就是空的意思，在ASCII表中表示的就是0x0<br>    (其实就相当于给指针赋了一个地址0x0)<br>8.指针的定义和指针的初始化的区别(和变量的内容一样)<br>9.指针的使用<br>    1&gt;指针在使用时应当先定义再使用<br>    2&gt;指针应该保存相应数据类型变量的地址<br>        int *类型的指针保存 int类型变量地址<br>        char *类型的指针 保存 char类型变量地址<br>        float *类型的指针 保存 float类型变量地址<br>    3&gt;指针可以做加减法运算(自增自减运算)<br>        int *P;<br>        p + 1; p += 1; P++; ++p;<br>        注意 ：不同类型的指针，在做加减法运算时，<br>        所偏移的字节数是不同的，<br>        和指针本身要保存的变量的数据类型有关<br>        例子：<br>        int *pi;//指针保存的地址是0x1000<br>        pi++;<br>        printf (“pi”);//0x11004<br>10.特殊的指针<br>    1&gt;空类型的指针(万能指针)<br>        void *p;<br>        空类型的指针可以保存任意类型的地址，所以叫做万能指针<br>        会在指针的强制类型转换时使用<br>    2&gt;空指针(指向NULL的指针)<br>    在C语言中，不允许访问地址为NULL的存储空间，<br>    因为该空间是系统保留的，所以不允许访问<br>    操作空指针，程序在执行时会报段错误<br>    3&gt;野指针(没有对象的指针)<br>    野指针指向一个已经删除或者已释放的空间<br>    与空指针不同，没有办法通过简单的判断避免使用野指针<br>    只能通过养成良好的编程习惯来尽力减少<br>    可以主动的把已删除或者已释放的指针变为空指针<br>    再去判断空指针即可<br>    ——————————————————–<br>    在操作指针时，可以使用一些方法，避免使用空指针<br>    可以加入判断<br>        if(p == NULL)//if(NULL == p)<br>            printf (“指针p是一个空指针!\n”);<br>*/</p>
+<p>注意 ：如果初始化指针时，不确定指针指向哪个空间，<br>    可以先将指针指向NULL(空)<br>    NULL代表的就是空的意思，在ASCII表中表示的就是0x0<br>    (其实就相当于给指针赋了一个地址0x0)<br>8.指针的定义和指针的初始化的区别(和变量的内容一样)<br>9.指针的使用<br>    1&gt;指针在使用时应当先定义再使用<br>    2&gt;指针应该保存相应数据类型变量的地址<br>        int *类型的指针保存 int类型变量地址<br>        char *类型的指针 保存 char类型变量地址<br>        float *类型的指针 保存 float类型变量地址<br>    3&gt;指针可以做加减法运算(自增自减运算)<br>        int *P;<br>        p + 1; p += 1; P++; ++p;<br>        注意 ：不同类型的指针，在做加减法运算时，<br>        所偏移的字节数是不同的，<br>        和指针本身要保存的变量的数据类型有关<br>        例子：<br>        int *pi;//指针保存的地址是0x1000<br>        pi++;<br>        printf (“pi”);//0x11004<br>10.特殊的指针<br>    1&gt;空类型的指针(万能指针)<br>        void *p;<br>        空类型的指针可以保存任意类型的地址，所以叫做万能指针<br>        会在指针的强制类型转换时使用<br>    2&gt;空指针(指向NULL的指针)<br>    在C语言中，不允许访问地址为NULL的存储空间，<br>    因为该空间是系统保留的，所以不允许访问<br>    操作空指针，程序在执行时会报段错误<br>    3&gt;野指针(没有对象的指针)<br>    野指针指向一个已经删除或者已释放的空间<br>    与空指针不同，没有办法通过简单的判断避免使用野指针<br>    只能通过养成良好的编程习惯来尽力减少<br>    可以主动的把已删除或者已释放的指针变为空指针<br>    再去判断空指针即可<br>    ——————————————————–<br>    在操作指针时，可以使用一些方法，避免使用空指针<br>    可以加入判断<br>        if(p == NULL)//if(NULL == p)<br>            printf (“指针p是一个空指针!\n”);<br>=====================================================================<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int i = 1;<br>    int sum = 0;</p>
+<p>loop:<br>    if(i &lt;= 100)<br>    {<br>        sum += i++;<br>        goto loop;<br>    }</p>
+<pre><code>printf(&quot;sum = %d\n&quot;, sum);
+
+return 0;
+</code></pre>
+<p>}</p>
+<p>=====================================================================<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    printf(“sizeof(char *) = %ld\n”, sizeof(char *));<br>    printf(“sizeof(short *) = %ld\n”, sizeof(short *));<br>    printf(“sizeof(int *) = %ld\n”, sizeof(int *));<br>    printf(“sizeof(long *) = %ld\n”, sizeof(long *));<br>    printf(“sizeof(float *) = %ld\n”, sizeof(float *));<br>    printf(“sizeof(double *) = %ld\n”, sizeof(double *));</p>
+<pre><code>return 0;
+</code></pre>
+<h1 id=""><a href="#" class="headerlink" title="}"></a>}</h1><p>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int i = 0;</p>
+<pre><code>printf(&quot;i = %d &amp;i = %p\n&quot;, i, &amp;i);
+
+i = 13;
+
+printf(&quot;i = %d &amp;i = %p\n&quot;, i, &amp;i);
+
+return 0;
+</code></pre>
+<h1 id="-1"><a href="#-1" class="headerlink" title="}"></a>}</h1><p>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int i = 0;</p>
+<pre><code>printf(&quot;i = %d &amp;i = %p\n&quot;, i, &amp;i);
+
+i = 13;
+
+printf(&quot;i = %d &amp;i = %p\n&quot;, i, &amp;i);
+
+//printf(&quot;*(&amp;i) = %d\n&quot;, *(&amp;i));//可以使用
+printf(&quot;&amp;(*i) = %d\n&quot;, &amp;(*i));//不能使用
+
+return 0;
+</code></pre>
+<h1 id="-2"><a href="#-2" class="headerlink" title="}"></a>}</h1><p>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int i = 0;<br>    int *p = &i;//把int类型变量i的地址保存到指针p当中<br>    printf(“i = %d &amp;i = %p\n”, i, &amp;i);<br>    printf(“*p = %d p = %p\n”, *p, p);<br>    i = 13;<br>    printf(“i = %d &amp;i = %p\n”, i, &amp;i);<br>    printf(“*p = %d p = %p\n”, *p, p);</p>
+<pre><code>//printf(&quot;*(&amp;i) = %d\n&quot;, *(&amp;i));//可以使用
+//printf(&quot;&amp;(*i) = %d\n&quot;, &amp;(*i));//不能使用
+
+return 0;
+</code></pre>
+<h1 id="-3"><a href="#-3" class="headerlink" title="}"></a>}</h1><p>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int i = 0;<br>    int *p = &i;//把int类型变量i的地址保存到指针p当中</p>
+<pre><code>printf(&quot;i = %d &amp;i = %p\n&quot;, i, &amp;i);
+printf(&quot;*p = %d p = %p\n&quot;, *p, p);
+
+//*p = 9527;
+scanf(&quot;%d&quot;, p);
+
+printf(&quot;i = %d &amp;i = %p\n&quot;, i, &amp;i);
+printf(&quot;*p = %d p = %p\n&quot;, *p, p);
+
+//printf(&quot;*(&amp;i) = %d\n&quot;, *(&amp;i));//可以使用
+//printf(&quot;&amp;(*i) = %d\n&quot;, &amp;(*i));//不能使用
+
+return 0;
+</code></pre>
+<h1 id="-4"><a href="#-4" class="headerlink" title="}"></a>}</h1><p>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int *p = 0x12345678;</p>
+<pre><code>printf(&quot;p = %p *p = %d\n&quot;, p, *p);
+
+return 0;
+</code></pre>
+<h1 id="-5"><a href="#-5" class="headerlink" title="}"></a>}</h1><p>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    char *pc;<br>    short *ps;<br>    int *pi;<br>    long *pl;<br>    float *pf;<br>    double *pd;</p>
+<pre><code>printf(&quot;sizeof(pc) = %ld sizeof(*pc) = %ld\n&quot;, sizeof(pc), sizeof(*pc));
+printf(&quot;sizeof(ps) = %ld sizeof(*ps) = %ld\n&quot;, sizeof(ps), sizeof(*ps));
+printf(&quot;sizeof(pi) = %ld sizeof(*pi) = %ld\n&quot;, sizeof(pi), sizeof(*pi));
+printf(&quot;sizeof(pl) = %ld sizeof(*pl) = %ld\n&quot;, sizeof(pl), sizeof(*pl));
+printf(&quot;sizeof(pf) = %ld sizeof(*pf) = %ld\n&quot;, sizeof(pf), sizeof(*pf));
+printf(&quot;sizeof(pd) = %ld sizeof(*pd) = %ld\n&quot;, sizeof(pd), sizeof(*pd));
+
+return 0;
+</code></pre>
+<h1 id="-6"><a href="#-6" class="headerlink" title="}"></a>}</h1><p>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int i = 9527;<br>    char *p = &i;</p>
+<pre><code>printf(&quot;i = %d &amp;i = %p\n&quot;, i, &amp;i);
+printf(&quot;*p = %d p = %p\n&quot;, *p, p);
+
+return 0;
+</code></pre>
+<h1 id="-7"><a href="#-7" class="headerlink" title="}"></a>}</h1><p>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    char i = 13;<br>    int *p = &i;</p>
+<pre><code>printf(&quot;i = %d &amp;i = %p\n&quot;, i, &amp;i);
+printf(&quot;*p = %d p = %p\n&quot;, *p, p);
+
+return 0;
+</code></pre>
+<h1 id="-8"><a href="#-8" class="headerlink" title="}"></a>}</h1><p>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    short i = 100;<br>    short *p = &i;</p>
+<pre><code>printf(&quot;i = %d &amp;i = %p\n&quot;, i, &amp;i);
+printf(&quot;*p = %d p = %p\n&quot;, *p, p);
+
+++p;//p++;//p+=1;
+
+printf(&quot;i = %d &amp;i = %p\n&quot;, i, &amp;i);
+printf(&quot;*p = %d p = %p\n&quot;, *p, p);
+
+return 0;
+</code></pre>
+<h1 id="-9"><a href="#-9" class="headerlink" title="}"></a>}</h1><p>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    short i = 100;<br>    short *p = &i;</p>
+<pre><code>printf(&quot;i = %d &amp;i = %p\n&quot;, i, &amp;i);
+printf(&quot;*p = %d p = %p\n&quot;, *p, p);
+
+++p;//p++;//p+=1;
+
+printf(&quot;i = %d &amp;i = %p\n&quot;, i, &amp;i);
+printf(&quot;*p = %d p = %p\n&quot;, *p, p);
+
+return 0;
+</code></pre>
+<h1 id="-10"><a href="#-10" class="headerlink" title="}"></a>}</h1><p>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    char c = 0;<br>    short s = 0;<br>    int i = 0;<br>    long l = 0;<br>    float f = 0;<br>    double d = 0;<br>    void *p;</p>
+<pre><code>p = &amp;c;
+p = &amp;s;
+p = &amp;i;
+p = &amp;l;
+p = &amp;f;
+p = &amp;d;
+
+return 0;
+</code></pre>
+<h1 id="-11"><a href="#-11" class="headerlink" title="}"></a>}</h1><p>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int i = 100;<br>    void *p = &i;</p>
+<pre><code>printf(&quot;p = %p\n&quot;, p);
+printf(&quot;*p = %d\n&quot;, *p);
+
+return 0;
+</code></pre>
+<h1 id="-12"><a href="#-12" class="headerlink" title="}"></a>}</h1><p>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int *p = NULL;</p>
+<pre><code>*p = 100;
+
+printf(&quot;*p = %d\n&quot;, *p);
+
+return 0;
+</code></pre>
+<h1 id="-13"><a href="#-13" class="headerlink" title="}"></a>}</h1><p>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int *p = NULL;</p>
+<pre><code>p = malloc(sizeof(int));
+*p = 100;
+printf(&quot;free之前*p = %d\n&quot;, *p);
+printf(&quot;free之前p = %p\n&quot;, p);
+free(p);
+p = NULL;//把野指针变为了空指针
+printf(&quot;free之后*p = %d\n&quot;, *p);
+printf(&quot;free之后p = %p\n&quot;, p);
+
+*p = 9527;//使用野指针
+
+printf(&quot;free之后*p = %d\n&quot;, *p);
+printf(&quot;free之后p = %p\n&quot;, p);
+
+return 0;
+</code></pre>
+<p>}</p>
 
       
     </div>
@@ -2113,7 +2272,7 @@ a[i][j][k] = *(*(*(a + i) + j) + k)
 <p>例:<br>100   201    50   70   30</p>
 <p>(3)完成itob函数(十-&gt;八)<br>十 -&gt; 二<br>void itob(int num, int arr[8]);<br>100<br>01100100</p>
 <p>(4)<br>    阅读<br>    man strcpy<br>    man strcat<br>    man strcmp<br>    man strlen</p>
-<p>(5)<br>有1000发子弹,要提前装到10个箱子里面，接收键盘输入，要取多少颗子弹数，只能显示整箱的个数，问这10个箱子怎么装,编程实现<br>============================<br>========================<br>小项目:五子棋<br>    1.player VS player<br>要求<br>    1&gt;最少完成p v p版本<br>    2&gt;用多函数实现<br>    3&gt;完成五子棋最基本功能即可<br>    4&gt;要有适当的提示信息<br>    5&gt;代码中要有注释<br>    6&gt;完成后上传到邮箱中(<a href="mailto:&#x34;&#x30;&#x32;&#52;&#48;&#51;&#53;&#55;&#57;&#x40;&#x71;&#113;&#46;&#99;&#111;&#x6d;">&#x34;&#x30;&#x32;&#52;&#48;&#51;&#53;&#55;&#57;&#x40;&#x71;&#113;&#46;&#99;&#111;&#x6d;</a>)<br>        2022-2-11_张三.c<br>提示<br>    1&gt;棋盘存储<br>    2&gt;坐标的打印<br>    3&gt;玩家的替换<br>    4&gt;下到重复位置/下出边界以后的处理<br>    5&gt;判断赢的条件</p>
+<p>(5)<br>有1000发子弹,要提前装到10个箱子里面，接收键盘输入，要取多少颗子弹数，只能显示整箱的个数，问这10个箱子怎么装,编程实现<br>============================<br>========================<br>小项目:五子棋<br>    1.player VS player<br>要求<br>    1&gt;最少完成p v p版本<br>    2&gt;用多函数实现<br>    3&gt;完成五子棋最基本功能即可<br>    4&gt;要有适当的提示信息<br>    5&gt;代码中要有注释<br>    6&gt;完成后上传到邮箱中(<a href="mailto:&#x34;&#x30;&#x32;&#52;&#x30;&#51;&#x35;&#x37;&#57;&#64;&#113;&#113;&#x2e;&#99;&#111;&#109;">&#x34;&#x30;&#x32;&#52;&#x30;&#51;&#x35;&#x37;&#57;&#64;&#113;&#113;&#x2e;&#99;&#111;&#109;</a>)<br>        2022-2-11_张三.c<br>提示<br>    1&gt;棋盘存储<br>    2&gt;坐标的打印<br>    3&gt;玩家的替换<br>    4&gt;下到重复位置/下出边界以后的处理<br>    5&gt;判断赢的条件</p>
 <p>字符数组初始化<br>char a[6] = {‘a’,’b’,’c’,’d’,’e’,’f’};<br>char b[6] = {‘h’,’i’,’j’,’k’,’l’,’\0’};<br>char c[] = {‘h’,’i’,’j’,’k’,’l’,’m’};<br>char d[] = “hello world”;</p>
 <pre><code>&quot;...&quot;    字符串,默认最后有\0
 </code></pre>
