@@ -136,7 +136,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">18</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">19</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -189,6 +189,109 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://naoemb.github.io/2022/07/17/embsky/03c/03c_01day/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="naoemb">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="naoemb">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/07/17/embsky/03c/03c_01day/" class="post-title-link" itemprop="url">03c01day</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-07-17 14:20:54" itemprop="dateCreated datePublished" datetime="2022-07-17T14:20:54+08:00">2022-07-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-19 14:14:04" itemprop="dateModified" datetime="2022-07-19T14:14:04+08:00">2022-07-19</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>/*<br>面试题<br>1.在C语言中以 # 开头的操作是预处理的操作<br>2.预处理阶段会有哪些操作?<br>    3个操作,文件包含 条件编译 宏定义<br>3.从.c文件编译成可执行程序需要经历哪些阶段?<br>源程序   被预处理过的源文件   汇编文件    目标文件<br>hello.c——–&gt;hello.i—–&gt;hello.s—–&gt;hello.o—&gt;a.out<br>        预处理          编译         汇编        链接<br>4.包含头文件时使用尖括号或者双引号的区别?<br>    尖括号 : 默认从指定目录中查找头文件(/usr/include),<br>            如果找不到报错<br>    双引号 : 默认从当前目录中查找头文件,如果找不到再从<br>            指定目录中查找头文件(/usr/include),<br>            如果再找不到报错<br>5.C语言中有字符串但是没有字符串类型</p>
+<p><em>/<br>#include &lt;stdio.h&gt;<br>/</em><br>main函数(主函数) : 是程序的入口<br>当执行可执行程序时,从main函数进入,<br>按照从上往下的顺序逐行逐行执行代码,<br>最后从main函数退出</p>
+<p>在刚开始写程序时,<br>多问问自己为什么要写这一行代码?<br>写这一行代码要干什么?<br><em>/<br>/</em><br>函数的返回值类型 函数名(参数列表)//该处参数指的是形式参数<br>{<br>    程序的代码<br>}</p>
+<p><em>/<br>int main(void)<br>{<br>    printf(“Hello World!”);<br>/</em><br>    调用了printf函数<br>    printf函数的功能 :<br>        可以把双引号引起来的内容打印输出到终端上<br>    在C语言中双引号引起来的内容叫做字符串<br>    在C语言中单引号引起来的内容叫做字符<br>    字符串是由一个一个单一的字符串组成的,<br>        最后会有一个结束标志尾0(‘\0’)<br>    ——————————–<br>    “0”        这是一个字符串,是由’0’ + ‘\0’组成<br>    ‘0’        这是一个字符,ASCII值48<br>    ‘\0’    这是一个字符,并且是一个转义字符,是尾0,ASCII是0<br>    0        这是一个整数0<br>*/<br>}</p>
+<p>/*<br>其实字符就是把计算机世界中的数字和日常生活中的符号<br>进行一一对应<br>printf函数<br>    1.转义字符(除了有数字的对应关系以外还有额外的含义)<br>        字符    ASCII值        额外的含义<br>        ‘\0’    0            字符串的结束标志<br>        ‘\n’    10            换行符<br>        ‘\r’    13            回车符<br>        ‘\t’    9            水平制表符<br>        ‘\v’    11            垂直制表符<br>    2.标准化输出格式<br>        %d    十进制整数(%03d)<br>        %x    十六进制输出<br>        %o    八进制输出<br>        %f    小数输出(%.2f)<br>        %c    字符输出<br>        %s    字符串输出<br>        %p    地址输出<br>        %%    打印百分号本身<br>    3.VT控制码<br>        可以控制打印输出的属性</p>
+<p>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    int i = 0, j = 0;</p>
+<pre><code>for(i = 30, j = 47; i &lt;= 37 &amp;&amp; j &gt;= 40; i++, j--)
+&#123;
+    printf(&quot;\33[%dm\33[%dmHello World!\33[0m\n&quot;,i ,j);
+&#125;
+
+return 0;
+</code></pre>
+<p>}</p>
+<p>/*<br>面试题<br>1.进制之间转换<br>    八进制&lt;——-&gt;二进制&lt;——–&gt;十六进制<br>                    ^<br>                    |<br>                    V<br>                十进制<br>    1)十进制转换成二进制    除以2取余<br>    2)二进制转换成十进制    2的n次方<br>2.除了常用进制以外,笔试题会考三进制 五进制 七进制 十五进制<br>============================================<br>作业:<br>1.把今天讲过的内容完完整整的复习一遍<br>2.多做一些进制之间转换的题目<br>============================================<br>变量<br>1.变量的含义<br>    变量是用来存储数据的<br>    (会把数据存储到内存中&lt;以二进制补码的形式存储&gt;)<br>2.变量的定义<br>    数据类型    变量名    ;<br>    1)基本数据类型<br>    整型    有符号/无符号    short int long<br>    实型    有符号            float double<br>    字符型    有符号/无符号    char<br>    2)通过sizeof运算符进行测试<br>    测试出的结果以字节为单位<br>    1字节 = 8位<br>    sizeof(char) = 1<br>    sizeof(short) = 2<br>    sizeof(int) = 4<br>    sizeof(long) = 8<br>    sizeof(float) = 4<br>    sizeof(double) = 8<br>    测试的结果并不唯一,会随着硬件或者操作系统有所变化<br>3.变量的存储<br>    char c = 13;<br>    //将来会把十进制整数13转换成8位的二进制的数据存储到<br>    //c变量所占用的1个字节的存储空间中</p>
+<pre><code>0 0 0 0 1 1 0 1
+在二进制数据中,最左边的是最高位
+在二进制数据中,最右边的是最低位
+第7位    0
+第6位    0
+第5位    0
+第4位    0
+第3位    1
+第2位    1
+第1位    0
+第0位    1
+如果是有符号类型,最高位是符号位,其余位是数据位
+第7位        符号位    (0代表正数 1代表负数)
+第6-0位        数据位
+
+
+变量会存储在内存中,以二进制补码的形式进行存储
+</code></pre>
+<p>原码 : 把操作数从别的进制转化成二进制,就是原码<br>补码 : 如果操作数为正,那么原码等于补码<br>        如果操作数为负,那么原码不等于补码,需要转换<br>        无论是原码转换成补码,还是补码转换成原码,公式都一样<br>        除了符号位不变,其他位按位取反,再加1<br>为什么使用补码存储数据?<br>    1)保证0的唯一性<br>    2)为了保证加法运算的合理<br>    1-1 -&gt; 1 + (-1)<br>            0001 + 1001 = 1010 = -2<br>            0001 + 1111 = 0000 = 0<br>*/<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char *argv[])<br>{<br>    printf(“sizeof(char) = %ld\n”, sizeof(char));<br>    printf(“sizeof(short) = %ld\n”, sizeof(short));<br>    printf(“sizeof(int) = %ld\n”, sizeof(int));<br>    printf(“sizeof(long) = %ld\n”, sizeof(long));<br>    printf(“sizeof(float) = %ld\n”, sizeof(float));<br>    printf(“sizeof(double) = %ld\n”, sizeof(double));</p>
+<pre><code>return 0;
+</code></pre>
+<p>}</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -2207,7 +2310,7 @@ else
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
